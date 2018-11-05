@@ -1,10 +1,6 @@
 # VenderCollection
 
---
 
-[swift 版本](https://github.com/AllenSWB/VenderCollection/blob/master/ReadMeSwift.md)
-
---
 * [网络@](#title_network)
 * [Json & Model@](#title_json)
 * [自适应@](#title_autolayout)
