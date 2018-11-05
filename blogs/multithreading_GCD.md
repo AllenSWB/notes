@@ -4,8 +4,10 @@
 ### 0. 参考
  
    + [细说GCD by 戴铭](https://www.jianshu.com/p/fbe6a654604c)
-    + https://opensource.apple.com/source/libdispatch/
-    + https://github.com/apple/swift-corelibs-libdispatch
+   
+   + https://opensource.apple.com/source/libdispatch/
+   
+   + https://github.com/apple/swift-corelibs-libdispatch
  
 ### 1. 开发者需要做的是定义想执行的任务，并追加到适当的Dispatch Queue中
  
