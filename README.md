@@ -2,7 +2,7 @@
 
 ### iOS基础
 
-+ [多线程-GCD](https://github.com/AllenSWB/blogs/blob/master/docs/multithreading_GCD.md)
++ [多线程-GCD](https://github.com/AllenSWB/notes/blob/master/blogs/multithreading_GCD.md)
 
 ### 文档
 
