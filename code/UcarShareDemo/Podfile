@@ -1,0 +1,37 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'UcarShareDemo' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+  
+  pod 'AFNetworking', '~> 3.0'
+  pod 'YYModel'
+  pod 'SDWebImage', '~> 4.0'
+  
+  pod 'YYText'
+  pod 'YYCategories'
+  pod 'YYCache'
+  
+  pod 'FDFullscreenPopGesture'
+  pod 'ReactiveObjC'
+  pod 'FMDB'
+  pod 'Aspects'
+  pod 'KVOController'
+  # Texture文档地址 http://texturegroup.org/docs/installation.html
+  pod 'Texture'
+
+  # 模块化
+  pod 'BeeHive', '1.1.1'
+  pod 'MGJRouter', '~>0.9.0'
+
+  # 布局
+  pod 'Masonry'
+  pod 'SDAutoLayout', '~> 2.1.3'
+  pod 'MyLayout'
+
+# pod 'DoraemonKit/Core', '~> 1.0.2'
+
+  # Pods for UcarShareDemo
+
+end
