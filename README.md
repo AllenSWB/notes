@@ -13,7 +13,7 @@
 ## flutter学习
 
 + [flutter系列1.环境配置](https://github.com/AllenSWB/notes/blob/master/docs/flutter%E7%B3%BB%E5%88%971.%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.md)
-+ [flutter系列2.入门]()
++ [flutter系列2.入门](https://github.com/AllenSWB/notes/blob/master/docs/flutter%E7%B3%BB%E5%88%972.%E5%85%A5%E9%97%A8.md)
 
 ## 文档
 
