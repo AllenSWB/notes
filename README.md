@@ -14,7 +14,7 @@
 
 ## 数据结构与算法
 
-+ [栈]() 、[代码demo]()
++ [栈](https://github.com/AllenSWB/notes/blob/master/docs/%E6%A0%88.md) 、[代码demo](https://github.com/AllenSWB/notes/tree/master/code/StackDemo)
 
 ## flutter学习
 
