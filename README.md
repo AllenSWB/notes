@@ -8,8 +8,9 @@
 + [全屏播放视频自定义音量条](https://github.com/AllenSWB/notes/blob/master/docs/ucar_volume.md)
 + [一些lldb调试技巧](https://github.com/AllenSWB/notes/blob/master/docs/%E4%B8%80%E4%BA%9Blldb%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7.md)
 + [让app支持通用链接](https://github.com/AllenSWB/notes/blob/master/docs/%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5.md)
-+ [Merge Request 和Code Review](https://github.com/AllenSWB/notes/blob/master/docs/mergerequest.md)
-
++ [Code Review 代码审查：Merge Request 和Code Review](https://github.com/AllenSWB/notes/blob/master/docs/mergerequest.md)
++ [Code Review 代码审查：Crucible + FishEye](https://github.com/AllenSWB/notes/blob/master/docs/Crucible.md)
++ 
 ## 三方库源码
 
 + [FDFullscreenPopGesture](https://github.com/AllenSWB/notes/blob/master/docs/FDFullscreenPopGesture.md)
