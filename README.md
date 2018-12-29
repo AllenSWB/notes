@@ -10,7 +10,7 @@
 + [让app支持通用链接](https://github.com/AllenSWB/notes/blob/master/docs/%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5.md)
 + [Code Review 代码审查：Merge Request 和Code Review](https://github.com/AllenSWB/notes/blob/master/docs/mergerequest.md)
 + [Code Review 代码审查：Crucible + FishEye](https://github.com/AllenSWB/notes/blob/master/docs/Crucible.md)
-+ [Jenkins环境搭建](https://github.com/AllenSWB/notes/blob/master/docs/Jenkins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html)
++ [Jenkins环境搭建](https://github.com/AllenSWB/notes/blob/master/docs/Jenkins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md)
 
 ## 三方库源码
 
