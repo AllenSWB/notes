@@ -35,3 +35,7 @@
 + [Code Review 代码审查：Crucible + FishEye](https://github.com/AllenSWB/notes/blob/master/docs/Crucible.md)
 + [Jenkins环境搭建](https://github.com/AllenSWB/notes/blob/master/docs/Jenkins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md)
 + [一些Java的基础知识](https://github.com/AllenSWB/notes/blob/master/docs/java_basic.md)
+
+---
+
++ [我的简书地址](https://www.jianshu.com/u/f75be2cdebe5)
