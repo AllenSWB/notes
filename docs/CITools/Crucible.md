@@ -107,3 +107,11 @@
 
 + [Docker 建立 Crucible4.6.1 以及與 Crowd3.3.2 實現 SSO 單點登入](https://tw.saowen.com/a/d3fe024777662a971c5c6d3caa4e79dd8653813efafd60dcc6de22bb659f10ca)
 + [Atlassian系列软件破解研究记录](https://www.jianshu.com/p/20dbcf85f962)
+
+## 一些图片
+
+![](https://github.com/AllenSWB/notes/blob/master/src/imgs/qq%E9%82%AE%E7%AE%B1smtp.png)
+![](https://github.com/AllenSWB/notes/blob/master/src/imgs/%E7%BD%91%E6%98%93%E9%82%AE%E7%AE%B1SMTP.png)
+![](https://github.com/AllenSWB/notes/blob/master/src/imgs/%E6%9F%A5%E7%9C%8Bserver%20ID%20.png)
+
+

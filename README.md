@@ -31,11 +31,11 @@
 
 ## 编程
 
-+ [Code Review 代码审查：Merge Request 和Code Review](https://github.com/AllenSWB/notes/blob/master/docs/mergerequest.md)
-+ [Code Review 代码审查：Crucible + FishEye](https://github.com/AllenSWB/notes/blob/master/docs/Crucible.md)
-+ [Code Review 代码审查：Gerrit](https://github.com/AllenSWB/notes/blob/master/docs/gerritinstall.md)
-+ [Code Review 代码审查：Gerrit关联Jenkins](https://github.com/AllenSWB/notes/blob/master/docs/Gerrit%20+%20Jenkins.md)
-+ [Jenkins环境搭建](https://github.com/AllenSWB/notes/blob/master/docs/Jenkins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md)
++ [Code Review 代码审查：Merge Request 和Code Review](https://github.com/AllenSWB/notes/blob/master/docs/CITools/mergerequest.md)
++ [Code Review 代码审查：Crucible + FishEye](https://github.com/AllenSWB/notes/blob/master/docs/CITools/Crucible.md)
++ [Code Review 代码审查：Gerrit](https://github.com/AllenSWB/notes/blob/master/docs/CITools/gerritinstall.md)
++ [Code Review 代码审查：Gerrit关联Jenkins](https://github.com/AllenSWB/notes/blob/master/docs/CITools/Gerrit%20+%20Jenkins.md)
++ [Jenkins环境搭建](https://github.com/AllenSWB/notes/blob/master/docs/CITools/Jenkins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md)
 + [一些Java的基础知识](https://github.com/AllenSWB/notes/blob/master/docs/java_basic.md)
 
 ---
