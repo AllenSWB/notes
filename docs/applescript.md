@@ -1,5 +1,7 @@
 # 一个上传图片到GitHub的workflow
 
++ [AppleScript的四种数据类型](https://blog.csdn.net/jymn_chen/article/details/19770495)
+
 ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/屏幕快照%202019-01-08%20下午6.39.39.png)
 
       # 第一步、将要上传的图片移到本地repo的目录下
