@@ -37,6 +37,7 @@
 + [Code Review 代码审查：Gerrit关联Jenkins](https://github.com/AllenSWB/notes/blob/master/docs/CITools/Gerrit%20+%20Jenkins.md)
 + [Jenkins环境搭建](https://github.com/AllenSWB/notes/blob/master/docs/CITools/Jenkins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md)
 + [一些Java的基础知识](https://github.com/AllenSWB/notes/blob/master/docs/java_basic.md)
++ [shell](https://github.com/AllenSWB/notes/blob/master/docs/shell.md)
 
 ## 工具
 
