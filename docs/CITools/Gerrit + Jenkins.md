@@ -21,71 +21,81 @@
     -  Gerrit trigger 
     -  Git plugin
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymmkk7ph1j31gv0b9mzp.jpg)
+  ![jenkins_plugin](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/jenkins_plugin.jpg)
 
 + 工作台 -> 系统管理 -> Gerrit Trigger
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymk3xb2xlj30c501waa2.jpg)
+  ![gerrit_trigger](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/gerrit_trigger.png)
 
   Add New Server 
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymk4oivfdj307v07pglv.jpg)
+  ![add_server_0](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/add_server_0.png)
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymk64m1mhj30ku07swf4.jpg)
+  ![add_server_1](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/add_server_1.png)
 
   详细配置如下
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymkprvmpgj317q0hv42p.jpg)
+  ![add_server_2](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/add_server_2.png)
 
   遇到了以下错误，解决方法如图：
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymkqqpihij30el093dgj.jpg)
+  ![error_0](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/error_0.png)
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymkrxt6wcj311x09ljsw.jpg)
+  ![error_1](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/error_1.png)
 
   Gerrit Reporting Values 配置：用于Jenkins向Gerrit传信息
 
   在Jenkins项目配置里
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fyy0a5fmn1j30q305rglx.jpg)
+  ![advance_0](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/advance_0.png)
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fyy092axr5j313o0bgjs8.jpg)
+  ![advance_1](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/advance_1.png)
+
+   Gerrit Trigger 详细配置
+
+  ![trigger_0](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/trigger_0.png) 
+
+  ![trigger_1](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/trigger_1.png)
+
+  shell脚本中可以使用一些自带的变量
+
+  ![Jenkins_var](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/Jenkins_var.png)
 
   在gerrit的project配置里，给用户加上verified权限
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fyy0cuct3ej30u20jxjv1.jpg)
+  ![verify](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/verify.png)
 
 ## Gerrit配置
 
   + 需要gerrit安装 verified label 功能。
 
     查看是否有这个功能，可以登录gerrrit。
-  
+
     在 Projects -> list -> all-projects -> access -> edit -> add permission 看看里面是否有`verified`选项
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymluhxct2j30kx0oywib.jpg)
+    ![permission_0](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/permission_0.jpg)
 
     如果没有的话，需要给Gerrit加上这个功能。方法如下
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymmg585mdj30ej08edgy.jpg)
+    ![permission_1](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/permission_1.png)
 
     给`All-Projectes`工程加上功能之后，所有子工程也都有这个功能了(需要restart服务)。加上之后再看：
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymmgt347uj30ib0m2q63.jpg)
+    ![permission_2](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/permission_2.png)
 
 + 给工程加上verified label 功能。方法如下
 
   Projects -> Access -> Edit(新版UI没有edit功能，旧版UI才有) -> Reference: refs/heads/* 项
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymn32gm7hj30mo06nacv.jpg)
+  ![readonly](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/readonly.png)
 
   添加`Label Verified`功能，增加一个Group，名字是`Non-Interactive Users`。保存更改
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymn0pdrayj30ib0r9q6h.jpg)
+  ![readonly2](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/readonly2.jpg)
 
   注意： 需要把Jenkin用户加到`Non-Interactive Users`组内。
 
-  ![](http://ww1.sinaimg.cn/large/006hznE2ly1fymn5weszej30el06ymxy.jpg)
+  ![add_user](https://github.com/AllenSWB/notes/blob/master/src/imgs/gerrit_jenkins/add_user.png)
 
 + 一次完整code review示例
 
