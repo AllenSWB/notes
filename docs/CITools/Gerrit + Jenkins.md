@@ -8,6 +8,7 @@
 
   - https://www.cnblogs.com/kevingrace/p/5651447.html
   - https://blog.csdn.net/vector090/article/details/19482491
+  - https://www.cnblogs.com/276815076/p/7299860.html
 
 ## Jenkins配置
 
