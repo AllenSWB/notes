@@ -294,6 +294,38 @@ wenbosundeMBA:Desktop wenbo.sun$
   Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.
   ```
 
+## 命令总结
+
+```shell
+# 根据模板创建私有库
+pod lib create TestVendor	# TestVendor 私有库名
+
+# 将local repo 关联 origin repo
+git remote add origin https://github.com/AllenSWB/TestVendor.git
+git push -u origin master 
+
+# 打tag
+git tag 0.1.1
+# 删除tag
+git tag -d 0.1.1
+# 将 0.1.1的tag push到origin
+git push origin 0.1.1
+# 上传本地所有tag到origin
+git push origin --tags 
+
+# 本地校验podspec文件
+pod lib lint --allow-warnings
+# 远端校验podspec文件
+pod spec lint --allow-warnings
+
+# 上传podspec文件
+# wbSpecs 索引库的名字
+# TestVendor.podspec 私有库.podspec文件
+pod repo push wbSpecs TestVendor.podspec
+```
+
+
+
 ## 参考链接
 
 + 创建三方库 https://www.jianshu.com/p/a57b696510e9
