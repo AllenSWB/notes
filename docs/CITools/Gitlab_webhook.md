@@ -24,3 +24,8 @@
 
 ![trigger](https://github.com/AllenSWB/notes/blob/master/src/imgs/gitlab_webhook/trigger.png)
 
++ Gitlab添加webhook
+
+  ![add_webhook](https://github.com/AllenSWB/notes/blob/master/src/imgs/gitlab_webhook/add_webhook.png)
+
+  ![test_webhook](https://github.com/AllenSWB/notes/blob/master/src/imgs/gitlab_webhook/test_webhook.png)
