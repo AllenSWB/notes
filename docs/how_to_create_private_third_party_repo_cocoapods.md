@@ -324,7 +324,19 @@ pod spec lint --allow-warnings
 pod repo push wbSpecs TestVendor.podspec
 ```
 
+## cocoapods原理
 
++ 它是将所有依赖库都放到一个名为**Pods**的项目中。
+
++ **Pods**项目最终会编译成一个名为`libPods.a`的文件，主项目只要依赖这个`.a`文件即可。这样，依赖库源码管理工作就从主项目移到了**Pods**项目中。
+
++ 对于资源文件，CocoaPods 提供了一个名为`Pods-resources.sh` 的 bash 脚本，该脚本在每次项目编译的时候都会执行，将第三方库的各种资源文件复制到目标目录中。
+
++ CocoaPods 通过一个名为 `Pods.xcconfig` 的文件来在编译时设置所有的依赖和参数。
+
+  ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/cocoapods/cocoapods0.png)
+
+  ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/cocoapods/cocoapods1.png)
 
 ## 参考链接
 
