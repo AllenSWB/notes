@@ -193,7 +193,7 @@ To run your app on Android:
    import React from 'react';
    import {AppRegistry, StyleSheet, Text, View} from 'react-native';
    
-   class RNHighScores extends React.Component {
+   class CMTApp extends React.Component {
      render() {
        var contents = this.props['scores'].map((score) => (
          <Text key={score.name}>
@@ -230,7 +230,7 @@ To run your app on Android:
    });
    
    // 整体js模块的名称
-   AppRegistry.registerComponent('RNHighScores', () => RNHighScores);
+   AppRegistry.registerComponent('CMTApp', () => CMTApp);
    ```
 
 2. `RCTRootView`
@@ -238,12 +238,11 @@ To run your app on Android:
    在原生的ViewController里`#import <React/RCTRootView.h>`
 
    ```objective-c
-   
    - (void)btnAction {
        NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
        RCTRootView *rootView =
        [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
-                                   moduleName: @"RNHighScores"
+                                   moduleName: @"CMTApp" //注意：这里是工程名，要跟index.js中对应上！！！！
                             initialProperties:
         @{
           @"scores" : @[
@@ -266,7 +265,52 @@ To run your app on Android:
 
 3. 测试集成结果
 
-   运行工程。
+   运行工程：
+
+   1. 在工程根目录下启动服务
+
+      ```shell
+      npm start
+      ```
+
+   2. 跑工程有两个方法，一个是执行命令，一个是用Xcode打开
+
+      + 执行命令
+
+        ```shell
+        react-native run-ios
+        ```
+
+      + 用xcode打开
+
+        打开`.xcworkspace`文件
+
+   遇到问题：
+
+   1. 链接js文件问题
+
+      ```objective-c
+      // 原来代码中，js文件的路径如下。
+      NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
+      ```
+
+      我用真机跑工程，发现找不到文件，需要把IP地址改下。改动后如下：
+
+      ```objective-c
+      NSURL *jsCodeLocation = [NSURL URLWithString:@"http://10.99.58.67:8081/index.bundle?platform=ios"];
+      ```
+
+   2. 内网IP问题
+
+      确认链接js的路径没问题后，发现还是不行。这是因为我电脑连得是公司WiFi，`10.99.58.67`是公司内网IP，真机没连WiFi，所以找不到这个IP，还是不行，解决就是手机连上公司WiFi和电脑处于一个局域网内。
+
+   3. native工程所在文件夹命名问题 `ios` or `CMTApp`
+
+      如图所示，原来iOS native工程的根目录就叫做`CMTApp`，用Xcode跑工程的时候一切都没问题，但是如果想要用命令`react-native run-ios`跑工程是不行的。这是因为ReactNative是跨平台的，iOS工程需要放在`ios`目录下，安卓工程放在`android`目录下，它才能分辨出来。
+
+      想要用命令跑工程的话，得改下native app的根目录名称。（记得改完目录名重新`pod install`下）
+
+      ![proj_path](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/proj_path.PNG)
 
 # React Native 开发 TODO未完成
 
