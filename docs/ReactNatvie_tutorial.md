@@ -171,6 +171,8 @@ To run your app on Android:
 
    2. pod库装完后，我用Xcode打开工程，build出错
 
+      ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/rn_join_error_0.png)
+
       ```
       'jsireact/JSIExecutor.h' file not found`
       ```
