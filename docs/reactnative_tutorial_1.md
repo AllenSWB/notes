@@ -101,6 +101,18 @@
 
      决定其子元素沿着**次轴**（与主轴垂直的轴，比如若主轴方向为`row`，则次轴方向为`column`）的**排列方式**
 
+   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__0.jpg)
+
+   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__1.jpg)
+
+   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__2.jpg)
+
+   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__3.jpg)
+
+   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__4.jpg)
+
+   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__5.jpg)
+
 6. JSX
 
    http://www.runoob.com/react/react-jsx.html
