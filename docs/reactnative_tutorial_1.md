@@ -67,25 +67,39 @@
 
 5. flexbox
 
-   全称是`Flexible Box` 弹性布局。
+   全称是`Flexible Box` 弹性布局。https://reactnative.cn/docs/flexbox/
 
    ![flex](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flex.png)
 
-   flex container：flex容器
+   > flex container：flex容器
+   >
+   > flex item：flex项目
+   >
+   > 主轴 main axis： 水平的
+   >
+   > main start ：主轴的起点
+   >
+   > main end：主轴的终点
+   >
+   > 交叉轴 cross axis：垂直的，又称做次轴。
+   >
+   > cross start：交叉轴的起点
+   >
+   > cross end：交叉轴的终点
 
-   flex item：flex项目
+   - `flexDirection`
 
-   主轴 main axis： 水平的
+     指定item排列方向：`row` 水平方向 or `colume`垂直方向
 
-   main start ：主轴的起点
+   - `justifyContent`
 
-   main end：主轴的终点
+     决定其子元素沿着**主轴**的**排列方式**
 
-   交叉轴 cross axis：垂直的
+     `flex-start`、`center`、`flex-end`、`space-around`、`space-between`以及`space-evenly`
 
-   cross start：交叉轴的起点
+   - `alignItems`
 
-   cross end：交叉轴的终点
+     决定其子元素沿着**次轴**（与主轴垂直的轴，比如若主轴方向为`row`，则次轴方向为`column`）的**排列方式**
 
 6. JSX
 
@@ -101,7 +115,7 @@
 
 2. React Native生命周期
 
-![compents_life](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/compents_life.png)
+   ![compents_life](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/compents_life.png)
 
 - 初始化
 
