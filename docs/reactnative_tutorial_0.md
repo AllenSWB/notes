@@ -179,12 +179,12 @@ To run your app on Android:
 
       解决办法：`JSIExecutor.h`这个文件是存在的，但是自动生成的路径不对。改成`#import 'JSIExecutor.h'`就好了。
 
-  3. 错误提示:required a higher minimum deployment target.
+    3. 错误提示:required a higher minimum deployment target.
 
-    ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/rn_join_error_1.png)
+      ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/rn_join_error_1.png)
 
-    解决办法：
-    ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/rn_join_error_1_solve.png)
+      解决办法：
+      ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/rn_join_error_1_solve.png)
 
 > 至此，所有的依赖都安装完成了。下面就可以进入编码阶段了。
 
