@@ -269,3 +269,26 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
 ![xianyu_flutter_native](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/xianyu_flutter_native.png)
 
+### 实现步骤
+
+- 参考这篇文章[从零搭建 iOS Native Flutter 混合工程](https://juejin.im/post/5c3ae5ef518825242165c5ca#heading-4)
+
+- 安装`Flutter Wrapper`
+
+  [安装方法](https://github.com/passsy/flutter_wrapper#add-the-flutter-wrapper-to-your-project)：在flutter工程的根目录执行以下命令。
+
+  ```
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/passsy/flutter_wrapper/master/install.sh)"
+  ```
+
+  - 此后，在当前flutter工程需要使用`flutter`命令的时候，都是用`./flutterw`来代替。
+
+  这一步耗时会比较长，因为他会下载一个新的flutter SDK下来，放到当前flutter工程目录下。这样就不会出现协作开发时每人电脑里的SDK版本不一致的问题了。
+
+  ![install_flutterwrapper](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/install_flutterwrapper.png)
+
+## 遇到问题
+
+1. 远端验证podspec文件不通过
+
+   执行本地验证`pob lib lint --allow-warning`通过，但是远端验证`pod spec lint --allow-warnings`不通过。原因是创建的flutter工程里的`.gitignore`文件将`App.framework`和`Flutter.framework`忽略了，修改flutter工程的`.gitignore`文件就好了。
