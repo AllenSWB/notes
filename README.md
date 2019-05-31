@@ -26,7 +26,7 @@
   + [Flutter系列2.入门](https://github.com/AllenSWB/notes/blob/master/docs/flutter/flutter_intro.md)
   + [Flutter系列3.Dart](xxx.md)
   + [Flutter系列4.原生集成Flutter](https://github.com/AllenSWB/notes/blob/master/docs/flutter/add_flutter_to_native.md)
-
+  + [Flutter系列5.Widgets in Flutter](https://github.com/AllenSWB/notes/blob/master/docs/flutter/widgets_in_flutter.md)
   
 + React Native
   + [React Native 0. 入坑](https://github.com/AllenSWB/notes/blob/master/docs/reactnative_tutorial_0.md)
