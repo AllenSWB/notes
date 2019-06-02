@@ -516,7 +516,7 @@ Flutter里一切都是Widget，视图、布局、手势、动画等等都是Widg
            })
       ```
 
-        ![listtile](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/listtile.png)
+      ![listtile](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/listtile.png)
         
     tip： 使用`ListTile`，需要将他放到一个Material风格的widget里面.
 
