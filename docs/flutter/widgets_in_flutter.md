@@ -392,10 +392,135 @@ Flutter里一切都是Widget，视图、布局、手势、动画等等都是Widg
 
 ### 可滚动Widget
 
-1. ListView
-2. GridView
-  
-### 自定义Widget (自定义视图)
+> ViewPort视口：指一个widget的实际显示区域
+> 主轴：滚动方向
+> 纵轴：非滚动方向
+
+可滚动的Widget都直接或间接的包含一个`Scrollable`。
+
+```dart
+    const Scrollable({
+       this.axisDirection = AxisDirection.down,  // 滚动方向，默认向下。
+       this.controller,     // ScrollController类型。ScrollController的主要作用是控制滚动位置和监听滚动事件。默认情况下，widget树中会有一个默认的PrimaryScrollController，如果子树中的可滚动widget没有显式的指定controller并且primary属性值为true时（默认就为true），可滚动widget会使用这个默认的PrimaryScrollController，这种机制带来的好处是父widget可以控制子树中可滚动widget的滚动，例如，Scaffold使用这种机制在iOS中实现了"回到顶部"的手势。我们将在本章后面“滚动控制”一节详细介绍ScrollController。
+       this.physics,    // ScrollPhysics类型。它决定可滚动Widget如何响应用户操作，比如用户滑动完抬起手指后，继续执行动画；或者滑动到边界时，如何显示。默认情况下，Flutter会根据具体平台分别使用不同的ScrollPhysics对象，应用不同的显示效果，如当滑动到边界时，继续拖动的话，在iOS上会出现弹性效果，而在Android上会出现微光效果。如果你想在所有平台下使用同一种效果，可以显式指定，Flutter SDK中包含了两个ScrollPhysics的子类可以直接使用：ClampingScrollPhysics：Android下微光效果、 BouncingScrollPhysics：iOS下弹性效果。
+       @required this.viewportBuilder,
+       this.excludeFromSemantics = false,
+       this.semanticChildCount,
+       this.dragStartBehavior = DragStartBehavior.start,
+     })
+
+     // Scrollbar是一个Material风格的滚动指示器（滚动条），如果要给可滚动widget添加滚动条，只需将Scrollbar作为可滚动widget的父widget即可
+     Scrollbar(
+        child: SingleChildScrollView(
+          ...
+        ),
+     );
+     // Scrollbar和CupertinoScrollbar都是通过ScrollController来监听滚动事件来确定滚动条位置
+     // CupertinoScrollbar是iOS风格的滚动条，如果你使用的是Scrollbar，那么在iOS平台它会自动切换为CupertinoScrollbar。
+
+```
+
+1. SingleChileScrollView
+
+    ```dart
+      const SingleChildScrollView({
+       Key key,
+       this.scrollDirection = Axis.vertical,  // 滚动方向，垂直方向vertical(default value)、horizontal水平方向
+       this.reverse = false,  // 是否按照阅读方向相反的方向滑动
+       this.padding,
+       bool primary,  // 指是否使用widget树中默认的PrimaryScrollController；当滑动方向为垂直方向（scrollDirection值为Axis.vertical）并且controller没有指定时，primary默认为true.
+       this.physics,
+       this.controller,
+       this.child,
+       this.dragStartBehavior = DragStartBehavior.start,
+     })
+    ```
+
+      ![singlechildscrollview](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/singlechildscrollview.png)
+
+2. ListView
+
+    ```dart
+      (new) ListView({
+          Key key,
+          Axis scrollDirection: Axis.vertical,    // 滚动方向，垂直方向vertical(default value)、horizontal水平方向
+          bool reverse: false,                    // 是否按照阅读方向相反的方向滑动
+          ScrollController controller,            
+          bool primary,                           // 指是否使用widget树中默认的PrimaryScrollController
+          ScrollPhysics physics, 
+          bool shrinkWrap: false,                 // 该属性表示是否根据子widget的总长度来设置ListView的长度，默认值为false 。默认情况下，ListView的会在滚动方向尽可能多的占用空间。当ListView在一个无边界(滚动方向上)的容器中时，shrinkWrap必须为true。
+          EdgeInsetsGeometry padding, 
+           double itemExtent,                     // 该参数如果不为null，则会强制children的"长度"为itemExtent的值；这里的"长度"是指滚动方向上子widget的长度，即如果滚动方向是垂直方向，则itemExtent代表子widget的高度，如果滚动方向为水平方向，则itemExtent代表子widget的长度。
+           bool addAutomaticKeepAlives: true,     // 该属性表示是否将列表项（子widget）包裹在AutomaticKeepAlive widget中；典型地，在一个懒加载列表中，如果将列表项包裹在AutomaticKeepAlive中，在该列表项滑出视口时该列表项不会被GC，它会使用KeepAliveNotification来保存其状态。如果列表项自己维护其KeepAlive状态，那么此参数必须置为false。
+           bool addRepaintBoundaries: true,       // 该属性表示是否将列表项（子widget）包裹在RepaintBoundary中。当可滚动widget滚动时，将列表项包裹在RepaintBoundary中可以避免列表项重绘，但是当列表项重绘的开销非常小（如一个颜色块，或者一个较短的文本）时，不添加RepaintBoundary反而会更高效。和addAutomaticKeepAlive一样，如果列表项自己维护其KeepAlive状态，那么此参数必须置为false。
+           bool addSemanticIndexes: true, 
+           double cacheExtent, 
+           List<Widget> children: const <Widget>[], 
+           int semanticChildCount, 
+           DragStartBehavior dragStartBehavior: DragStartBehavior.start}) 
+
+    ```
+    三种创建ListView的方法:
+   
+      - **I. 默认构造函数**
+
+          这种方式接收一个widget list，适合只有少量子widg的情况。因为这种方式会提前将所有的children创建好，而不是等到子widget真正显示的时候才创建。
+
+          ![listview_create_1](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/listview_create_1.png)
+
+      - **II. `ListView.builder`**
+
+          适合列表项比较多（或者无限）的情况，因为只有当子Widget真正显示的时候才会被创建。
+          
+          ```dart
+            (new) ListView.builder({
+               (BuildContext, int) → Widget itemBuilder, 
+               int itemCount, 
+               // 更多参数已省略
+            }) → ListView
+          ```
+
+          ![listview_create_2](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/listview_create_2.png)
+
+      - **III. `ListView.separated`**
+
+          可以生成列表项之间的分割器，它比ListView.builder多了一个separatorBuilder参数，该参数是一个分割器生成器。
+
+          ```dart
+          (new) ListView.separated({
+            (BuildContext, int) → Widget separatorBuilder, 
+            // 更多参数已省略
+          }) → ListView
+          ```
+
+          ![listview_create_3](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/listview_create_3.png)
+
+    
+    使用`ListTile`实现类似TableViewHeader的效果。
+
+      ```dart
+          //Material设计规范中状态栏、导航栏、ListTile高度分别为24、56、56 
+            const ListTile({
+             Key key,
+             this.leading,
+             this.title,
+             this.subtitle,
+             this.trailing,
+             this.isThreeLine = false,
+             this.dense,
+             this.contentPadding,
+             this.enabled = true,
+             this.onTap,
+             this.onLongPress,
+             this.selected = false,
+           })
+      ```
+
+        ![listtile](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/listtile.png)
+        
+    tip： 使用`ListTile`，需要将他放到一个Material风格的widget里面.
+
+      ![listtil_err](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/listtil_err.png)
 
 ## 功能相关Widget
 
