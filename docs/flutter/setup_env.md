@@ -3,7 +3,6 @@
 ## 相关链接
 
 + 官方文档 [中](https://flutterchina.club/docs/) [英](https://flutter.io/docs/get-started/install) 
-+ [专车同事flutter分享](http://wiki.10101111.com/pages/viewpage.action?pageId=180818749)
 + [闲鱼技术flutter](https://www.yuque.com/xytech/flutter)
 + [头条 Flutter iOS 混合工程实践 by 张星宇](https://xiaozhuanlan.com/topic/1538692074)
 + [flutter库](https://flutterawesome.com/)
