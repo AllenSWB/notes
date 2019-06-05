@@ -1,7 +1,7 @@
 # Dart 
 
-> 语法预览  http://dart.goodev.org/guides/language/language-tour
-> 核心库预览 http://dart.goodev.org/guides/libraries/library-tour
+> - 语法预览  http://dart.goodev.org/guides/language/language-tour
+> - 核心库预览 http://dart.goodev.org/guides/libraries/library-tour
 
 ## 语法
 

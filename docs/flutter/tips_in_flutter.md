@@ -47,6 +47,13 @@
     }
   ```
 
+4. `pubspec.ymal`文件中的`dev_dependencies`和`dependencies`区别
+
+    > pubspec.ymal文件：https://dart.dev/tools/pub/pubspec
+
+    + `dependencies`：工程所依赖的库放在这里；[官方释义点我](https://dart.dev/tools/pub/pubspec#dependencies)
+    + `dev_dependencies`：尽在开发阶段才使用到的库放在这里；
+
 ---
 // todo list
 
