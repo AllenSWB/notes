@@ -6,7 +6,7 @@
    
    ```Json
          {
-          "businessInfos" : [
+        "businessInfos" : [
           {
             "storeInfo" : {
               "address" : "31路;32路;60路;86路;134路;154路;260路;(停运)B21路",
@@ -28,21 +28,68 @@
                     "count" : 0,
                     "menuCode" : "011004004001000000",
                     "idx" : 1,
-                    "menuName" : "我的进行中试驾单"
+                    "menuName" : "我的进行中试驾单",
+                    "ext": [
+                        {
+                          "orderNo": "-",
+                          "customerName": "啦啦啦啦",
+                          "customerTel": "12323686482342",
+                          "vehicleSeries": "JFLAJDK",
+                          "dynamicBottom": ""
+                        },
+      {
+                          "orderNo": "-",
+                          "customerName": "逻辑",
+                          "customerTel": "12323686482342",
+                          "vehicleSeries": "JFLAJDK",
+                          "dynamicBottom": ""
+                        },
+
+      {
+        "orderNo": "-",
+        "customerName": "逻辑",
+        "customerTel": "12323686482342",
+        "vehicleSeries": "JFLAJDK",
+        "dynamicBottom": ""
+      },
+      {
+                          "orderNo": "-",
+                          "customerName": "捡垃圾",
+                          "customerTel": "12323686482342",
+                          "vehicleSeries": "JFLAJDK",
+                          "dynamicBottom": ""
+                        }
+                      ]
                   },
                   {
                     "icon" : "",
                     "count" : -1,
                     "menuCode" : "011004007001000000",
                     "idx" : 2,
-                    "menuName" : "全部试驾单"
+                    "menuName" : "全部试驾单",
+       "ext": [
+                        {
+                          "orderNo": "-",
+                          "customerName": "啦啦啦啦",
+                          "customerTel": "12323686482342",
+                          "vehicleSeries": "JFLAJDK",
+                          "dynamicBottom": ""
+                        }]
                   },
                   {
                     "icon" : "",
                     "count" : 0,
                     "menuCode" : "011004005001000000",
                     "idx" : 3,
-                    "menuName" : "待试驾"
+                    "menuName" : "待试驾",
+       "ext": [
+                        {
+                          "orderNo": "-",
+                          "customerName": "啦啦啦啦",
+                          "customerTel": "12323686482342",
+                          "vehicleSeries": "JFLAJDK",
+                          "dynamicBottom": ""
+                        }]
                   },
                   {
                     "icon" : "",
@@ -63,7 +110,6 @@
         },
         "buttonCodes" : [
           "011001000000000000",
-          "011001002001001004",
           "011004004001000000"
         ]
       }
@@ -83,7 +129,7 @@
       class YzBenchModel {
           YzBenchModel();
 
-          List businessInfos;
+          List <BusinessInfo>businessInfos;
           AccountInfo accountInfo;
           List buttonCodes;
           
@@ -162,12 +208,27 @@
         String menuCode;
         int idx;
         String menuName;
+        List <TestDriveOrder> ext;
 
         factory SubMenuInfo.fromJson(Map<String,dynamic> json) => _$SubMenuInfoFromJson(json);
         Map<String, dynamic> toJson() => _$SubMenuInfoToJson(this);
       }
 
       // **************************************************************************
+
+      @JsonSerializable()
+      class TestDriveOrder {
+        TestDriveOrder();
+
+        String orderNo;       // 试驾单号
+        String customerName;  // 客户姓名
+        String customerTel;   // 客户电话
+        String vehicleSeries; // 试驾车系名称
+        String dynamicBottom; // 底部自定义文案
+
+        factory TestDriveOrder.fromJson(Map<String,dynamic> json) => _$TestDriveOrderFromJson(json);
+        Map<String, dynamic> toJson() => _$TestDriveOrderToJson(this);
+      }
 
     ```
 
@@ -181,13 +242,15 @@
       // **************************************************************************
 
       YzBenchModel _$YzBenchModelFromJson(Map<String, dynamic> json) {
-
-        List businessInfos = json['businessInfos'] as List;
         List <BusinessInfo> tempList = [];
-        for (int i = 0; i < businessInfos.length; i++) {
-          BusinessInfo temp = BusinessInfo.fromJson(businessInfos[i] as Map);
-          tempList.add(temp);
+        if (json.keys.contains('businessInfos')) {
+          List businessInfos = json['businessInfos'] as List;
+          for (int i = 0; i < businessInfos.length; i++) {
+            BusinessInfo temp = BusinessInfo.fromJson(businessInfos[i] as Map);
+            tempList.add(temp);
+          }
         }
+       
         
         AccountInfo accountInfoModel = AccountInfo.fromJson(json['accountInfo']);
 
@@ -223,12 +286,13 @@
       BusinessInfo _$BusinessInfoFromJson(Map<String, dynamic> json) {
         
         StoreInfo storeInfo = StoreInfo.fromJson(json['storeInfo']);
-        
-        List menuInfos = json['menuInfos'] as List;
         List <MenuInfo> tempList = [];
-        for (int i = 0; i < menuInfos.length; i++) {
-          MenuInfo temp = MenuInfo.fromJson(menuInfos[i]);
-          tempList.add(temp);
+        if (json.keys.contains('menuInfos')) {
+          List menuInfos = json['menuInfos'] as List;
+          for (int i = 0; i < menuInfos.length; i++) {
+            MenuInfo temp = MenuInfo.fromJson(menuInfos[i]);
+            tempList.add(temp);
+          }
         }
 
         return BusinessInfo()
@@ -274,13 +338,15 @@
 
       MenuInfo _$MenuInfoFromJson(Map<String, dynamic> json) {
 
-        List subMenuInfos = json['subMenuInfos'] as List;
         List <SubMenuInfo> tempList = [];
-        for (int i = 0; i < subMenuInfos.length; i++) {
-          SubMenuInfo temp = SubMenuInfo.fromJson(subMenuInfos[i]);
-          tempList.add(temp);
+        if (json.keys.contains('subMenuInfos')) {
+          List subMenuInfos = json['subMenuInfos'] as List;
+          for (int i = 0; i < subMenuInfos.length; i++) {
+            SubMenuInfo temp = SubMenuInfo.fromJson(subMenuInfos[i]);
+            tempList.add(temp);
+          }
         }
-
+        
         return MenuInfo()
           ..subMenuInfos = tempList
           ..menuGroupName = json['menuGroupName']
@@ -297,22 +363,52 @@
       // **************************************************************************
 
       SubMenuInfo _$SubMenuInfoFromJson(Map<String, dynamic> json) {
+        List <TestDriveOrder> tempList = [];
+        if (json.keys.contains('ext')) {  // 如果后台不返这个参数，就会导致解析失败，所以要加上防御代码
+          List exts = json['ext'] as List;    
+          for (int i = 0; i < exts.length; i++) {
+            TestDriveOrder temp = TestDriveOrder.fromJson(exts[i]);
+            tempList.add(temp);
+          }
+        }
+        
         return SubMenuInfo()
           ..icon = json['icon']
           ..menuCode = json['menuCode']
           ..idx = json['idx']
+          ..ext = tempList
           ..menuName = json['menuName'];
       }
 
       Map<String, dynamic> _$SubMenuInfoToJson(SubMenuInfo instance) =>
           <String, dynamic>{
             'icon': instance.icon,
+            'ext': instance.ext,
             'menuCode': instance.menuCode,
             'idx': instance.idx,
             'menuName': instance.menuName,
           };
           
       // **************************************************************************
+
+      TestDriveOrder _$TestDriveOrderFromJson(Map<String, dynamic> json) {
+        return TestDriveOrder()
+          ..customerName = json['customerName']
+          ..customerTel = json['customerTel']
+          ..orderNo = json['orderNo']
+          ..vehicleSeries = json['vehicleSeries']
+          ..dynamicBottom = json['dynamicBottom'];
+      }
+
+      Map<String, dynamic> _$TestDriveOrderToJson(TestDriveOrder instance) =>
+          <String, dynamic>{
+            'customerName': instance.customerName,
+            'customerTel': instance.customerTel,
+            'orderNo': instance.orderNo,
+            'vehicleSeries': instance.vehicleSeries,
+            'dynamicBottom': instance.dynamicBottom,
+          };
+          
 
 
     ```
