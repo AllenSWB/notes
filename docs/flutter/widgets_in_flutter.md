@@ -93,6 +93,22 @@ Flutter里一切都是Widget，视图、布局、手势、动画等等都是Widg
 
         ![img](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/img.png)
 
+4. CircularProgressIndicator 加载指示器
+
+    ```dart
+        const CircularProgressIndicator({
+          double value,
+          Color backgroundColor,   // loading圈背景色
+          Animation<Color> valueColor,  // loading圈前景色
+          this.strokeWidth = 4.0,       // loading圈宽度
+          String semanticsLabel,
+          String semanticsValue,
+        })
+    ```
+
+    ![progress_hud](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/widgets/progress_hud.png)
+
+
 ### 布局Widget
 
 > 对于线性布局，有**主轴**、**纵轴**之分
@@ -526,4 +542,3 @@ Flutter里一切都是Widget，视图、布局、手势、动画等等都是Widg
 
 TODO
 
-操作符 https://www.jianshu.com/p/64a6ed7581aa

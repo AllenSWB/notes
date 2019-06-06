@@ -22,6 +22,7 @@
 ## 跨平台
 
 + Flutter
+  
   + [Flutter系列1.环境配置](https://github.com/AllenSWB/notes/blob/master/docs/flutter/setup_env.md)
   + [Flutter系列2.入门](https://github.com/AllenSWB/notes/blob/master/docs/flutter/flutter_intro.md)
   + [Flutter系列3.Dart](https://github.com/AllenSWB/notes/blob/master/docs/flutter/dart.md)
@@ -29,6 +30,11 @@
   + [Flutter系列5.Widgets in Flutter](https://github.com/AllenSWB/notes/blob/master/docs/flutter/widgets_in_flutter.md)
   + [Flutter系列6.Tips in Flutter](https://github.com/AllenSWB/notes/blob/master/docs/flutter/tips_in_flutter.md)
   + [Flutter系列7.一个复杂Json解析的例子](https://github.com/AllenSWB/notes/blob/master/docs/flutter/json_parsing_in_flutter.md)
+  + [Flutter系列8.Flutter和Native iOS交互](https://github.com/AllenSWB/notes/blob/master/docs/flutter/flutter_native_communication.md)
+  + [Flutter系列9.Flutter进度条和Toast](https://github.com/AllenSWB/notes/blob/master/docs/flutter/flutter_progresshud_toast.md)
+
+  ---
+  + [Flutter 文章&库](https://github.com/AllenSWB/notes/blob/master/docs/flutter/flutter_resources.md)
   
 + React Native
   + [React Native 0. 入坑](https://github.com/AllenSWB/notes/blob/master/docs/reactnative_tutorial_0.md)
