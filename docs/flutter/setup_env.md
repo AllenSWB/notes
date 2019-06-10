@@ -1,5 +1,12 @@
 # flutter学习系列
-
+- [flutter学习系列](#flutter%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97)
+  - [相关链接](#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5)
+  - [开发环境配置](#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE)
+  - [更新环境变量](#%E6%9B%B4%E6%96%B0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
+  - [配置VSCode作为开发工具](#%E9%85%8D%E7%BD%AEvscode%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7)
+  - [创建第一个flutter工程](#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AAflutter%E5%B7%A5%E7%A8%8B)
+  - [遇到的问题](#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98)
+  
 ## 相关链接
 
 + 官方文档 [中](https://flutterchina.club/docs/) [英](https://flutter.io/docs/get-started/install) 
