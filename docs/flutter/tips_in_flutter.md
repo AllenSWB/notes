@@ -47,7 +47,28 @@
     }
   ```
 
-4. `pubspec.ymal`文件中的`dev_dependencies`和`dependencies`区别
+4. 获取屏幕宽高
+   
+   ```dart
+      import 'dart:ui';
+      import 'package:flutter/material.dart';
+
+      /// 返回屏幕宽
+      double wbScreenWidth(BuildContext context) {
+        return wbScreenSize(context).width;
+      }
+
+      /// 返回屏幕高
+      double wbScreenHeight(BuildContext context) {
+        return wbScreenSize(context).height;
+      }
+
+      Size wbScreenSize(BuildContext context) {
+        return MediaQuery.of(context).size;
+      }
+   ```
+   
+5. `pubspec.ymal`文件中的`dev_dependencies`和`dependencies`区别
 
     > pubspec.ymal文件：https://dart.dev/tools/pub/pubspec
 

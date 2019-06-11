@@ -89,14 +89,14 @@
     @override
     Widget build(BuildContext context) {
       return ConstrainedBox(          
-        constraints: BoxConstraints(maxWidth: ucarScreenWidth(context) - 40, maxHeight: double.infinity),
+        constraints: BoxConstraints(maxWidth: wbScreenWidth(context) - 40, maxHeight: double.infinity),
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           decoration: BoxDecoration(
               color: Colors.black,
               borderRadius: BorderRadius.all(Radius.circular(6)),
           ),
-          // constraints: BoxConstraints(maxWidth: ucarScreenWidth() -  90),
+          // constraints: BoxConstraints(maxWidth: wbScreenWidth() -  90),
           child: Text(
             this.toastString,
             // maxLines: 1,
