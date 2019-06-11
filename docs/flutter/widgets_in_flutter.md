@@ -547,5 +547,19 @@ Flutter里一切都是Widget，视图、布局、手势、动画等等都是Widg
 
 ## 功能相关Widget
 
-TODO
+1. 手势GestureDetector
+
+    ```dart
+       GestureDetector(
+          onTap: () {
+            debugPrint('点击入口');
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(4)),
+            ),
+          ),
+        ),
+    ```
 
