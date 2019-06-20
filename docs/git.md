@@ -2,14 +2,9 @@
 
 1. 常用
 
-  ```shell
     https://www.liaoxuefeng.com/wiki/896043488029600
 
-    git pull
-    git push
-    git add .
-    git commit -m 'feat: 登录功能'
-  ```
+    ![giteasy](../src/imgs/git/git_easy.JPG)
 
 2. 回退
 

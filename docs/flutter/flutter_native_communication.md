@@ -1,8 +1,8 @@
 # Flutter和Native iOS交互
 
-![flutter_native_talk0](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/flutter_native_talk0.png)
+![flutter_native_talk0](../../src/imgs/flutter/flutter_native_talk0.png)
 
-![flutter_native_talk1](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/flutter_native_talk1.png)
+![flutter_native_talk1](../../src/imgs/flutter/flutter_native_talk1.png)
 
 
 ## Flutter调用iOS的方法 - 使用`MethodChannel`
@@ -62,8 +62,8 @@
      
      如果Native iOS里没有定义requestHomeInfo方法，就会报错如下`MissingPluginException (MissingPluginException(No implementation found for method requestHomeInfo on channel requestApi/yzHomeInfo))`
 
-     ![methodchannel_error_no_imp](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/methodchannel_error_no_imp.png)
+     ![methodchannel_error_no_imp](../../src/imgs/flutter/methodchannel_error_no_imp.png)
 
 3. 运行iOS工程，正常结果如下
 
-    ![methodchannel_success](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/methodchannel_success.png)
+    ![methodchannel_success](../../src/imgs/flutter/methodchannel_success.png)

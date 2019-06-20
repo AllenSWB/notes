@@ -1,10 +1,10 @@
 # notes 学习笔记簿
 - [notes 学习笔记簿](#notes-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B0%BF)
-  - [iOS](#ios)
+  - [iOS](#iOS)
   - [跨平台](#%E8%B7%A8%E5%B9%B3%E5%8F%B0)
-  - [Algorithm](#algorithm)
-  - [Code](#code)
-  - [Tools](#tools)
+  - [Algorithm](#Algorithm)
+  - [Code](#Code)
+  - [Tools](#Tools)
 
 ## iOS 
 
@@ -33,7 +33,7 @@
 
 + Flutter
   
-  + [1.环境配置](https://github.com/AllenSWB/notes/blob/master/docs/flutter/setup_env.md)
+  + [1.环境配置](docs/flutter/setup_env.md)
   + [2.入门](https://github.com/AllenSWB/notes/blob/master/docs/flutter/flutter_intro.md)
   + [3.Dart](https://github.com/AllenSWB/notes/blob/master/docs/flutter/dart.md)
   + [4.原生集成Flutter](https://github.com/AllenSWB/notes/blob/master/docs/flutter/add_flutter_to_native.md)

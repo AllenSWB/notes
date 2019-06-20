@@ -73,8 +73,22 @@
     > pubspec.ymal文件：https://dart.dev/tools/pub/pubspec
 
     + `dependencies`：工程所依赖的库放在这里；[官方释义点我](https://dart.dev/tools/pub/pubspec#dependencies)
-    + `dev_dependencies`：尽在开发阶段才使用到的库放在这里；
+    + `dev_dependencies`：仅在开发阶段才使用到的库放在这里；
 
+6. `flutter attach`让你跑native工程也能享受hot-reload
+   
+   ![flutter-attach](../../src/imgs/flutter/flutter-attach.png)
+
+7. 修改`app`名和`logo`
+
+    - 名称：
+    
+      `iOS`是`info.plist`文件中修改，`Android`在`AndroidManifest.xml`文件中修改。两个名字可以不一致。
+
+    - `Logo`：
+    
+      `iOS` 是在 `AppIcon.appiconset` 文件夹中添加对应 `Logo` 图标，并在 `Contents.json` 中进行配置，`Android` 是添加图片在 `mipmap` 文件夹中，并在 `AndroidManifest.xml` 中修改 
+   
 ---
 // todo list
 

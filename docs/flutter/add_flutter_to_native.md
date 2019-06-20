@@ -1,10 +1,10 @@
 # Native集成Flutter
-- [Native集成Flutter](#native%E9%9B%86%E6%88%90flutter)
+- [Native集成Flutter](#Native%E9%9B%86%E6%88%90Flutter)
   - [官方文档上的方法](#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%B8%8A%E7%9A%84%E6%96%B9%E6%B3%95)
     - [step 1：创建flutter模块](#step-1%E5%88%9B%E5%BB%BAflutter%E6%A8%A1%E5%9D%97)
     - [step2：原生工程依赖flutter模块](#step2%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%BE%9D%E8%B5%96flutter%E6%A8%A1%E5%9D%97)
-    - [step3：添加一个Build Phase](#step3%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AAbuild-phase)
-    - [step 4：Xcode中编写代码](#step-4xcode%E4%B8%AD%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81)
+    - [step3：添加一个Build Phase](#step3%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AABuild-Phase)
+    - [step 4：Xcode中编写代码](#step-4Xcode%E4%B8%AD%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81)
   - [闲鱼团队的方法](#%E9%97%B2%E9%B1%BC%E5%9B%A2%E9%98%9F%E7%9A%84%E6%96%B9%E6%B3%95)
     - [实现步骤](#%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4)
   - [遇到问题](#%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98)
@@ -17,7 +17,7 @@
 
 现在有个iOS原生工程，放在目录`_projs`下面
 
-![IMG_2766](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/IMG_2766.PNG)
+![IMG_2766](../../src/imgs/flutter/IMG_2766.PNG)
 
 打开终端，执行命令，会自动生成一个目录`my_flutter`
 
@@ -25,7 +25,7 @@
 $ flutter create -t module my_flutter
 ```
 
-![IMG_2769](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/IMG_2769.PNG)
+![IMG_2769](../../src/imgs/flutter/IMG_2769.PNG)
 
 ### step2：原生工程依赖flutter模块
 
@@ -45,11 +45,11 @@ eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper
 
 另外，Flutter不支持bitcode，需要在Xcode中关闭它
 
-![bitcode_off](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/bitcode_off.png)
+![bitcode_off](../../src/imgs/flutter/bitcode_off.png)
 
 ### step3：添加一个Build Phase
 
-![IMG_2771](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/IMG_2771.PNG)
+![IMG_2771](../../src/imgs/flutter/IMG_2771.PNG)
 
 将以下脚本复制进去
 
@@ -60,7 +60,7 @@ eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper
 
 然后拖动`Run Script`一栏到`Target Dependencies`下面
 
-![IMG_2773](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/IMG_2773.PNG)
+![IMG_2773](../../src/imgs/flutter/IMG_2773.PNG)
 
 编译程序 `Command + B`
 
@@ -276,7 +276,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
 实现思路：将flutter的依赖抽取为一个flutter依赖库发布到远程。
 
-![xianyu_flutter_native](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/xianyu_flutter_native.png)
+![xianyu_flutter_native](../../src/imgs/flutter/xianyu_flutter_native.png)
 
 ### 实现步骤
 
@@ -294,7 +294,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
   这一步耗时会比较长，因为他会下载一个新的flutter SDK下来，放到当前flutter工程目录下。这样就不会出现协作开发时每人电脑里的SDK版本不一致的问题了。
 
-  ![install_flutterwrapper](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/install_flutterwrapper.png)
+  ![install_flutterwrapper](../../src/imgs/flutter/install_flutterwrapper.png)
 
 ## 遇到问题
 
