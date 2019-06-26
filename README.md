@@ -17,6 +17,9 @@
 ---
 
 + [Tips in iOS](docs/ios/tips_in_ios.md)
+
+---
+
 + [多线程-GCD](docs/ios/multithreading_GCD.md)
 + [KVO](docs/ios/KVO.md)、 [代码demo](https://github.com/AllenSWB/notes/blob/master/code/UcarShareDemo/)
 + [使用UITextField常见的几个问题](docs/ios/%E4%BD%BF%E7%94%A8UITextField%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98.md)
@@ -34,15 +37,18 @@
 
 + Flutter
   
+  + [Tips in Flutter](docs/flutter/tips_in_flutter.md)
+  
+  ---
+
   + [1.环境配置](docs/flutter/setup_env.md)
   + [2.入门](docs/flutter/flutter_intro.md)
   + [3.Dart](docs/flutter/dart.md)
   + [4.原生集成Flutter](docs/flutter/add_flutter_to_native.md)
   + [5.Widgets in Flutter](docs/flutter/widgets_in_flutter.md)
-  + [6.Tips in Flutter](docs/flutter/tips_in_flutter.md)
-  + [7.一个复杂Json解析的例子](docs/flutter/json_parsing_in_flutter.md)
-  + [8.Flutter和Native iOS交互](docs/flutter/flutter_native_communication.md)
-  + [9.Flutter进度条和Toast](docs/flutter/flutter_progresshud_toast.md)
+  + [6.一个复杂Json解析的例子](docs/flutter/json_parsing_in_flutter.md)
+  + [7.Flutter和Native iOS交互](docs/flutter/flutter_native_communication.md)
+  + [8.Flutter进度条和Toast](docs/flutter/flutter_progresshud_toast.md)
 
   ---
   + [Flutter 文章&库](docs/flutter/flutter_resources.md)
