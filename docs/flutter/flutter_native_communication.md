@@ -5,7 +5,7 @@
 ![flutter_native_talk1](../../src/imgs/flutter/flutter_native_talk1.png)
 
 
-## Flutter调用iOS的方法 - 使用`MethodChannel`
+## Flutter调用iOS的方法
 
 1. Native iOS里注册方法
    
@@ -67,3 +67,52 @@
 3. 运行iOS工程，正常结果如下
 
     ![methodchannel_success](../../src/imgs/flutter/methodchannel_success.png)
+
+## iOS调用Flutter的方法
+
+1. OC文件
+   
+   ```objc
+    /// ntf NativeToFlutter
+    @property (nonatomic, strong) FlutterMethodChannel *methodChannel_ntf;
+      
+    - (FlutterMethodChannel *)methodChannel_ntf {
+      if (!_methodChannel_ntf) {
+          _methodChannel_ntf = [FlutterMethodChannel methodChannelWithName:@"bwcmt.native/yz_bench" binaryMessenger:self.flutterVC];
+      }
+      return _methodChannel_ntf;
+    }
+
+     // 调用flutter方法
+     [self.methodChannel_ntf invokeMethod:@"requestDataSuccessful" arguments:json];
+   ```
+
+2. Flutter文件
+
+    ```dart
+
+      void initState() {
+        super.initState();
+
+        MethodChannel methodChannel = MethodChannel(yzBenchChannelName_ntf);
+        methodChannel.setMethodCallHandler(callbackHandler);
+      }
+
+      Future<dynamic>callbackHandler(MethodCall call) { // 回调方法
+
+        if (call.method == 'requestDataSuccessful') {
+          // 网络请求成功
+          print('原生请求网络成功');
+
+          Map data = json.decode(call.arguments as String);
+          YzBenchModel model = YzBenchModel.fromJson(data);
+
+          setState(() {
+            networkErrorMsg = null;
+            benchModel = model;
+          });
+        }
+        return call.arguments;
+      }
+
+    ```

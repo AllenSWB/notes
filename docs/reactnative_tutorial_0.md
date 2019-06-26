@@ -171,7 +171,7 @@ To run your app on Android:
 
    2. pod库装完后，我用Xcode打开工程，build出错
 
-      ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/rn_join_error_0.png)
+      ![](../src/imgs/reactnative/rn_join_error_0.png)
 
       ```
       'jsireact/JSIExecutor.h' file not found`
@@ -181,10 +181,11 @@ To run your app on Android:
 
     3. 错误提示:required a higher minimum deployment target.
 
-      ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/rn_join_error_1.png)
+        ![](../src/imgs/reactnative/rn_join_error_1.png)
 
-      解决办法：
-      ![](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/rn_join_error_1_solve.png)
+        解决办法：
+      
+        ![](../src/imgs/reactnative/rn_join_error_1_solve.png)
 
 > 至此，所有的依赖都安装完成了。下面就可以进入编码阶段了。
 
@@ -317,7 +318,7 @@ To run your app on Android:
 
       想要用命令跑工程的话，得改下native app的根目录名称。（记得改完目录名重新`pod install`下）
 
-      ![proj_path](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative//proj_path.PNG)
+      ![proj_path](../src/imgs/reactnative/proj_path.PNG)
 
 # 参考资料
 
