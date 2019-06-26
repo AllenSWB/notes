@@ -8,16 +8,16 @@
 
 ## iOS 
 
-+ [三方库 OC](docs/third_party_library_OC.md)
-+ [三方库 Swift](docs/third_party_library_Swift.md)
-+ [iOS开发文章](docs/articles.md)
 + [我的简书](https://www.jianshu.com/u/f75be2cdebe5)
-+ [iOS设计图](docs/ios_design.md)
++ [Tips in iOS](docs/ios/tips_in_ios.md)
 
 ---
 
-+ [Tips in iOS](docs/ios/tips_in_ios.md)
-
++ [三方库 OC](docs/ios/third_party_library_OC.md)
++ [三方库 Swift](docs/ios/third_party_library_Swift.md)
++ [iOS开发文章](docs/ios/articles.md)
++ [iOS设计图](docs/ios/ios_design.md)
+  
 ---
 
 + [多线程-GCD](docs/ios/multithreading_GCD.md)
@@ -54,13 +54,13 @@
   + [Flutter 文章&库](docs/flutter/flutter_resources.md)
   
 + React Native
-  + [React Native 0. 入坑](docs/reactnative_tutorial_0.md)
-  + [React Native 1. React原理](docs/reactnative_tutorial_1.md)
+  + [React Native 0. 入坑](docs/reactnative/reactnative_tutorial_0.md)
+  + [React Native 1. React原理](docs/reactnative/reactnative_tutorial_1.md)
 
 
 ## Algorithm
 
-+ [栈](docs/%E6%A0%88.md) 、[代码demo](https://github.com/AllenSWB/notes/tree/master/code/StackDemo)
++ [栈](docs/algorithm/stack.md) 、[代码demo](https://github.com/AllenSWB/notes/tree/master/code/StackDemo)
 
 ## Code
 
