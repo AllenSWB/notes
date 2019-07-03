@@ -563,6 +563,29 @@ Flutter里一切都是Widget，视图、布局、手势、动画等等都是Widg
         ),
     ```
 
-2. StatelessWidget & StatefulWidget
+2. 通知
+
+     ```dart
+       // 1. 自定义通知类
+       class YzCancelOrderNotification extends Notification {
+         final YzCancellListModel model; // 传递的数据
+         YzCancelOrderNotification(this.model);
+       }
+       // 2. 发送通知
+       onTap: () {
+         YzCancelOrderNotification(selected?null:this.model).dispatch(context);
+       },
+       // 3. 接收通知
+       NotificationListener<YzCancelOrderNotification>(
+         onNotification: (notification){
+          setState(() {
+           this.selectedModel = notification.model;
+          });
+         },
+         child: Container(),
+       )
+     ```
+
+3. StatelessWidget & StatefulWidget
    
    ![widget-elements](../../src/imgs/flutter/widgets/widget-elements.png)

@@ -8,6 +8,7 @@
     - [`pubspec.ymal`文件中的`dev_dependencies`和`dependencies`区别](#pubspecymal%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84devdependencies%E5%92%8Cdependencies%E5%8C%BA%E5%88%AB)
     - [`flutter attach`让你跑native工程也能享受hot-reload](#flutter-attach%E8%AE%A9%E4%BD%A0%E8%B7%91native%E5%B7%A5%E7%A8%8B%E4%B9%9F%E8%83%BD%E4%BA%AB%E5%8F%97hot-reload)
     - [修改`app`名和`logo`](#%E4%BF%AE%E6%94%B9app%E5%90%8D%E5%92%8Clogo)
+    - [自动选择二倍图三倍图资源](#%E8%87%AA%E5%8A%A8%E9%80%89%E6%8B%A9%E4%BA%8C%E5%80%8D%E5%9B%BE%E4%B8%89%E5%80%8D%E5%9B%BE%E8%B5%84%E6%BA%90)
   - [错误](#%E9%94%99%E8%AF%AF)
     - [热重载【r】错误：`Error 105 received from application: Isolate must be runnable`](#%E7%83%AD%E9%87%8D%E8%BD%BDr%E9%94%99%E8%AF%AFError-105-received-from-application-Isolate-must-be-runnable)
     - [真机运行，flutter run报错 : Error connecting to the service protocol: HttpException](#%E7%9C%9F%E6%9C%BA%E8%BF%90%E8%A1%8Cflutter-run%E6%8A%A5%E9%94%99--Error-connecting-to-the-service-protocol-HttpException)
@@ -105,7 +106,32 @@
   - `Logo`：
   
     `iOS` 是在 `AppIcon.appiconset` 文件夹中添加对应 `Logo` 图标，并在 `Contents.json` 中进行配置，`Android` 是添加图片在 `mipmap` 文件夹中，并在 `AndroidManifest.xml` 中修改 
-   
+
+### 自动选择二倍图三倍图资源
+
+  ![auto_select_img](../../src/imgs/flutter/tips/auto_select_img.png)
+
+  eg: 
+
+  1. 在`/resources`目录下放入三个不同倍率的图片
+     
+     ![auto_select_img_step1](../../src/imgs/flutter/tips/auto_select_img_step1.png)
+  
+  2. 在`pubspec.ymal`里引入资源
+     
+     ![auto_select_img_step2](../../src/imgs/flutter/tips/auto_select_img_step2.png)
+  
+  3. 使用
+
+      ```dart
+        child: Center(
+            child: Image(image: AssetImage('resources/atestimg.png'),)
+        ),
+      ```
+  4. 效果 (在6Plus上)
+
+     ![auto_select_img_step4](../../src/imgs/flutter/tips/auto_select_img_step4.png)
+
 ## 错误
 
 ### 热重载【r】错误：`Error 105 received from application: Isolate must be runnable`
@@ -128,6 +154,8 @@
 
 1. Flutter中使用2倍图、3倍图
 2. 获取设备信息 https://segmentfault.com/a/1190000014913010?utm_source=index-hottest
-
-
-
+3. 一个channel处理1万个方法，和一千个channel，每个处理10个方法，性能可能前者更好吧？
+4. 页面跳转的方式；push栈 ；router
+5. 页面间传参数
+6. 下层widget通知上层widget更高state
+7. bloc 状态
