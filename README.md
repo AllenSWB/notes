@@ -2,6 +2,7 @@
 - [notes 学习笔记簿](#notes-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B0%BF)
   - [iOS](#iOS)
   - [跨平台](#%E8%B7%A8%E5%B9%B3%E5%8F%B0)
+  - [+ Flutter 文章&库](#Flutter-%E6%96%87%E7%AB%A0%E5%BA%93)
   - [Algorithm](#Algorithm)
   - [Code](#Code)
   - [Tools](#Tools)
@@ -38,20 +39,18 @@
 + Flutter
   
   + [Tips in Flutter](docs/flutter/tips_in_flutter.md)
-  
-  ---
-
-  + [1.环境配置](docs/flutter/setup_env.md)
-  + [2.入门](docs/flutter/flutter_intro.md)
-  + [3.Dart](docs/flutter/dart.md)
-  + [4.原生集成Flutter](docs/flutter/add_flutter_to_native.md)
-  + [5.Widgets in Flutter](docs/flutter/widgets_in_flutter.md)
-  + [6.一个复杂Json解析的例子](docs/flutter/json_parsing_in_flutter.md)
-  + [7.Flutter和Native iOS交互](docs/flutter/flutter_native_communication.md)
-  + [8.Flutter进度条和Toast](docs/flutter/flutter_progresshud_toast.md)
-
-  ---
   + [Flutter 文章&库](docs/flutter/flutter_resources.md)
+  ---
+
+  + [环境配置](docs/flutter/setup_env.md)
+  + [入门](docs/flutter/flutter_intro.md)
+  + [Dart .....未完成](docs/flutter/dart.md)
+  + [原生集成Flutter](docs/flutter/add_flutter_to_native.md)
+  + [Widgets in Flutter](docs/flutter/widgets_in_flutter.md)
+  + [Json解析](docs/flutter/json_parsing_in_flutter.md)
+  + [Flutter和Native iOS交互](docs/flutter/flutter_native_communication.md)
+  + [Flutter中的状态管理  .....未完成](docs/flutter/state_manage_in_flutter.md)
+  + [Flutter进度条和Toast](docs/flutter/flutter_progresshud_toast.md)
   
 + React Native
   + [React Native 0. 入坑](docs/reactnative/reactnative_tutorial_0.md)

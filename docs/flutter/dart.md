@@ -1,13 +1,13 @@
 # Dart 
-- [Dart](#dart)
+- [Dart](#Dart)
   - [语法](#%E8%AF%AD%E6%B3%95)
   - [核心库](#%E6%A0%B8%E5%BF%83%E5%BA%93)
     - [一些基础类型 numbers, collections, strings, and more](#%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B-numbers-collections-strings-and-more)
     - [异步编程async](#%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8Basync)
-    - [Math库: 数学运算](#math%E5%BA%93-%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97)
+    - [Math库: 数学运算](#Math%E5%BA%93-%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97)
     - [dart:html](#darthtml)
     - [dart.io](#dartio)
-    - [convert: JSON转换](#convert-json%E8%BD%AC%E6%8D%A2)
+    - [convert: JSON转换](#convert-JSON%E8%BD%AC%E6%8D%A2)
     - [mirrors: 反射机制](#mirrors-%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6)
 
     
@@ -25,7 +25,7 @@
 
 2. 关键字
 
-  ![keywords](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/dart/keywords.png)
+  ![keywords](../../src/imgs/flutter/dart/keywords.png)
 
 3. `final`和`const`的区别
    
@@ -135,7 +135,7 @@
         print(iamclosure); // flutter: Closure: ({String name}) => void
     ```
 
-    ![closure](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/dart/closure.png)
+    ![closure](../../src/imgs/flutter/dart/closure.png)
 
 9. 方法 - 返回值
 
@@ -970,6 +970,18 @@
 7. Exceptions 异常和错误类
 
 ### 异步编程async
+
+1. [Future](http://dart.goodev.org/guides/libraries/library-tour#future)
+   
+   Future和JavaScript中的Promise类似，代表在将来某个时刻会返回一个结果。
+
+
+2. [Stream](http://dart.goodev.org/guides/libraries/library-tour#stream)
+
+   是一种用来获取一些列数据的方式，例如事件流。
+
+   ![stream_desc](../../src/imgs/flutter/dart/stream_desc.png)
+
 ### Math库: 数学运算
 ### dart:html
 ### dart.io
