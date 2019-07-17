@@ -4,15 +4,18 @@
     - [打开视觉调试开关](#%E6%89%93%E5%BC%80%E8%A7%86%E8%A7%89%E8%B0%83%E8%AF%95%E5%BC%80%E5%85%B3)
     - [SingleChildScrollView嵌套ListView，防止内部的ListView滚动，设置`primary: false`](#SingleChildScrollView%E5%B5%8C%E5%A5%97ListView%E9%98%B2%E6%AD%A2%E5%86%85%E9%83%A8%E7%9A%84ListView%E6%BB%9A%E5%8A%A8%E8%AE%BE%E7%BD%AEprimary-false)
     - [判断当前设备平台](#%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8D%E8%AE%BE%E5%A4%87%E5%B9%B3%E5%8F%B0)
+    - [判断当前是debug还是product](#%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8D%E6%98%AFdebug%E8%BF%98%E6%98%AFproduct)
     - [获取屏幕宽高](#%E8%8E%B7%E5%8F%96%E5%B1%8F%E5%B9%95%E5%AE%BD%E9%AB%98)
     - [`pubspec.ymal`文件中的`dev_dependencies`和`dependencies`区别](#pubspecymal%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84devdependencies%E5%92%8Cdependencies%E5%8C%BA%E5%88%AB)
     - [`flutter attach`让你跑native工程也能享受hot-reload](#flutter-attach%E8%AE%A9%E4%BD%A0%E8%B7%91native%E5%B7%A5%E7%A8%8B%E4%B9%9F%E8%83%BD%E4%BA%AB%E5%8F%97hot-reload)
     - [修改`app`名和`logo`](#%E4%BF%AE%E6%94%B9app%E5%90%8D%E5%92%8Clogo)
     - [自动选择二倍图三倍图资源](#%E8%87%AA%E5%8A%A8%E9%80%89%E6%8B%A9%E4%BA%8C%E5%80%8D%E5%9B%BE%E4%B8%89%E5%80%8D%E5%9B%BE%E8%B5%84%E6%BA%90)
+    - [更新Flutter版本](#%E6%9B%B4%E6%96%B0Flutter%E7%89%88%E6%9C%AC)
   - [错误](#%E9%94%99%E8%AF%AF)
     - [热重载【r】错误：`Error 105 received from application: Isolate must be runnable`](#%E7%83%AD%E9%87%8D%E8%BD%BDr%E9%94%99%E8%AF%AFError-105-received-from-application-Isolate-must-be-runnable)
     - [真机运行，flutter run报错 : Error connecting to the service protocol: HttpException](#%E7%9C%9F%E6%9C%BA%E8%BF%90%E8%A1%8Cflutter-run%E6%8A%A5%E9%94%99--Error-connecting-to-the-service-protocol-HttpException)
     - [Runner找不到头文件](#Runner%E6%89%BE%E4%B8%8D%E5%88%B0%E5%A4%B4%E6%96%87%E4%BB%B6)
+    - [[VERBOSE-2:ui_dart_state.cc(148)] Unhandled Exception: NoSuchMethodError: Class 'Window' has no instance setter 'onReportTimings='.](#VERBOSE-2uidartstatecc148-Unhandled-Exception-NoSuchMethodError-Class-Window-has-no-instance-setter-onReportTimings)
   - [todo list](#todo-list)
 ## 开发
 
@@ -61,6 +64,11 @@
     } else if (Platform.isMacOS) {
       print('Mac OS');
     }
+  ```
+### 判断当前是debug还是product
+
+  ```dart
+    bool inProduction = const bool.fromEnvironment("dart.vm.product");//当前是否是production环境
   ```
 
 ### 获取屏幕宽高
@@ -132,6 +140,15 @@
 
      ![auto_select_img_step4](../../src/imgs/flutter/tips/auto_select_img_step4.png)
 
+### 更新Flutter版本
+
+  ```shell
+    # 更新(加上--force参数，代表强制更新，会把你对flutter sdk本地修改直接丢弃)
+    flutter upgrade --force
+  ```
+
+  ![upgrade_force](../../src/imgs/flutter/tips/upgrade_force.png)
+
 ## 错误
 
 ### 热重载【r】错误：`Error 105 received from application: Isolate must be runnable`
@@ -149,6 +166,12 @@
 ### Runner找不到头文件
 
   ![flutter_err_install](../../src/imgs/flutter/tips/flutter_err_install.png)
+
+### [VERBOSE-2:ui_dart_state.cc(148)] Unhandled Exception: NoSuchMethodError: Class 'Window' has no instance setter 'onReportTimings='.
+
+  + [参考链接](https://github.com/brianegan/flutter_redux/issues/142)
+  
+  解决方法：把flutter sdk版本换成stabel版本
 
 ##  todo list
 

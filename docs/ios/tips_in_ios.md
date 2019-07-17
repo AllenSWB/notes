@@ -5,6 +5,8 @@
     - [创建多target方法](#%E5%88%9B%E5%BB%BA%E5%A4%9Atarget%E6%96%B9%E6%B3%95)
     - [创建一个新target的注意点：](#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0target%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9)
     - [多target设置`GCC_PREPROCESSOR_DEFINITIONS`引起的问题](#%E5%A4%9Atarget%E8%AE%BE%E7%BD%AEGCCPREPROCESSORDEFINITIONS%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98)
+    - [加快编译速度](#%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6)
+    - [安装多个版本的cocoapods](#%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84cocoapods)
 
 ## iOS开发随手记 
   
@@ -71,4 +73,17 @@
 
    ![more_target_error_pod_solve](../../src/imgs/ios/more_target_error_pod_solve.png)
 
-   
+### 加快编译速度
+
+从源码到二进制可执行文件整个流程去考虑
+
+1. 修改`Optimization Level`的值
+
+    ![Optimization Level](../../src/imgs/ios/optimization_level.png)
+
+2. `.h`文件引入头文件，`#import`改成`@class`
+
+
+### 安装多个版本的cocoapods
+
+????
