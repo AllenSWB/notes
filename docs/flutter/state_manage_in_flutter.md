@@ -5,6 +5,7 @@
   - [使用Bloc](#%E4%BD%BF%E7%94%A8Bloc)
   - [使用Provider](#%E4%BD%BF%E7%94%A8Provider)
   - [使用Redux](#%E4%BD%BF%E7%94%A8Redux)
+  - [参考链接](#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5)
 
 ## 使用setState
 
@@ -387,10 +388,10 @@
   + [fish-redux](https://github.com/alibaba/fish-redux) 
   + [flutter_redux](https://github.com/brianegan/flutter_redux)
 
----
+## 参考链接
 
-> + [状态管理探索篇——Scoped Model（一）](https://juejin.im/post/5b97fa0d5188255c5546dcf8)
-> + [状态管理探索篇——Redux（二）](https://juejin.im/post/5ba26c086fb9a05ce57697da)
-> + [状态管理探索篇——BLoC(三)](https://juejin.im/post/5bb6f344f265da0aa664d68a)
-> + [状态管理特别篇 —— Provide](https://juejin.im/post/5c6d4b52f265da2dc675b407)
-> + [状态管理指南篇——Provider](https://juejin.im/post/5d00a84fe51d455a2f22023f)
++ [状态管理探索篇——Scoped Model（一）](https://juejin.im/post/5b97fa0d5188255c5546dcf8)
++ [状态管理探索篇——Redux（二）](https://juejin.im/post/5ba26c086fb9a05ce57697da)
++ [状态管理探索篇——BLoC(三)](https://juejin.im/post/5bb6f344f265da0aa664d68a)
++ [状态管理特别篇 —— Provide](https://juejin.im/post/5c6d4b52f265da2dc675b407)
++ [状态管理指南篇——Provider](https://juejin.im/post/5d00a84fe51d455a2f22023f)

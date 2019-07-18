@@ -47,3 +47,9 @@
       - `cd .git` 切换到.git目录，修改config，删掉 submodule
       - `cd modules` 删除子模块目录
       - `cd 项目根目录` 删除子模块目录
+
+    - 直接clone下来submodule的代码 `git clone --recursive http://xxx.git`
+
+        ![git clone](../src/imgs/git/gitclone.png)
+
+        ![git clone 2](../src/imgs/git/gitclone2.png)
