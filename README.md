@@ -1,12 +1,12 @@
 # notes 笔记簿
-- [notes 笔记簿](#notes-%E7%AC%94%E8%AE%B0%E7%B0%BF)
-  - [iOS](#iOS)
-  - [跨平台](#%E8%B7%A8%E5%B9%B3%E5%8F%B0)
-    - [Flutter](#Flutter)
-    - [React Native](#React-Native)
-  - [Algorithm](#Algorithm)
-  - [Code](#Code)
-  - [Tools](#Tools)
+- [notes 笔记簿](#notes-%e7%ac%94%e8%ae%b0%e7%b0%bf)
+  - [iOS](#ios)
+  - [跨平台](#%e8%b7%a8%e5%b9%b3%e5%8f%b0)
+    - [Flutter](#flutter)
+    - [React Native](#react-native)
+  - [Algorithm](#algorithm)
+  - [Code](#code)
+  - [Tools](#tools)
   
 + [我的简书](https://www.jianshu.com/u/f75be2cdebe5)
 
@@ -25,7 +25,7 @@
 + [全屏播放视频自定义音量条](docs/ios/ucar_volume.md)
 + [一些lldb调试技巧](docs/ios/lldb.md)
 + [让app支持通用链接](docs/ios/universal_links.md)
-+ [cocoapods私有库的封装](docs/ios/how_to_create_private_third_party_repo_cocoapods.md)
++ [Cocoapods .....未完成](docs/ios/cocoapods.md)
   
 ---
 
@@ -46,12 +46,12 @@
   + [Widgets in Flutter](docs/flutter/widgets_in_flutter.md)
   + [Json解析](docs/flutter/json_parsing_in_flutter.md)
   + [Flutter和Native iOS交互](docs/flutter/flutter_native_communication.md)
-  + [Flutter中的状态管理  .....未完成](docs/flutter/state_manage_in_flutter.md)
+  + [Flutter中的状态管理](docs/flutter/state_manage_in_flutter.md)
   + [Flutter进度条和Toast](docs/flutter/flutter_progresshud_toast.md)
   
 ### React Native
 
-  + [React Native 0. 入坑](docs/reactnative/reactnative_tutorial_0.md)
+  + [React Native 0. 项目创建](docs/reactnative/reactnative_tutorial_0.md)
   + [React Native 1. React原理](docs/reactnative/reactnative_tutorial_1.md)
 
 

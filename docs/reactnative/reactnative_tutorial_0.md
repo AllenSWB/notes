@@ -109,6 +109,10 @@ To run your app on Android:
    # 会打印类似下面的警告信息，这是正常现象，意味着我们需要安装指定版本的React
    warning " > react-native@0.58.1" has unmet peer dependency "react@16.6.3".
    ```
+   安装指定版本的react-native [yarn文档](https://yarn.bootcss.com/docs/)
+   ```shell
+    yarn add react-native@0.44.3
+   ```
 
    安装React
 
