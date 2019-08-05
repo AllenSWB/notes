@@ -1,13 +1,13 @@
 # Native集成Flutter
-- [Native集成Flutter](#Native%E9%9B%86%E6%88%90Flutter)
-  - [官方文档上的方法](#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E4%B8%8A%E7%9A%84%E6%96%B9%E6%B3%95)
-    - [step 1：创建flutter模块](#step-1%E5%88%9B%E5%BB%BAflutter%E6%A8%A1%E5%9D%97)
-    - [step2：原生工程依赖flutter模块](#step2%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%BE%9D%E8%B5%96flutter%E6%A8%A1%E5%9D%97)
-    - [step3：添加一个Build Phase](#step3%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AABuild-Phase)
-    - [step 4：Xcode中编写代码](#step-4Xcode%E4%B8%AD%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81)
-  - [闲鱼团队的方法](#%E9%97%B2%E9%B1%BC%E5%9B%A2%E9%98%9F%E7%9A%84%E6%96%B9%E6%B3%95)
-    - [实现步骤](#%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4)
-  - [遇到问题](#%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98)
+- [Native集成Flutter](#native%e9%9b%86%e6%88%90flutter)
+  - [官方文档上的方法](#%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%e4%b8%8a%e7%9a%84%e6%96%b9%e6%b3%95)
+    - [step 1：创建flutter模块](#step-1%e5%88%9b%e5%bb%baflutter%e6%a8%a1%e5%9d%97)
+    - [step2：原生工程依赖flutter模块](#step2%e5%8e%9f%e7%94%9f%e5%b7%a5%e7%a8%8b%e4%be%9d%e8%b5%96flutter%e6%a8%a1%e5%9d%97)
+    - [step3：添加一个Build Phase](#step3%e6%b7%bb%e5%8a%a0%e4%b8%80%e4%b8%aabuild-phase)
+    - [step 4：Xcode中编写代码](#step-4xcode%e4%b8%ad%e7%bc%96%e5%86%99%e4%bb%a3%e7%a0%81)
+  - [Flutter产物集成的方法](#flutter%e4%ba%a7%e7%89%a9%e9%9b%86%e6%88%90%e7%9a%84%e6%96%b9%e6%b3%95)
+    - [实现步骤](#%e5%ae%9e%e7%8e%b0%e6%ad%a5%e9%aa%a4)
+  - [遇到问题](#%e9%81%87%e5%88%b0%e9%97%ae%e9%a2%98)
   
 ## 官方文档上的方法
 
@@ -268,7 +268,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 @end
 ```
 
-## 闲鱼团队的方法
+## Flutter产物集成的方法
 
 > 闲鱼flutter混合工程持续集成的最佳实践：https://zhuanlan.zhihu.com/p/40528502
 >
@@ -301,3 +301,67 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 1. 远端验证podspec文件不通过
 
    执行本地验证`pob lib lint --allow-warning`通过，但是远端验证`pod spec lint --allow-warnings`不通过。原因是创建的flutter工程里的`.gitignore`文件将`App.framework`和`Flutter.framework`忽略了，修改flutter工程的`.gitignore`文件就好了。
+
+2. 安装flutter plugin的时候，pod库的加载（iOS）
+
+    在原生工程Podfile文件中（路径的地方需要根据自己的工程目录来）
+
+    ```ruby
+   def parse_KV_file(file, separator='=')
+       file_abs_path = File.expand_path(file)
+       if !File.exists? file_abs_path
+         return [];
+       end
+       pods_ary = []
+       skip_line_start_symbols = ["#", "/"]
+       File.foreach(file_abs_path) { |line|
+           next if skip_line_start_symbols.any? { |symbol| line =~ /^\s*#{symbol}/ }
+           plugin = line.split(pattern=separator)
+           if plugin.length == 2
+             podname = plugin[0].strip()
+             path = plugin[1].strip()
+             podpath = File.expand_path("#{path}", file_abs_path)
+             pods_ary.push({:name => podname, :path => podpath});
+           else
+             puts "Invalid plugin specification: #{line}"
+           end
+       }
+       return pods_ary
+     end
+
+   target 'BWCMTApp' do 
+       # flutter 产物 Pods
+       pod 'BWCMT_FlutterModule', :path => './bwcmt_fluttermodule'
+
+       # Flutter Pods
+       system('rm -rf ./bwcmt_fluttermodule/bwcmt_flutter_src/ios/.symlinks')
+       system('mkdir -p ./bwcmt_fluttermodule/bwcmt_flutter_src/ios/.symlinks/plugins')
+
+       generated_xcode_build_settings = parse_KV_file('./bwcmt_fluttermodule/bwcmt_flutter_src/ios/Flutter/Generated.xcconfig') # parse_KV_file('./Flutter/Generated.xcconfig')
+       if generated_xcode_build_settings.empty?
+           puts "Generated.xcconfig must exist. If you're running pod install manually, make sure flutter packages get is executed first."
+       end
+
+       generated_xcode_build_settings.map { |p|
+           if p[:name] == 'FLUTTER_FRAMEWORK_DIR'
+           symlink = File.join('bwcmt_fluttermodule','bwcmt_flutter_src','ios', '.symlinks', 'flutter')
+           File.symlink(File.dirname(p[:path]), symlink)
+           pod 'Flutter', :path => File.join(symlink, File.basename(p[:path]))
+           end
+       }
+
+       # Flutter Plugin Pods
+       plugin_pods = parse_KV_file('./bwcmt_fluttermodule/bwcmt_flutter_src/.flutter-plugins')
+       plugin_pods.map { |p|
+           symlink = File.join('bwcmt_fluttermodule','bwcmt_flutter_src','ios', '.symlinks', 'plugins', p[:name])
+   #        puts symlink
+   #        puts path
+   #        puts p[:path]
+           File.symlink(p[:path], symlink)
+           localPodspec = File.join(symlink, 'ios')
+           pod p[:name], :path => localPodspec
+       }
+
+   end 
+
+    ```

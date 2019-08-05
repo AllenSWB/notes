@@ -1,8 +1,9 @@
 # Cocoapods
-- [Cocoapods](#Cocoapods)
-  - [封装私有库](#%E5%B0%81%E8%A3%85%E7%A7%81%E6%9C%89%E5%BA%93)
-  - [索引库位置](#%E7%B4%A2%E5%BC%95%E5%BA%93%E4%BD%8D%E7%BD%AE)
-  - [更新索引库](#%E6%9B%B4%E6%96%B0%E7%B4%A2%E5%BC%95%E5%BA%93)
+- [Cocoapods](#cocoapods)
+  - [封装私有库](#%e5%b0%81%e8%a3%85%e7%a7%81%e6%9c%89%e5%ba%93)
+  - [索引库位置](#%e7%b4%a2%e5%bc%95%e5%ba%93%e4%bd%8d%e7%bd%ae)
+  - [更新索引库](#%e6%9b%b4%e6%96%b0%e7%b4%a2%e5%bc%95%e5%ba%93)
+  - [Podfile](#podfile)
 
 ## 封装私有库
 
@@ -34,3 +35,25 @@
       ```shell
         $ pod install --repo-update
       ```
+
+## Podfile
+
+> Podfile中的代码是ruby
+
+```ruby
+
+  # 本地导入指明podspec文件路径
+  pod 'Whoops', :path => '../'
+
+  # 版本号
+  pod 'ZCComponent', '0.1.2' # 指定版本号
+  pod 'ZBarSDK', '~> 1.3.1' # 不小于1.3.1版本
+
+  # tag
+
+  # 分支
+
+  # 仅Debug
+  pod 'UCARRobot', :configurations => ['Debug']
+
+```
