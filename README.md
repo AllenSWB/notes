@@ -26,6 +26,7 @@
 + [一些lldb调试技巧](docs/ios/lldb.md)
 + [让app支持通用链接](docs/ios/universal_links.md)
 + [Cocoapods .....未完成](docs/ios/cocoapods.md)
++ [事件的产生和传递 - 响应者链](docs/ios/responderchain.md)
   
 ---
 

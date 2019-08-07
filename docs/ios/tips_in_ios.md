@@ -1,16 +1,16 @@
 # Tips in iOS
-- [Tips in iOS](#Tips-in-iOS)
-  - [iOS开发随手记](#iOS%E5%BC%80%E5%8F%91%E9%9A%8F%E6%89%8B%E8%AE%B0)
-  - [多target](#%E5%A4%9Atarget)
-    - [创建多target方法](#%E5%88%9B%E5%BB%BA%E5%A4%9Atarget%E6%96%B9%E6%B3%95)
-    - [创建一个新target的注意点：](#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0target%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9)
-    - [多target设置`GCC_PREPROCESSOR_DEFINITIONS`引起的问题](#%E5%A4%9Atarget%E8%AE%BE%E7%BD%AEGCCPREPROCESSORDEFINITIONS%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98)
-    - [加快编译速度](#%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6)
-    - [安装多个版本的cocoapods](#%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84cocoapods)
+- [Tips in iOS](#tips-in-ios)
+  - [iOS开发随手记](#ios%e5%bc%80%e5%8f%91%e9%9a%8f%e6%89%8b%e8%ae%b0)
+  - [多target](#%e5%a4%9atarget)
+    - [创建多target方法](#%e5%88%9b%e5%bb%ba%e5%a4%9atarget%e6%96%b9%e6%b3%95)
+    - [创建一个新target的注意点：](#%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%96%b0target%e7%9a%84%e6%b3%a8%e6%84%8f%e7%82%b9)
+    - [多target设置`GCC_PREPROCESSOR_DEFINITIONS`引起的问题](#%e5%a4%9atarget%e8%ae%be%e7%bd%aegccpreprocessordefinitions%e5%bc%95%e8%b5%b7%e7%9a%84%e9%97%ae%e9%a2%98)
+  - [加快编译速度](#%e5%8a%a0%e5%bf%ab%e7%bc%96%e8%af%91%e9%80%9f%e5%ba%a6)
+  - [安装多个版本的cocoapods](#%e5%ae%89%e8%a3%85%e5%a4%9a%e4%b8%aa%e7%89%88%e6%9c%ac%e7%9a%84cocoapods)
 
 ## iOS开发随手记 
   
-  https://www.jianshu.com/p/cb80ad438057
+  [iOS开发随手记](https://www.jianshu.com/p/cb80ad438057)
    
 ## 多target
    
@@ -29,6 +29,7 @@
 
   创建target的步骤参考这个链接：[iOS 一套代码多APP／多渠道／多target+自动打包脚本](https://www.jianshu.com/p/73343b4fc42b)
 
+  [创建多target](./add_more_targets_to_your_project.md)
 ###  创建一个新target的注意点：
 
   + 依赖
@@ -73,7 +74,7 @@
 
    ![more_target_error_pod_solve](../../src/imgs/ios/more_target_error_pod_solve.png)
 
-### 加快编译速度
+## 加快编译速度
 
 从源码到二进制可执行文件整个流程去考虑
 
@@ -84,6 +85,6 @@
 2. `.h`文件引入头文件，`#import`改成`@class`
 
 
-### 安装多个版本的cocoapods
+## 安装多个版本的cocoapods
 
 ????
