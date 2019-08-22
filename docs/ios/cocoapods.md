@@ -5,6 +5,7 @@
   - [索引库位置](#%e7%b4%a2%e5%bc%95%e5%ba%93%e4%bd%8d%e7%bd%ae)
   - [更新索引库](#%e6%9b%b4%e6%96%b0%e7%b4%a2%e5%bc%95%e5%ba%93)
   - [Podfile](#podfile)
+  - [升级](#%e5%8d%87%e7%ba%a7)
 
 ## 封装私有库
 
@@ -119,3 +120,17 @@
   pod 'UCARRobot', :configurations => ['Debug']
 
 ```
+
+## 升级
+
++ 升级cocoapods到指定版本
+
+  ```shell
+    sudo gem install -n /usr/local/bin cocoapods -v 1.6.1
+  ```
+
++ 安装cocoapods最新版本
+
+  ```shell
+    sudo gem install -n /usr/local/bin cocoapods --pre 
+  ```
