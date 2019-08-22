@@ -6,11 +6,13 @@
 
 旧版：
 
-<video src="../../src/video/RPReplay_Final1566384692.MP4" width="320" height="180" controls="controls"></video> 
+![deepcopy_old](../../src/imgs/ios/deepcopy_old.GIF)
+<!-- <video src="../../src/video/RPReplay_Final1566384692.MP4" width="320" height="180" controls="controls"></video>  -->
 
 新版：
 
-<video src="../../src/video/RPReplay_Final1566384154.MP4" width="320" height="180" controls="controls"></video> 
+![deepcopy_new](../../src/imgs/ios/deepcopy_new.GIF)
+<!-- <video src="../../src/video/RPReplay_Final1566384154.MP4" width="320" height="180" controls="controls"></video>  -->
 
 
 现在有三级页面 pageA pageB pageC，从旧版交互改到新版，变化的地方在于：之前从pageB到pageA，只有pop一种方式，现在是可以一直push下去。
