@@ -7,6 +7,7 @@
     - [多target设置`GCC_PREPROCESSOR_DEFINITIONS`引起的问题](#%e5%a4%9atarget%e8%ae%be%e7%bd%aegccpreprocessordefinitions%e5%bc%95%e8%b5%b7%e7%9a%84%e9%97%ae%e9%a2%98)
   - [加快编译速度](#%e5%8a%a0%e5%bf%ab%e7%bc%96%e8%af%91%e9%80%9f%e5%ba%a6)
   - [安装多个版本的cocoapods](#%e5%ae%89%e8%a3%85%e5%a4%9a%e4%b8%aa%e7%89%88%e6%9c%ac%e7%9a%84cocoapods)
+  - [扩大button响应区域](#%e6%89%a9%e5%a4%a7button%e5%93%8d%e5%ba%94%e5%8c%ba%e5%9f%9f)
 
 ## iOS开发随手记 
   
@@ -87,4 +88,50 @@
 
 ## 安装多个版本的cocoapods
 
-????
+
+## 扩大button响应区域
+
+```objc
+/// .h
+
+@interface UIButton (EnlargeHitArea)
+
+@property (nonatomic, assign) UIEdgeInsets hitTestEdgeInsets;
+
+@end
+
+/// .m
+
+#import "UIButton+EnlargeHitArea.h"
+static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
+
+@implementation UIButton (EnlargeHitArea)
+
+-(void)setHitTestEdgeInsets:(UIEdgeInsets)hitTestEdgeInsets {
+    NSValue *value = [NSValue value:&hitTestEdgeInsets withObjCType:@encode(UIEdgeInsets)];
+    objc_setAssociatedObject(self, &KEY_HIT_TEST_EDGE_INSETS, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(UIEdgeInsets)hitTestEdgeInsets {
+    NSValue *value = objc_getAssociatedObject(self, &KEY_HIT_TEST_EDGE_INSETS);
+    if(value) {
+        UIEdgeInsets edgeInsets; [value getValue:&edgeInsets]; return edgeInsets;
+    }else {
+        return UIEdgeInsetsZero;
+    }
+}
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    if(UIEdgeInsetsEqualToEdgeInsets(self.hitTestEdgeInsets, UIEdgeInsetsZero) || !self.enabled || self.hidden) {
+        return [super pointInside:point withEvent:event];
+    }
+    
+    CGRect relativeFrame = self.bounds;
+    CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.hitTestEdgeInsets);
+    
+    return CGRectContainsPoint(hitFrame, point);
+}
+
+@end
+
+```
