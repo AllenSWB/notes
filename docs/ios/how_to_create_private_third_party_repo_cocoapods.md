@@ -324,6 +324,10 @@ pod spec lint --allow-warnings
 pod repo push wbSpecs TestVendor.podspec
 ```
 
+## 私有库依赖私有库
+
++ https://www.jianshu.com/p/9096a2eb2804
+
 ## cocoapods原理
 
 + 它是将所有依赖库都放到一个名为**Pods**的项目中。
