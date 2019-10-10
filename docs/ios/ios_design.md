@@ -1,1 +1,2 @@
-![私有索引库](../../src/imgs/design.JPG)
+![](../../src/imgs/iphone_design.png)
+![](../../src/imgs/design.JPG)
