@@ -1,1 +1,1 @@
-![私有索引库](https://github.com/AllenSWB/notes/blob/master/src/imgs/design.JPG)
+![私有索引库](../../src/imgs/design.JPG)

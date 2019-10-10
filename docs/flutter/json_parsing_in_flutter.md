@@ -442,7 +442,7 @@
         flutter packages pub run json_model
       ```
   
-      ![json_model](https://github.com/AllenSWB/notes/blob/master/src/imgs/flutter/json_model.png)
+      ![json_model](../../src/imgs/flutter/json_model.png)
 
 3. 使用
 

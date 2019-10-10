@@ -10,7 +10,7 @@
 
 1. `index.js`入口文件
 
-   ![indexjs](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/indexjs.png)
+   ![indexjs](../../src/imgs/reactnative/indexjs.png)
 
 2. 常用组件  https://reactnative.cn/docs/components-and-apis/
 
@@ -69,7 +69,7 @@
 
    全称是`Flexible Box` 弹性布局。https://reactnative.cn/docs/flexbox/
 
-   ![flex](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flex.png)
+   ![flex](../../src/imgs/reactnative/flex.png)
 
    > flex container：flex容器
    >
@@ -101,17 +101,17 @@
 
      决定其子元素沿着**次轴**（与主轴垂直的轴，比如若主轴方向为`row`，则次轴方向为`column`）的**排列方式**
 
-   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__0.jpg)
+   ![flexbox__0](../../src/imgs/reactnative/flexbox__0.jpg)
 
-   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__1.jpg)
+   ![flexbox__0](../../src/imgs/reactnative/flexbox__1.jpg)
 
-   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__2.jpg)
+   ![flexbox__0](../../src/imgs/reactnative/flexbox__2.jpg)
 
-   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__3.jpg)
+   ![flexbox__0](../../src/imgs/reactnative/flexbox__3.jpg)
 
-   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__4.jpg)
+   ![flexbox__0](../../src/imgs/reactnative/flexbox__4.jpg)
 
-   ![flexbox__0](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/flexbox__5.jpg)
+   ![flexbox__0](../../src/imgs/reactnative/flexbox__5.jpg)
 
 6. JSX
 
@@ -131,11 +131,11 @@
 
    2. `JSX`
 
-      ![react](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/react_jsx.png)
+      ![react](../../src/imgs/reactnative/react_jsx.png)
 
 2. React Native生命周期
 
-   ![compents_life](https://github.com/AllenSWB/notes/blob/master/src/imgs/reactnative/compents_life.png)
+   ![compents_life](../../src/imgs/reactnative/compents_life.png)
 
 - 初始化
 
