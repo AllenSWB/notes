@@ -1,2 +1,3 @@
-![](../../src/imgs/iphone_design.png)
-![](../../src/imgs/design.JPG)
+![iphone_max_os](../../src/imgs/iphone_max_os.png)
+![iphone_design](../../src/imgs/iphone_design.png)
+![design](../../src/imgs/design.JPG)

@@ -12,6 +12,8 @@
   - [UILabel设置行间隙](#uilabel%e8%ae%be%e7%bd%ae%e8%a1%8c%e9%97%b4%e9%9a%99)
   - [去除String中的空格](#%e5%8e%bb%e9%99%a4string%e4%b8%ad%e7%9a%84%e7%a9%ba%e6%a0%bc)
   - [UILabel部分文字可点击](#uilabel%e9%83%a8%e5%88%86%e6%96%87%e5%ad%97%e5%8f%af%e7%82%b9%e5%87%bb)
+  - [找到所有subviewClass类](#%e6%89%be%e5%88%b0%e6%89%80%e6%9c%89subviewclass%e7%b1%bb)
+  - [找到subviewClass这个类的父视图](#%e6%89%be%e5%88%b0subviewclass%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e7%88%b6%e8%a7%86%e5%9b%be)
 
 ## iOS开发随手记 
   
@@ -718,5 +720,47 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
         NSLog(@"电话 ：%@", str);
         
     }];
+}
+```
+
+## 找到所有subviewClass类
+```objc
+- (NSMutableArray *)_findSubViews:(UIView *)currentView subViewClass:(NSString *)subviewClass array:(NSMutableArray *)array {
+    if (currentView.subviews.count == 0) {
+        return array;
+    }
+    if (!array) {
+        array = [NSMutableArray arrayWithCapacity:0];
+    } 
+    for (NSInteger i = 0; i < currentView.subviews.count; i++) {
+        UIView *subb = currentView.subviews[i];
+       if ([subb isKindOfClass:NSClassFromString(subviewClass)]) {
+           [array addObject:subb];
+        }
+        
+        [self _findSubViews:subb subViewClass:subviewClass array:array];
+    }
+    return array;
+}
+```
+
+## 找到subviewClass这个类的父视图
+```objc
+
+- (UIView *)_findParentView:(UIView *)currentView subViewClass:(NSString *)subviewClass{
+    // 深度优先查找
+    for (NSInteger i = 0; i < currentView.subviews.count; i++) {
+        UIView *subb = currentView.subviews[i];
+       if ([subb isKindOfClass:NSClassFromString(subviewClass)]) {
+           return currentView;
+           break;
+        }
+        UIView *n = [self _findParentView:subb subViewClass:subviewClass];
+        if (n) {
+            return n;
+            break;
+        }
+    }
+    return nil;
 }
 ```
