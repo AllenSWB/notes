@@ -14,6 +14,8 @@
   - [UILabel部分文字可点击](#uilabel%e9%83%a8%e5%88%86%e6%96%87%e5%ad%97%e5%8f%af%e7%82%b9%e5%87%bb)
   - [找到所有subviewClass类](#%e6%89%be%e5%88%b0%e6%89%80%e6%9c%89subviewclass%e7%b1%bb)
   - [找到subviewClass这个类的父视图](#%e6%89%be%e5%88%b0subviewclass%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e7%88%b6%e8%a7%86%e5%9b%be)
+  - [iOS13适配](#ios13%e9%80%82%e9%85%8d)
+  - [RAC通知的移除](#rac%e9%80%9a%e7%9f%a5%e7%9a%84%e7%a7%bb%e9%99%a4)
 
 ## iOS开发随手记 
   
@@ -763,4 +765,38 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
     }
     return nil;
 }
+```
+
+## iOS13适配
+
+1. present出来的控制器默认不是全屏
+
+```swift
+    let v = WBTestViewController()
+    v.modalPresentationStyle = .fullScreen // 加上这句话
+    self.present(v, animated: true, completion: nil)
+```
+
+2. Dark Mode适配
+
+## RAC通知的移除
+
+```objc
+    // https://juejin.im/post/5a30974ef265da433562bec2
+    RACSignal *ss = [[NSNotificationCenter defaultCenter] rac_addObserverForName:@"UserSyncVerifyInfoWithServerSuccessNoti" object:nil];
+        self.disposableObj = [ss subscribeNext:^(id  _Nullable x) {
+            NSLog(@"更新认证信息成功~!!!!!!");
+            [vcObjc.view bw_hiddenLoading];
+
+            NSNotification *noti = (NSNotification *)x;
+            BOOL syncSuccess = ((NSNumber *)noti.object).boolValue;
+            if (syncSuccess) {
+                NSLog(@"同步后台成功 - 更新认证信息成功~!!!!!");
+            } else {
+                NSLog(@"同步后台失败");
+            }
+            
+            [UserRealNameAuthTool _handleToRealNameAuth:params];
+            [self.disposableObj dispose];//rac 移除通知监听  
+        }];
 ```

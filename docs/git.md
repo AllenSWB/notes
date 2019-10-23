@@ -1,5 +1,47 @@
 # Git
 
+```shell
+
+# 查看工作区（Working Directory）状态
+git status 
+
+git pull
+git fetch
+
+git push
+
+git add .
+git commit -m 'feat：新特性'
+
+git checkout .
+
+# to discard changes in working directory
+git checkout -- <file> 
+
+
+# 打tag
+git tag <name> 
+
+# 查看所有tag
+git tag 
+
+# 查看tag信息
+git show <tagname> 
+
+# 删除本地tag
+git tag -d <tagname>
+
+# 删除远端tag，需要先本地删除tag，然后执行远端删除的命令
+git push origin :refs/tags/v0.9
+
+# 推送特定tag到origin
+git push origin <tagname>
+
+# 一次性推送全部尚未推送到远程的本地标签
+git push origin --tags
+
+```
+
 1. 常用
 
     https://www.liaoxuefeng.com/wiki/896043488029600
