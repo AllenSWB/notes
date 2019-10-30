@@ -16,6 +16,7 @@
   - [找到subviewClass这个类的父视图](#%e6%89%be%e5%88%b0subviewclass%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e7%88%b6%e8%a7%86%e5%9b%be)
   - [iOS13适配](#ios13%e9%80%82%e9%85%8d)
   - [RAC通知的移除](#rac%e9%80%9a%e7%9f%a5%e7%9a%84%e7%a7%bb%e9%99%a4)
+  - [类方法里使用self](#%e7%b1%bb%e6%96%b9%e6%b3%95%e9%87%8c%e4%bd%bf%e7%94%a8self)
 
 ## iOS开发随手记 
   
@@ -781,22 +782,47 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 
 ## RAC通知的移除
 
++ [参考链接](https://juejin.im/post/5a30974ef265da433562bec2)
+  
 ```objc
-    // https://juejin.im/post/5a30974ef265da433562bec2
     RACSignal *ss = [[NSNotificationCenter defaultCenter] rac_addObserverForName:@"UserSyncVerifyInfoWithServerSuccessNoti" object:nil];
-        self.disposableObj = [ss subscribeNext:^(id  _Nullable x) {
-            NSLog(@"更新认证信息成功~!!!!!!");
-            [vcObjc.view bw_hiddenLoading];
+    
+    self.disposableObj = [ss subscribeNext:^(id  _Nullable x) {
+        NSLog(@"更新认证信息成功~!!!!!!");
+        [vcObjc.view bw_hiddenLoading];
 
-            NSNotification *noti = (NSNotification *)x;
-            BOOL syncSuccess = ((NSNumber *)noti.object).boolValue;
-            if (syncSuccess) {
-                NSLog(@"同步后台成功 - 更新认证信息成功~!!!!!");
-            } else {
-                NSLog(@"同步后台失败");
-            }
-            
-            [UserRealNameAuthTool _handleToRealNameAuth:params];
-            [self.disposableObj dispose];//rac 移除通知监听  
-        }];
+        NSNotification *noti = (NSNotification *)x;
+        BOOL syncSuccess = ((NSNumber *)noti.object).boolValue;
+        if (syncSuccess) {
+            NSLog(@"同步后台成功 - 更新认证信息成功~!!!!!");
+        } else {
+            NSLog(@"同步后台失败");
+        }
+        
+        [UserRealNameAuthTool _handleToRealNameAuth:params];
+        [self.disposableObj dispose];//rac 移除通知监听  
+    }];
+```
+
+## 类方法里使用self
+
+```objc
+@interface CKTool : NSObject 
+
++ (void)test0;
++ (void)test1;
+
+@end
+
+@implementation CKTool
+
++ (void)test0 {
+    [self test1]; //效果和👇一样一样
+    // [CKTool test1];
+}
+
++ (void)test1 {
+    NSLog(@"test 1");
+}
+@end
 ```
