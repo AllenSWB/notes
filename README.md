@@ -13,7 +13,7 @@
 ## iOS 
 
 + [Tips in iOS](docs/ios/tips_in_ios.md)
-+ [Swift Tips](./docs/ios/swift_tips.md)
++ [Swift Tips](./docs/ios/tips_in_swift.md)
 + [三方库 OC](docs/ios/third_party_library_OC.md)
 + [三方库 Swift](docs/ios/third_party_library_Swift.md)
 + [iOS开发文章](docs/ios/articles.md)
