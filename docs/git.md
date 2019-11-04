@@ -1,5 +1,8 @@
 # Git
 
++ [廖雪峰 Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
++ [通过 41 个 问答方式快速了解学习 Git](https://juejin.im/post/5dba2249f265da4cef190484)
+
 ```shell
 
 # 查看工作区（Working Directory）状态
@@ -95,3 +98,5 @@ git push origin --tags
         ![git clone](../src/imgs/git/gitclone.png)
 
         ![git clone 2](../src/imgs/git/gitclone2.png)
+
+![git fetch pull](../src/imgs/git/gitpull_fetch.png)

@@ -18,6 +18,7 @@
   - [RAC通知的移除](#rac%e9%80%9a%e7%9f%a5%e7%9a%84%e7%a7%bb%e9%99%a4)
   - [类方法里使用self](#%e7%b1%bb%e6%96%b9%e6%b3%95%e9%87%8c%e4%bd%bf%e7%94%a8self)
   - [拍照后修复图片方向`fixOrientation` & 剪切图片`imageByCroppingWithRect`](#%e6%8b%8d%e7%85%a7%e5%90%8e%e4%bf%ae%e5%a4%8d%e5%9b%be%e7%89%87%e6%96%b9%e5%90%91fixorientation--%e5%89%aa%e5%88%87%e5%9b%be%e7%89%87imagebycroppingwithrect)
+  - [设置APP支持的文件类型 eg:PDF](#%e8%ae%be%e7%bd%aeapp%e6%94%af%e6%8c%81%e7%9a%84%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b-egpdf)
 
 ## iOS开发随手记 
   
@@ -922,3 +923,10 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 @end
 
 ```
+## 设置APP支持的文件类型 eg:PDF
+
++ [Core Foundation Keys](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-101685)
++ [System-Declared Uniform Type Identifiers
+](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)
+
+// todo
