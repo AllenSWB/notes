@@ -19,6 +19,7 @@
   - [类方法里使用self](#%e7%b1%bb%e6%96%b9%e6%b3%95%e9%87%8c%e4%bd%bf%e7%94%a8self)
   - [拍照后修复图片方向`fixOrientation` & 剪切图片`imageByCroppingWithRect`](#%e6%8b%8d%e7%85%a7%e5%90%8e%e4%bf%ae%e5%a4%8d%e5%9b%be%e7%89%87%e6%96%b9%e5%90%91fixorientation--%e5%89%aa%e5%88%87%e5%9b%be%e7%89%87imagebycroppingwithrect)
   - [设置APP支持的文件类型 eg:PDF](#%e8%ae%be%e7%bd%aeapp%e6%94%af%e6%8c%81%e7%9a%84%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b-egpdf)
+  - [`Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: "swift_lang")`方法获取不到文件解决](#bundlemainpathsforresourcesoftype-%22pdf%22-indirectory-%22swiftlang%22%e6%96%b9%e6%b3%95%e8%8e%b7%e5%8f%96%e4%b8%8d%e5%88%b0%e6%96%87%e4%bb%b6%e8%a7%a3%e5%86%b3)
 
 ## iOS开发随手记 
   
@@ -930,3 +931,13 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 ](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)
 
 // todo
+
+## `Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: "swift_lang")`方法获取不到文件解决
+
+导入文件的时候选取create folder references
+
+![](../../src/imgs/ios/create_folder_references.png)
+
+![](../../src/imgs/ios/create_folder_references_result.png)
+
+![](../../src/imgs/ios/create_folder_references_code.png)
