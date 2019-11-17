@@ -1,11 +1,13 @@
-# Cocoapods
-- [Cocoapods](#cocoapods)
-  - [封装私有库](#%e5%b0%81%e8%a3%85%e7%a7%81%e6%9c%89%e5%ba%93)
-  - [封装开源库](#%e5%b0%81%e8%a3%85%e5%bc%80%e6%ba%90%e5%ba%93)
-  - [索引库位置](#%e7%b4%a2%e5%bc%95%e5%ba%93%e4%bd%8d%e7%bd%ae)
-  - [更新索引库](#%e6%9b%b4%e6%96%b0%e7%b4%a2%e5%bc%95%e5%ba%93)
-  - [Podfile](#podfile)
-  - [升级](#%e5%8d%87%e7%ba%a7)
+- [封装私有库](#%e5%b0%81%e8%a3%85%e7%a7%81%e6%9c%89%e5%ba%93)
+- [封装开源库](#%e5%b0%81%e8%a3%85%e5%bc%80%e6%ba%90%e5%ba%93)
+- [索引库位置](#%e7%b4%a2%e5%bc%95%e5%ba%93%e4%bd%8d%e7%bd%ae)
+- [更新索引库](#%e6%9b%b4%e6%96%b0%e7%b4%a2%e5%bc%95%e5%ba%93)
+- [Podfile](#podfile)
+- [升级](#%e5%8d%87%e7%ba%a7)
+- [工作原理](#%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86)
+- [iOS 多target 项目使用 pod 管理三方库的方法](#ios-%e5%a4%9atarget-%e9%a1%b9%e7%9b%ae%e4%bd%bf%e7%94%a8-pod-%e7%ae%a1%e7%90%86%e4%b8%89%e6%96%b9%e5%ba%93%e7%9a%84%e6%96%b9%e6%b3%95)
+- [常用`pod`命令](#%e5%b8%b8%e7%94%a8pod%e5%91%bd%e4%bb%a4)
+- [参考链接](#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5)
 
 ## 封装私有库
 
@@ -134,3 +136,91 @@
   ```shell
     sudo gem install -n /usr/local/bin cocoapods --pre 
   ```
+
+
+## 工作原理
+
+  它是将所有依赖库都放到一个名为`Pods`的项目中。
+  
+  `Pods`项目最终会编译成一个名为`libPods.a`的文件，主项目只要依赖这个`.a`文件即可。这样，依赖库源码管理工作就从主项目移到了`Pods`项目中。 
+  
+  对于资源文件，CocoaPods 提供了一个名为`Pods-resources.sh` 的`bash`脚本，该脚本在每次项目编译的时候都会执行，将第三方库的各种资源文件复制到目标目录中。
+
+  CocoaPods 通过一个名为`Pods.xcconfig`的文件来在编译时设置所有的依赖和参数。
+
+  ![](../../src/imgs/ios/cocoapods/cocoapods0.png)
+  ![](../../src/imgs/ios/cocoapods/cocoapods1.png)
+
+  + coaoapods二进制？？？？
+  + cocoapods-packager
+
+## iOS 多target 项目使用 pod 管理三方库的方法
+
+  ```ruby
+  ## Podfile 文件内容（使用 ruby 语法）
+
+  ######################## 方式1
+ 	target 'CZ' do
+ 	pod 'AFNetworking', '~> 3.0'	
+ 	pod 'JSONModel'
+ 	end
+
+ 	target 'CZBuyer' do
+ 	pod 'AFNetworking', '~> 3.0'
+ 	pod 'YYModel'
+ 	end
+
+ 	target 'CZPlatform' do
+ 	pod 'AFNetworking', '~> 3.0'
+ 	pod 'MJExtension'
+  end
+
+  ######################## 方式2
+	targetsArray = ['CZ', 'CZBuyer', 'CZPlatform']
+	targetsArray.each do |t|
+		target t do
+		pod 'AFNetworking', '~> 3.0'
+			if t == 'CZ' then
+				pod 'JSONModel'
+			elsif t == 'CZBuyer' then
+				pod 'YYModel'
+			elsif t == 'CZPlatform' then
+				pod 'MJExtension'
+			end
+		end
+	end
+  ```
+
+## 常用`pod`命令
+  
+  `pod install `
+  
+  + 第一次给项目添加pod时使用
+  + 添加或者移除三方库时使用
+
+  每次 pod install 命令运行的时候，pod install 会将要安装的三方库版本号写入Podfile.lock 文件中。
+
+  Podfile.lock 文件追踪每一个三方库的版本号，并锁定这些版本号
+
+  当 pod install 运行时候，它将只解决不在 Podfile.lock 中的三方库的依赖关系；对于在 Podfile.lock文件的库， pod install 只会下载指定的版本，而不会检查这个库是否有更新；对于不在 Podfile.lock 文件的库，pod install 会搜索这个三方库指定的版本
+
+  `pod update` 
+
+  + 更新三方库的版本时使用
+
+  `pod outdated`
+  
+  + 这个命令会列出所有在Podfile.lock文件中有新版本的三方库。在运行 pod update 时候会更新这些库。  
+
+  使用 `pod deintegrate` 和 `pod install` 解决下图的问题
+
+  ![](../../src/imgs/ios/cocoapods/poderror0.png)
+
+  > 使用git时候，Pods文件夹可以不提交，但是**Podfile.lock**文件一定要提交。因为它里面指定了每个库使用的版本。
+       case: 一个项目里用到了三方库A。三方库A依赖于三方库B。如果团队里的小伙伴不使用相同的Podfile.lock文件，就算指定A的版本 ( A ~> 1.0.2) ，也不能保证所有人用的库B都是相同的版本。
+
+## 参考链接
+
++ [为什么我还在写 CocoaPods 的教程](https://www.jianshu.com/p/1d8340bd0efd) 
++ [使用CocoaPods打造 --- 远程私有库](https://www.jianshu.com/p/558dd48273d0) 
++ [使用CocoaPods打造 --- 第三方库](https://www.jianshu.com/p/a57b696510e9)

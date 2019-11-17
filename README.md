@@ -19,6 +19,7 @@
 + [深拷贝](docs/ios/deep_copy.md)
 + [FDFullscreenPopGesture](docs/ios/FDFullscreenPopGesture.md)
 + [SDWebImage](docs/ios/SDWebImage.md)
++ [ReactiveCocoa](./docs/ios/rac.md)
 
 ## 跨平台
 
@@ -40,7 +41,7 @@
 
   + [React Native 0. 项目创建](docs/reactnative/reactnative_tutorial_0.md)
   + [React Native 1. React原理](docs/reactnative/reactnative_tutorial_1.md)
-
+  + [JavaScript Syntax](./docs/js/javascript.md)
 
 ## Algorithm
 

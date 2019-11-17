@@ -1,6 +1,5 @@
 - [Swift Syntax](#swift-syntax)
 - [从 `OC` 到 `Swift`](#%e4%bb%8e-oc-%e5%88%b0-swift)
-- [todo](#todo)
 ## Swift Syntax
 
 1. `for-in`
@@ -647,19 +646,17 @@
     ```
  
 
-## todo 
+<!-- ## todo 
 + 错误处理do-catch try! try?
 + 断言
 + 引用类型 值类型？？
 + rxSwfit vs Combine 
 + SwiftUI
 + 递归枚举??
-<!-- ## Swift中类方法和实例方法
-
-## 全局导入头文件 (pch作用)
-
-## public方法和private方法
-
-## KVO in Swift
-
-## Runtime in Swift -->
++ 混编
++ 网络请求库
++ Swift中类方法和实例方法
++ 全局导入头文件 (pch作用)
++ public方法和private方法
++ KVO in Swift
++ Runtime in Swift -->
