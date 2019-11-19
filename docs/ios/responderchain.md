@@ -133,8 +133,8 @@ touchesBegan:withEvent:   点self.view上的按钮不走，点空白视图走这
 
 ----
 
-[响应链探究 - hou](http://wiki.10101111.com/pages/viewpage.action?pageId=180835636)
++ [响应链探究 - hou](http://wiki.10101111.com/pages/viewpage.action?pageId=180835636)
 
-[iOS视图响应与渲染 - hou](http://wiki.10101111.com/pages/viewpage.action?pageId=183142691)
++ [iOS视图响应与渲染 - hou](http://wiki.10101111.com/pages/viewpage.action?pageId=183142691)
 
-https://juejin.im/post/5d396ef7518825453b605afa#heading-17
++ [深入理解 iOS 事件机制](https://juejin.im/post/5d396ef7518825453b605afa#heading-17)

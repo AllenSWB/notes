@@ -1,33 +1,41 @@
+## lldb
+
++ [lldb tutorial](https://lldb.llvm.org/tutorial.html)
++ [WWDC 2018：效率提升爆表的 Xcode 和 LLDB 调试技巧](https://juejin.im/post/5b1cd870e51d4506dc0ac76c)
+
+
+## lldb常用命令
+
 1. 最常用的几个命令
 
     + `po`： 打印
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy4xh3kp3sj30a101ojre.jpg)
+        ![](../../src/imgs/lldb/po_self.jpg)
 
     + `breakpoint`： 打断点
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy4xz14lwaj30ak01z748.jpg)
+        ![](../../src/imgs/lldb/breakpoint.jpg)
     
     控制流快捷键对应的命令
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy4y0w9khtj309i00va9w.jpg)
+    ![](../../src/imgs/lldb/lldb_shortcuts.png)
 
     + `c`： 继续，程序恢复执行
     + `n`： step over，单步执行 
     + `s`： step in，进入执行。eg: 断点打在方法调用处，执行step in操作，进入方法内部
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy4y27kggoj30ku08lta0.jpg)
+        ![](../../src/imgs/lldb/lldb_s.jpg)
 
     + `finish`： step out，跳出。eg: 在方法内部，执行step out操作，跳出当前方法
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy4y2tmsycj30fg07sjsg.jpg)
+        ![](../../src/imgs/lldb/lldb_s_out.png)
 
     查看帮助
 
     + `help`：查看所有可用的`lldb`命令
     + `help xx`：查看`xx`命令的帮助。类似终端中的`man`命令。eg: `help po`
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy4ydnczh4j30q007pab5.jpg)
+        ![](../../src/imgs/lldb/lldb_help.png)
 
 2. 调试过程中自动创建标签页
 
@@ -35,46 +43,46 @@
 
     设置 -> Behaviors -> Runing -> Pause - 选中 show Tab Name xxx in active window
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxuiiegomij311v06htav.jpg)
+    ![](../../src/imgs/lldb/lldb_debug.jpg)
 
 
 3. 修改状态: `expr` 命令
 
     走到第30行代码的时候，在控制台输入命令`expr`，修改news.author为"林肯"，最后打印出来的就是我们修改后的值
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxuirbw9k0j30gq081gn6.jpg)
+    ![](../../src/imgs/lldb/lldb_expr.jpg)
 
 4. 断点编辑功能
 
     1> 打断点，右键，Edit Breakpoint
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxuiz6ihrnj30dn04a74w.jpg)
+    ![](../../src/imgs/lldb/edit_break.jpg)
 
     2> 输入条件 `condition`；在 `action` 一栏输入一些调试命令
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxuj133ie4j30j8066jsw.jpg)
+    ![](../../src/imgs/lldb/edit_condi_1.jpg)
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxuj2u5912j30cy04h0tp.jpg)
+    ![](../../src/imgs/lldb/edit_condi_2.jpg)
 
     3> 执行
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxuj235ubij30ie09ctb9.jpg)
+    ![](../../src/imgs/lldb/edit_condi_3.jpg)
 
 5. `Symbolic Breakpoint`
 
     1> 增加全局断点 
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxunxutdtmj307l04kjru.jpg)
+    ![](../../src/imgs/lldb/add_global_breakpoint.jpg)
 
     2> 设置`Symbol`
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxuny4gdd6j30d9063q4c.jpg)
+    ![](../../src/imgs/lldb/set_symbol.jpg)
 
     3> 程序走到断点位置
 
     `po $arg1` ; `po $arg2` 打印
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxunzesbfmj30uc0a276l.jpg)
+    ![](../../src/imgs/lldb/set_symbol_1.jpg)
 
 6. [chisel by facebook](https://github.com/facebook/chisel) 
 
@@ -99,11 +107,11 @@
 
     + `pviews`：打印当前视图层级。
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy521xsk4pj312907177b.jpg)
+        ![](../../src/imgs/lldb/pviews.png)
 
         使用lldb命令能达到同样的效果 `po [[[UIApplication sharedApplication] keyWindow] recursiveDescription]`
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy52bou0lij312n06ktbv.jpg)
+        ![](../../src/imgs/lldb/po_view.png)
     
     + `flicker`：闪烁视图，以便开发者能快速找到它。
 
@@ -118,15 +126,15 @@
 
     + `mask` & `unmask`：`mask`是给view加个框。`unmask`相反效果。
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy52v5escaj3032028dfs.jpg)
+        ![](../../src/imgs/lldb/cisle_mask.png)
     
     + `pbundlepath`：打印main bundle路径
 
-       ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy52ytspayj30s301lmxg.jpg)
+       ![](../../src/imgs/lldb/cisle_pbundlepath.png)
 
     + `plass`：打印一个实例的继承关系
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy531bi69cj309t03wmxe.jpg)
+        ![](../../src/imgs/lldb/cisle_pclass.png)
 
     + `caflush`：强制刷新界面. force Core Animation flush
 
@@ -137,7 +145,7 @@
         - `expr (void)[$tempView setBackgroundColor:[UIColor redColor]]`：设置tempView的背景色为红色
         - `caflush`：强制刷新界面。可以看到此时手机背景色成了红色了。
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy53c0ckwbj312o0a8gpy.jpg)
+        ![](../../src/imgs/lldb/cisle_cflush.jpg)
 
-        ![](http://ww1.sinaimg.cn/large/006hznE2ly1fy53cjklq7j30ku1120t8.jpg)
+        ![](../../src/imgs/lldb/cisle_flush_example.PNG)
 
