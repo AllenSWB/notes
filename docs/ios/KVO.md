@@ -43,6 +43,7 @@
         [weakSelf.car setValue:@"丰田FJ" forKey:@"carName"];
         // setValue: forKeyPath:
         [weakSelf setValue:@"丰田FJ" forKeyPath:@"car.carName"];
+        
 
 3. 移除观察者。`removeObserver: forKeyPath:`
 
