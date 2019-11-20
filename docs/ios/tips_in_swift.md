@@ -2,6 +2,8 @@
 - [从 `OC` 到 `Swift`](#%e4%bb%8e-oc-%e5%88%b0-swift)
 ## Swift Syntax
 
+> - [Swift5官方文档](https://swiftgg.gitbook.io/swift/)
+
 1. `for-in`
 
    ```swift
@@ -657,7 +659,17 @@
        } 
      ```  
 
-6. `Moya`报错`'Method' is ambiguous for type lookup in this context`
+6. `dealloc`
+
+    - [dealloc in swift](https://stackoverflow.com/questions/25497928/dealloc-in-swift)
+
+    ```swift
+    deinit {
+            /* perform the deinitialization */
+    }
+    ```
+
+7. `Moya`报错`'Method' is ambiguous for type lookup in this context`
 
     ```swift
     extension BWService : TargetType {
@@ -666,6 +678,47 @@
     }
     ```
  
+ 8. pch替代、宏
+
+    ```swift
+    // in Global.swift file
+      import Foundation
+      @_exported import SwifterSwift
+      @_exported import Alamofire
+      @_exported import Cache
+      @_exported import Hero
+      @_exported import Kingfisher
+      @_exported import MJRefresh
+      @_exported import Moya
+      @_exported import ReactiveCocoa
+      @_exported import SnapKit
+      @_exported import StarShareDevUIKit
+      @_exported import SwiftyJSON
+      @_exported import SwiftyUserDefaults
+      @_exported import YYKit
+      
+      // MARK: 宏
+      let PixelOne: CGFloat = 0.5
+      let BG_ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
+      let BG_ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
+      ```
+
+9. 自定义log
+
+   ```swift
+   /* MARK: Log */
+   func printLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
+          #if DEBUG
+          print("\nLoooooog: \n[\(file.lastPathComponent) \(line)行] [\(method)] \n\(message)\n")
+          #endif
+      }
+    /* eg:  */
+   Loooooog: 
+   [BGMineViewController.swift 140行] [tableView(_:didSelectRowAt:)] 
+      我是一条没有梦想的log
+   ```
+
+
 
 <!-- ## todo 
 + 错误处理do-catch try! try?

@@ -55,7 +55,8 @@
     });
     
     
-    RACObserve(<#TARGET#>, <#KEYPATH#>)
+    
+
 }
 
 
