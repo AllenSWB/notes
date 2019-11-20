@@ -174,6 +174,8 @@ RACMulticastConnection 用于当一个信号，被多次订阅时，为了保证
 
 + [RAC 中的 RACObserve 监听流程分析](https://www.jianshu.com/p/dbeb0b45fdc8)
 
+> demo的源码里有注释，RACObserve一路点下去 [demo](../../code/racDemo20191120/Pods/ReactiveObjC/ReactiveObjC/NSObject+RACPropertySubscribing.m)
+
 ```objc
 #define _RACObserve(TARGET, KEYPATH) \
 ({ \
