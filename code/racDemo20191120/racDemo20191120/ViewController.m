@@ -54,6 +54,8 @@
         RecursiveMethod(5);
     });
     
+    dispatch_block_testcancel(<#^(void)block#>)
+    dispatch_block_cancel(<#^(void)block#>)
     
     
 
