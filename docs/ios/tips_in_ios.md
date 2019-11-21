@@ -43,6 +43,7 @@
   创建target的步骤参考这个链接：[iOS 一套代码多APP／多渠道／多target+自动打包脚本](https://www.jianshu.com/p/73343b4fc42b)
 
   [创建多target](./add_more_targets_to_your_project.md)
+  
 ###  创建一个新target的注意点：
 
   + 依赖

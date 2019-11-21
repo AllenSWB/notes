@@ -23,6 +23,7 @@
 - [x] Xcode
 - [x] Cocoapods (sudo gem install cocoapods -v 1.6.1 另外 pod setup)
 - [x] Postman
+- [ ] Charles
 - [x] Visual Studio Code
 - [x] SourceTree
 - [ ] homebrew 
