@@ -7,6 +7,7 @@
 - [工作原理](#%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86)
 - [iOS 多target 项目使用 pod 管理三方库的方法](#ios-%e5%a4%9atarget-%e9%a1%b9%e7%9b%ae%e4%bd%bf%e7%94%a8-pod-%e7%ae%a1%e7%90%86%e4%b8%89%e6%96%b9%e5%ba%93%e7%9a%84%e6%96%b9%e6%b3%95)
 - [常用`pod`命令](#%e5%b8%b8%e7%94%a8pod%e5%91%bd%e4%bb%a4)
+- [cocoapods资源文件怎么管理](#cocoapods%e8%b5%84%e6%ba%90%e6%96%87%e4%bb%b6%e6%80%8e%e4%b9%88%e7%ae%a1%e7%90%86)
 - [参考链接](#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5)
 
 ## 封装私有库
@@ -16,38 +17,36 @@
 ## 封装开源库
 
 1. 创建 WBNetwork.podspec 
+   
    ```shell
     pod spec create WBNetwork 
    ```
 2. 编辑 WBNetwork.podspec 文件, 下面是个示例
 
-    ```ruby
-        #  Be sure to run `pod spec lint WBNetwork.podspec' to ensure this is a
-        #  valid spec and to remove all comments including this before submitting the spec.
+    ```ruby  
+     Pod::Spec.new do |s|
 
-        Pod::Spec.new do |s|
-
-        s.name         = "WBNetwork"
-        s.version      = "0.1.3"
-        s.summary      = "iOS 基于 AFN 封装的链式网络请求框架" 
-        s.homepage     = "https://github.com/AllenSWB/WBNetwork"
-        s.license      = "MIT"
-        s.author       = "AllenSWB"
-        s.platform     = :ios, "8.0"
-        s.source       = { :git => "https://github.com/AllenSWB/WBNetwork.git", :tag => "#{s.version}" }
-        s.frameworks   = "Foundation",'UIKit'
-        s.source_files = "WBNetworkDemo/WBNetwork/*.{h,m}" 
-        s.dependency "AFNetworking"
-
-        end
+     s.name         = "WBNetwork"
+     s.version      = "0.1.3"
+     s.summary      = "iOS 基于 AFN 封装的链式网络请求框架" 
+     s.homepage     = "https://github.com/AllenSWB/WBNetwork"
+     s.license      = "MIT"
+     s.author       = "AllenSWB"
+     s.platform     = :ios, "8.0"
+     s.source       = { :git => "https://github.com/AllenSWB/WBNetwork.git", :tag => "#{s.version}" }
+     s.frameworks   = "Foundation",'UIKit'
+     s.source_files = "WBNetworkDemo/WBNetwork/*.{h,m}" 
+     s.dependency "AFNetworking" 
+     end
     ```
 3. pod lib lint WBNetwork.podspec , 本地验证 .podspec 文件。可以加上参数 --allow-warnings --verbose
 
-      ```shell
-        pod lib lint WBNetwork.podspec --vrebose --allow-warnings
-      ```
+   ```shell
+    pod lib lint WBNetwork.podspec --vrebose --allow-warnings
+   ```
     + --verbose 校验过程会log处详情
     + --allow-warnings 有警告也允许验证通过
+
 4. 把本地更新推送到origin
 5. 远端验证文件
     ```shell
@@ -151,7 +150,7 @@
   ![](../../src/imgs/ios/cocoapods/cocoapods0.png)
   ![](../../src/imgs/ios/cocoapods/cocoapods1.png)
 
-  + coaoapods二进制？？？？
+  <!-- + coaoapods二进制？？？？ -->
   + cocoapods-packager
 
 ## iOS 多target 项目使用 pod 管理三方库的方法
@@ -218,6 +217,42 @@
 
   > 使用git时候，Pods文件夹可以不提交，但是**Podfile.lock**文件一定要提交。因为它里面指定了每个库使用的版本。
        case: 一个项目里用到了三方库A。三方库A依赖于三方库B。如果团队里的小伙伴不使用相同的Podfile.lock文件，就算指定A的版本 ( A ~> 1.0.2) ，也不能保证所有人用的库B都是相同的版本。
+
+## cocoapods资源文件怎么管理
+
+![podspec_resource](../../src/imgs/ios/podspec_resource.png)
+
+```ruby
+# podspec 
+s.resource_bundles = {
+  'BWCMT_MMC' => ['BWCMT_MMC/Assets/*.xcassets']
+} 
+s.resources = ['BWCMT_MMC/ThirdFrameworks/WBCloudReflectionFaceVerify/bundles/*']
+```
+
+```objc
+// 提供获取图片方法
++ (UIImage *)imageNamed:(NSString *)name {
+    UIImage *image = nil;
+    
+    if (name) {
+        image = [UIImage imageNamed:name inBundle:[self getCurrentBundle] compatibleWithTraitCollection:nil];
+    }
+    //else cont.
+    
+    return image;
+}
+
+// 提供资源Bundle对象
++ (NSBundle *)getCurrentBundle {
+//    NSBundle *resourceBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"MMCResource" ofType:@"bundle"]];
+//    return resourceBundle;
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSURL *url = [bundle URLForResource:@"BWCMT_MMC" withExtension:@"bundle"];
+    NSBundle *targetBundle = [NSBundle bundleWithURL:url];
+    return targetBundle;
+}
+```
 
 ## 参考链接
 
