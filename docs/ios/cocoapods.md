@@ -1,10 +1,10 @@
 - [封装私有库](#%e5%b0%81%e8%a3%85%e7%a7%81%e6%9c%89%e5%ba%93)
+  - [如果要封装的私有库依赖于另外一个私有库，校验podspec文件的时候要指明私有库索引源的位置](#%e5%a6%82%e6%9e%9c%e8%a6%81%e5%b0%81%e8%a3%85%e7%9a%84%e7%a7%81%e6%9c%89%e5%ba%93%e4%be%9d%e8%b5%96%e4%ba%8e%e5%8f%a6%e5%a4%96%e4%b8%80%e4%b8%aa%e7%a7%81%e6%9c%89%e5%ba%93%e6%a0%a1%e9%aa%8cpodspec%e6%96%87%e4%bb%b6%e7%9a%84%e6%97%b6%e5%80%99%e8%a6%81%e6%8c%87%e6%98%8e%e7%a7%81%e6%9c%89%e5%ba%93%e7%b4%a2%e5%bc%95%e6%ba%90%e7%9a%84%e4%bd%8d%e7%bd%ae)
 - [封装开源库](#%e5%b0%81%e8%a3%85%e5%bc%80%e6%ba%90%e5%ba%93)
-- [索引库位置](#%e7%b4%a2%e5%bc%95%e5%ba%93%e4%bd%8d%e7%bd%ae)
-- [更新索引库](#%e6%9b%b4%e6%96%b0%e7%b4%a2%e5%bc%95%e5%ba%93)
+- [索引库](#%e7%b4%a2%e5%bc%95%e5%ba%93)
 - [Podfile](#podfile)
-- [升级](#%e5%8d%87%e7%ba%a7)
-- [工作原理](#%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86)
+- [升级Cocoapods](#%e5%8d%87%e7%ba%a7cocoapods)
+- [Cocoapods工作原理](#cocoapods%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86)
 - [iOS 多target 项目使用 pod 管理三方库的方法](#ios-%e5%a4%9atarget-%e9%a1%b9%e7%9b%ae%e4%bd%bf%e7%94%a8-pod-%e7%ae%a1%e7%90%86%e4%b8%89%e6%96%b9%e5%ba%93%e7%9a%84%e6%96%b9%e6%b3%95)
 - [常用`pod`命令](#%e5%b8%b8%e7%94%a8pod%e5%91%bd%e4%bb%a4)
 - [cocoapods资源文件怎么管理](#cocoapods%e8%b5%84%e6%ba%90%e6%96%87%e4%bb%b6%e6%80%8e%e4%b9%88%e7%ae%a1%e7%90%86)
@@ -13,6 +13,34 @@
 ## 封装私有库
 
   [封装私有库](./how_to_create_private_third_party_repo_cocoapods.md)
+
+### 如果要封装的私有库依赖于另外一个私有库，校验podspec文件的时候要指明私有库索引源的位置
+
+  ```ruby 
+  Pod::Spec.new do |s|
+    s.name             = 'bwcmt_network'
+    s.version          = '0.0.1'
+    s.summary          = '网络请求Flutter plugin'
+    s.description      = <<-DESC
+  网络请求Flutter plugin
+                         DESC
+    s.homepage         = 'http://example.com'
+    s.license          = { :file => '../LICENSE' }
+    s.author           = { 'Your Company' => 'email@example.com' }
+    s.source           = { :path => '.' }
+    s.source_files = 'Classes/**/*'
+    s.public_header_files = 'Classes/**/*.h'
+    s.dependency 'Flutter'
+    s.dependency 'UCARNetwork/CMT', '4.2.3'       # 这是一个私有的库
+
+    s.ios.deployment_target = '8.0'
+  end 
+  ```
+  校验时候要指明索引库
+  ```shell
+  # 默认索引源是https://github.com/artsy/Specs， 多个源的话要用逗号分隔。可以写索引源地址或者名字
+  pod lib lint bwcmt_network.podspec --sources=master,ucar_ios_platform
+  ```
 
 ## 封装开源库
 
@@ -73,32 +101,39 @@
       pod search WBNetwork # 这时候就能搜索到自己的库了
     ```
 
-## 索引库位置
+## 索引库
 
-  1. 远端 https://github.com/CocoaPods/Specs
-      
-      ![originspecs](../../src/imgs/ios/cocoapods/cocoapods_originspecs.png)
+1. 查看本地所有的索引库
+   ```shell
+   pod repo
+   ```
+2. 添加索引库 `ucar_ios_zcspec`
+   ```shell
+   pod repo add ucar_ios_zcspec http://gitlab.10101111.com/p2p/zcspec.git
+   ```
+3. 移除索引库 `10101111-mmc-mmc_specs`
+   ```shell
+   pod repo remove 10101111-mmc-mmc_specs
+   ```
+4. 更新索引库
+     + 更新所有索引库
+        ```shell
+        pod repo update
+        pod install --repo-update
+        ```
+     + 单独更新某一个索引库
+        ```shell
+        pod repo update wbSpecs 
+        ``` 
+5. 索引库位置
+     - 远端 https://github.com/CocoaPods/Specs
+        
+        ![originspecs](../../src/imgs/ios/cocoapods/cocoapods_originspecs.png)
 
-  2. 本地 `~/.cocoapods/repos/master/`
+     - 本地 `~/.cocoapods/repos/master/`
      
-      ![localspecs](../../src/imgs/ios/cocoapods/cocoapods_local_specs.png)
+        ![localspecs](../../src/imgs/ios/cocoapods/cocoapods_local_specs.png)
 
-## 更新索引库
-
-  + 更新所有索引库
-      ```shell
-        $ pod repo update
-      ```
-  + 单独更新某一个索引库
-      ```shell
-        $ pod repo update wbSpecs 
-      ```
-  + install时候更新索引库
-    > out-of-date source repos which you can update with `pod repo update` or with `pod install --repo-update`.
-
-      ```shell
-        $ pod install --repo-update
-      ```
 
 ## Podfile
 
@@ -122,7 +157,7 @@
 
 ```
 
-## 升级
+## 升级Cocoapods
 
 + 升级cocoapods到指定版本
 
@@ -136,8 +171,7 @@
     sudo gem install -n /usr/local/bin cocoapods --pre 
   ```
 
-
-## 工作原理
+## Cocoapods工作原理
 
   它是将所有依赖库都放到一个名为`Pods`的项目中。
   
@@ -192,6 +226,7 @@
 
 ## 常用`pod`命令
   
+  ![](../../src/imgs/ios/cocoapods/pod_commands.png)
   `pod install `
   
   + 第一次给项目添加pod时使用
