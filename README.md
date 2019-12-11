@@ -29,23 +29,23 @@
 
 ### Flutter
 
-  + [Tips in Flutter](docs/flutter/tips_in_flutter.md)
-  + [Flutter 文章&库](docs/flutter/flutter_resources.md) 
-  + [环境配置](docs/flutter/setup_env.md)
-  + [入门](docs/flutter/flutter_intro.md)
-  + [Dart](docs/flutter/dart.md)
-  + [原生集成Flutter](docs/flutter/add_flutter_to_native.md)
-  + [Widgets in Flutter](docs/flutter/widgets_in_flutter.md)
-  + [Json解析](docs/flutter/json_parsing_in_flutter.md)
-  + [Flutter和Native iOS交互](docs/flutter/flutter_native_communication.md)
-  + [Flutter中的状态管理](docs/flutter/state_manage_in_flutter.md)
-  + [Flutter进度条和Toast](docs/flutter/flutter_progresshud_toast.md)
++ [Tips in Flutter](docs/flutter/tips_in_flutter.md)
++ [Flutter 文章&库](docs/flutter/flutter_resources.md) 
++ [环境配置](docs/flutter/setup_env.md)
++ [入门](docs/flutter/flutter_intro.md)
++ [Dart](docs/flutter/dart.md)
++ [原生集成Flutter](docs/flutter/add_flutter_to_native.md)
++ [Widgets in Flutter](docs/flutter/widgets_in_flutter.md)
++ [Json解析](docs/flutter/json_parsing_in_flutter.md)
++ [Flutter和Native iOS交互](docs/flutter/flutter_native_communication.md)
++ [Flutter中的状态管理](docs/flutter/state_manage_in_flutter.md)
++ [Flutter进度条和Toast](docs/flutter/flutter_progresshud_toast.md)
   
 ### React Native
 
-  + [React Native 0. 项目创建](docs/reactnative/reactnative_tutorial_0.md)
-  + [React Native 1. React原理](docs/reactnative/reactnative_tutorial_1.md)
-  + [JavaScript Syntax](./docs/js/javascript.md)
++ [React Native 0. 项目创建](docs/reactnative/reactnative_tutorial_0.md)
++ [React Native 1. React原理](docs/reactnative/reactnative_tutorial_1.md)
++ [JavaScript Syntax](./docs/js/javascript.md)
 
 ## Algorithm
 
@@ -61,7 +61,8 @@
 + [Gitlab webhook触发Jenkins打包](docs/CITools/Gitlab_webhook.md)
 + [Java](docs/java_basic.md)
 + [shell](docs/shell.md)
-+ [git](docs/git.md)
++ [Git](docs/git.md)
++ [Linux](./docs/linux.md)
 
 ## Tools
 
