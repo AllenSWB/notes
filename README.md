@@ -17,6 +17,7 @@
 + [Cocoapods](docs/ios/cocoapods.md)
 + [响应者链](docs/ios/responderchain.md)
 + [深拷贝](docs/ios/deep_copy.md)
++ [Xcode编译报错](./docs/ios/xcode_error.md)
 
 ## 三方库
 
