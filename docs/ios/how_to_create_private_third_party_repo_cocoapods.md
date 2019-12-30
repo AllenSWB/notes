@@ -4,7 +4,7 @@
 
 - 在origin创建私有索引库
 
-  ![私有索引库](../../src/imgs/ios/cocoapods/%E7%A7%81%E6%9C%89%E7%B4%A2%E5%BC%95%E5%BA%93.png)
+  ![私有索引库](../../src/imgs/ios/cocoapods/private_specs.png)
 
 - 将创建的私有索引库clone到本地
 
@@ -16,15 +16,15 @@
 
   执行完命令可以在本地索引库看到 wbSpecs 已经添加进来了。本地索引库路径是`/Users/userNamexxx/.cocoapods/repos`
 
-  ![本地索引库](../../src/imgs/ios/cocoapods/%E6%9C%AC%E5%9C%B0%E7%B4%A2%E5%BC%95%E5%BA%93.png)
+  ![本地索引库](../../src/imgs/ios/cocoapods/local_specs.png)
 
 ## 创建私有库
 
 - 在origin创建一个空工程 TestVendor
 
-	![origin创建空工程0](../../src/imgs/ios/cocoapods/origin%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%B7%A5%E7%A8%8B0.png)
+	![origin创建空工程0](../../src/imgs/ios/cocoapods/origin_empty_pod_0.png)
 
-	![origin创建空工程1](../../src/imgs/ios/cocoapods/origin%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%B7%A5%E7%A8%8B1.png)
+	![origin创建空工程1](../../src/imgs/ios/cocoapods/origin_empty_pod_1.png)
 
 - 在本地创建一个模板工程（会直接创建好`.podspec`文件），执行命令 `pod lib create TestVendor`
 
@@ -85,9 +85,9 @@ wenbosundeMBA:Desktop wenbo.sun$
 
 模板工程如下：
 
-![模板工程](../../src/imgs/ios/cocoapods/%E6%A8%A1%E6%9D%BF%E5%B7%A5%E7%A8%8B.png)
+![模板工程](../../src/imgs/ios/cocoapods/template_proj_0.png)
 
-![模板工程1](../../src/imgs/ios/cocoapods/%E6%A8%A1%E6%9D%BF%E5%B7%A5%E7%A8%8B1.PNG)
+![模板工程1](../../src/imgs/ios/cocoapods/template_proj_1.PNG)
 
 把私有库的代码放到`ReplaceMe.m`文件所在的目录，删掉`ReplaceMe.m`文件
 
@@ -101,7 +101,7 @@ wenbosundeMBA:Desktop wenbo.sun$
 
 - 将私有库代码加进来
 
-  ![添加私有库代码](../../src/imgs/ios/cocoapods/%E6%B7%BB%E5%8A%A0%E7%A7%81%E6%9C%89%E5%BA%93%E4%BB%A3%E7%A0%81.png)
+  ![添加私有库代码](../../src/imgs/ios/cocoapods/add_private_pod_class.png)
 
 - 打tag，将本地更改推送到origin
 
@@ -220,7 +220,7 @@ wenbosundeMBA:Desktop wenbo.sun$
 
   完成后可以看到本地索引库和origin索引库里已经有我们的私有库了
 
-  ![上传podspec文件到索引库](../../src/imgs/ios/cocoapods/%E4%B8%8A%E4%BC%A0podspec%E6%96%87%E4%BB%B6%E5%88%B0%E7%B4%A2%E5%BC%95%E5%BA%93.png)
+  ![上传podspec文件到索引库](../../src/imgs/ios/cocoapods/uploda_podspec.png)
 
   可以搜索到了
 
@@ -239,7 +239,7 @@ wenbosundeMBA:Desktop wenbo.sun$
 
 这时候将 `pod 'TestVendor', '~> 0.1.0'`一行加入到工程的podfile文件里，然后`pod install`，会报错。
 
-![podinstall出错](../../src/imgs/ios/cocoapods/podinstall%E5%87%BA%E9%94%99.png)
+![podinstall出错](../../src/imgs/ios/cocoapods/podinstall_error.png)
 
 原因是默认从Cocoapods官方索引库里下载代码，我们需要把自己的索引库加上。
 
