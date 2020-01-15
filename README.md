@@ -4,10 +4,9 @@
 
 ## iOS 
 
-+ [iOS开发文章](docs/ios/articles.md) 
-+ [三方库 OC](docs/ios/third_party_library_OC.md) 、[三方库 Swift](docs/ios/third_party_library_Swift.md)
 + [Tips in iOS](docs/ios/tips_in_ios.md)
-+ [Swift](./docs/ios/tips_in_swift.md)
++ [Tips in Swift](./docs/ios/tips_in_swift.md)
++ [iOS开发文章](docs/ios/articles.md) 、[三方库 OC](docs/ios/third_party_library_OC.md) 、[三方库 Swift](docs/ios/third_party_library_Swift.md)
 + [GCD](docs/ios/gcd.md)
 + [KVO](./docs/ios/kvo_ios.md)、 [demo](./code/UcarShareDemo/)
 + [使用UITextField常见的几个问题](docs/ios/uitextfield_problems.md)
@@ -43,16 +42,15 @@
 + [Flutter进度条和Toast](docs/flutter/flutter_progresshud_toast.md)
   
 ### React Native
-
 + [React Native 0. 项目创建](docs/reactnative/reactnative_tutorial_0.md)
 + [React Native 1. React原理](docs/reactnative/reactnative_tutorial_1.md)
 + [JavaScript Syntax](./docs/js/javascript.md)
 
-## Algorithm
+## 算法  
 
 + [栈](docs/algorithm/stack.md) 、[代码demo](https://github.com/AllenSWB/notes/tree/master/code/StackDemo)
 
-## Code
+## 编程 
 
 + [Code Review 代码审查：Merge Request 和Code Review](docs/CITools/mergerequest.md)
 + [Code Review 代码审查：Crucible + FishEye](docs/CITools/Crucible.md)
@@ -65,8 +63,8 @@
 + [Git](docs/git.md)
 + [Linux](./docs/linux.md)
 
-## Tools
+## 工具
 
-+ [一个上传图片到GitHub的workflow](docs/applescript.md)
-+ [新Mac配置](./docs/mac.md)
-+ [iPhone手机尺寸](docs/ios/ios_design.md) 
++ [一个上传图片到 GitHub 的 workflow](docs/applescript.md)
++ [新 Mac 配置](./docs/mac.md)
++ [iPhone 手机尺寸](docs/ios/ios_design.md) 

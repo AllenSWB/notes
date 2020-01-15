@@ -1,42 +1,41 @@
-# Tips in iOS
-- [Tips in iOS](#tips-in-ios)
-  - [iOS开发随手记](#ios%e5%bc%80%e5%8f%91%e9%9a%8f%e6%89%8b%e8%ae%b0)
-  - [多target](#%e5%a4%9atarget)
-    - [创建多target方法](#%e5%88%9b%e5%bb%ba%e5%a4%9atarget%e6%96%b9%e6%b3%95)
-    - [创建一个新target的注意点：](#%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%96%b0target%e7%9a%84%e6%b3%a8%e6%84%8f%e7%82%b9)
-    - [多target设置`GCC_PREPROCESSOR_DEFINITIONS`引起的问题](#%e5%a4%9atarget%e8%ae%be%e7%bd%aegccpreprocessordefinitions%e5%bc%95%e8%b5%b7%e7%9a%84%e9%97%ae%e9%a2%98)
-  - [加快编译速度](#%e5%8a%a0%e5%bf%ab%e7%bc%96%e8%af%91%e9%80%9f%e5%ba%a6)
-  - [安装多个版本的cocoapods](#%e5%ae%89%e8%a3%85%e5%a4%9a%e4%b8%aa%e7%89%88%e6%9c%ac%e7%9a%84cocoapods)
-  - [扩大button响应区域](#%e6%89%a9%e5%a4%a7button%e5%93%8d%e5%ba%94%e5%8c%ba%e5%9f%9f)
-  - [UILabel文本靠左上角](#uilabel%e6%96%87%e6%9c%ac%e9%9d%a0%e5%b7%a6%e4%b8%8a%e8%a7%92)
-  - [UILabel设置行间隙](#uilabel%e8%ae%be%e7%bd%ae%e8%a1%8c%e9%97%b4%e9%9a%99)
-  - [去除String中的空格](#%e5%8e%bb%e9%99%a4string%e4%b8%ad%e7%9a%84%e7%a9%ba%e6%a0%bc)
-  - [UILabel部分文字可点击](#uilabel%e9%83%a8%e5%88%86%e6%96%87%e5%ad%97%e5%8f%af%e7%82%b9%e5%87%bb)
-  - [找到所有subviewClass类](#%e6%89%be%e5%88%b0%e6%89%80%e6%9c%89subviewclass%e7%b1%bb)
-  - [找到subviewClass这个类的父视图](#%e6%89%be%e5%88%b0subviewclass%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e7%88%b6%e8%a7%86%e5%9b%be)
-  - [iOS13适配](#ios13%e9%80%82%e9%85%8d)
-  - [RAC通知的移除](#rac%e9%80%9a%e7%9f%a5%e7%9a%84%e7%a7%bb%e9%99%a4)
-  - [类方法里使用self](#%e7%b1%bb%e6%96%b9%e6%b3%95%e9%87%8c%e4%bd%bf%e7%94%a8self)
-  - [拍照后修复图片方向`fixOrientation` & 剪切图片`imageByCroppingWithRect`](#%e6%8b%8d%e7%85%a7%e5%90%8e%e4%bf%ae%e5%a4%8d%e5%9b%be%e7%89%87%e6%96%b9%e5%90%91fixorientation--%e5%89%aa%e5%88%87%e5%9b%be%e7%89%87imagebycroppingwithrect)
-  - [设置APP支持的文件类型 eg:PDF](#%e8%ae%be%e7%bd%aeapp%e6%94%af%e6%8c%81%e7%9a%84%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b-egpdf)
-  - [`Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: "swift_lang")`方法获取不到文件解决](#bundlemainpathsforresourcesoftype-%22pdf%22-indirectory-%22swiftlang%22%e6%96%b9%e6%b3%95%e8%8e%b7%e5%8f%96%e4%b8%8d%e5%88%b0%e6%96%87%e4%bb%b6%e8%a7%a3%e5%86%b3)
+- [iOS开发随手记](#ios%e5%bc%80%e5%8f%91%e9%9a%8f%e6%89%8b%e8%ae%b0)
+- [多target](#%e5%a4%9atarget)
+  - [创建多target方法](#%e5%88%9b%e5%bb%ba%e5%a4%9atarget%e6%96%b9%e6%b3%95)
+  - [创建一个新target的注意点：](#%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%96%b0target%e7%9a%84%e6%b3%a8%e6%84%8f%e7%82%b9)
+  - [多target设置`GCC_PREPROCESSOR_DEFINITIONS`引起的问题](#%e5%a4%9atarget%e8%ae%be%e7%bd%aegccpreprocessordefinitions%e5%bc%95%e8%b5%b7%e7%9a%84%e9%97%ae%e9%a2%98)
+- [加快编译速度](#%e5%8a%a0%e5%bf%ab%e7%bc%96%e8%af%91%e9%80%9f%e5%ba%a6)
+- [安装多个版本的cocoapods](#%e5%ae%89%e8%a3%85%e5%a4%9a%e4%b8%aa%e7%89%88%e6%9c%ac%e7%9a%84cocoapods)
+- [扩大button响应区域](#%e6%89%a9%e5%a4%a7button%e5%93%8d%e5%ba%94%e5%8c%ba%e5%9f%9f)
+- [UILabel文本靠左上角](#uilabel%e6%96%87%e6%9c%ac%e9%9d%a0%e5%b7%a6%e4%b8%8a%e8%a7%92)
+- [UILabel设置行间隙](#uilabel%e8%ae%be%e7%bd%ae%e8%a1%8c%e9%97%b4%e9%9a%99)
+- [去除String中的空格](#%e5%8e%bb%e9%99%a4string%e4%b8%ad%e7%9a%84%e7%a9%ba%e6%a0%bc)
+- [UILabel部分文字可点击](#uilabel%e9%83%a8%e5%88%86%e6%96%87%e5%ad%97%e5%8f%af%e7%82%b9%e5%87%bb)
+- [找到所有subviewClass类](#%e6%89%be%e5%88%b0%e6%89%80%e6%9c%89subviewclass%e7%b1%bb)
+- [找到subviewClass这个类的父视图](#%e6%89%be%e5%88%b0subviewclass%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e7%88%b6%e8%a7%86%e5%9b%be)
+- [iOS13适配](#ios13%e9%80%82%e9%85%8d)
+- [RAC通知的移除](#rac%e9%80%9a%e7%9f%a5%e7%9a%84%e7%a7%bb%e9%99%a4)
+- [类方法里使用self](#%e7%b1%bb%e6%96%b9%e6%b3%95%e9%87%8c%e4%bd%bf%e7%94%a8self)
+- [拍照后修复图片方向`fixOrientation` & 剪切图片`imageByCroppingWithRect`](#%e6%8b%8d%e7%85%a7%e5%90%8e%e4%bf%ae%e5%a4%8d%e5%9b%be%e7%89%87%e6%96%b9%e5%90%91fixorientation--%e5%89%aa%e5%88%87%e5%9b%be%e7%89%87imagebycroppingwithrect)
+- [设置APP支持的文件类型 eg:PDF](#%e8%ae%be%e7%bd%aeapp%e6%94%af%e6%8c%81%e7%9a%84%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b-egpdf)
+- [`Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: "swift_lang")`方法获取不到文件解决](#bundlemainpathsforresourcesoftype-%22pdf%22-indirectory-%22swiftlang%22%e6%96%b9%e6%b3%95%e8%8e%b7%e5%8f%96%e4%b8%8d%e5%88%b0%e6%96%87%e4%bb%b6%e8%a7%a3%e5%86%b3)
+- [Xcode11新建项目，去除SceneDelegate.swift](#xcode11%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae%e5%8e%bb%e9%99%a4scenedelegateswift)
 
 ## iOS开发随手记 
   
-  [iOS开发随手记](https://www.jianshu.com/p/cb80ad438057)
+- [iOS开发随手记 - 简书](https://www.jianshu.com/p/cb80ad438057)
    
 ## 多target
    
-   >  BWCMT项目架构:
-   >
-   >  - 基础库pod集成（封装好的UI；网络库；三方库等）
-   >  - 每个业务线是一个project，最后主工程依赖各个业务线framework，业务线间通信通过平台层platform里的路由完成（不能跨业务线直接调用）
-   >
-   >  ![bwcmt_struct](../../src/imgs/ios/bwcmt_struct.png)
-   >
-   >  产生的问题：主工程依赖所有的业务线的framework，但是各个业务线之间不一定有依赖，我开发某一个业务线的时候，如果需要编译整个工程的话，时间会很长。
-   >
-   >  解决方案是：为一个单独的业务线创建一个target，以节省工程build时间。
+ >  BWCMT项目架构:
+ >
+ >  - 基础库pod集成（封装好的UI；网络库；三方库等）
+ >  - 每个业务线是一个project，最后主工程依赖各个业务线framework，业务线间通信通过平台层platform里的路由完成（不能跨业务线直接调用）
+ >
+ >  ![bwcmt_struct](../../src/imgs/ios/bwcmt_struct.png)
+ >
+ >  产生的问题：主工程依赖所有的业务线的framework，但是各个业务线之间不一定有依赖，我开发某一个业务线的时候，如果需要编译整个工程的话，时间会很长。
+ >
+ >  解决方案是：为一个单独的业务线创建一个target，以节省工程build时间。
 
 ### 创建多target方法
 
@@ -942,3 +941,29 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 ![](../../src/imgs/ios/create_folder_references_result.png)
 
 ![](../../src/imgs/ios/create_folder_references_code.png)
+
+## Xcode11新建项目，去除SceneDelegate.swift
+
+ - 删除SceneDelegate.swift文件
+ - info.plist中移除`Application Scene Manifest`项
+  ![](../../src/imgs/ios/swift_tip/secen_plist.png)
+ - 注释掉相关代码
+   ```swift
+   func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration { 
+   }
+
+   func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) { 
+   }
+   ```
+ - 新增window属性
+   ```swift
+   var window: UIWindow?
+
+   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool { 
+       window = UIWindow.init()
+       window?.frame = UIScreen.main.bounds
+       window?.makeKeyAndVisible()
+       window?.rootViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
+       return true
+     } 
+   ```  

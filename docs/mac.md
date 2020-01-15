@@ -23,16 +23,14 @@
 - [x] Xcode
 - [x] Cocoapods (sudo gem install cocoapods -v 1.6.1 另外 pod setup)
 - [x] Postman
-- [ ] Charles
 - [x] Visual Studio Code
 - [x] SourceTree
 - [ ] homebrew 
 - [ ] Sketch
 - [ ] PS
-- [ ] `brew install annie` 视频下载
+- [ ] `brew install annie` [视频下载](https://github.com/iawia002/annie#download-a-video) 
 - [ ] Ummy Video Downloader (YouTube视频下载)
 
- 
 ——
 
 - [x] 设置四个触发角
@@ -41,7 +39,6 @@
 - [x] 切换输入法快捷键 系统输入法大写按钮
 - [x] 命令行安装 `command line developer tool` : `xcode-select --install` 
 
-
 ——
 
 - [软件资源站 xclient](xclient.info)  
@@ -49,11 +46,11 @@
 
 ### 启用`root`用户
 
-![](https://user-gold-cdn.xitu.io/2019/11/13/16e6391f49d95772?w=554&h=385&f=png&s=55381)
+![](../src/imgs/mac_root.png)
 
 ### Alfred 设置百度搜索
 
-![](https://user-gold-cdn.xitu.io/2019/11/13/16e63920cf7b442b?w=2192&h=1430&f=jpeg&s=305686)
+![](../src/imgs/aflred_search.jpg)
 
 ```shell
     # 百度搜索
@@ -62,15 +59,18 @@
     https://github.com/search?q={query}&ref=opensearch
     # 掘金搜索
     https://juejin.im/search?query={query}
+    # 百度翻译
+    https://fanyi.baidu.com/#en/zh/{query}
+    # pub.dev 搜索
+    https://pub.dev/packages?q={query}
 ```
-
 ### Alfred 常用快捷键
 
 + `command` + `option` + `c` 最近复制的内容
 
 ### SourceTree免登陆使用
- 
-![sourcetree_withoutlogin](../src/imgs/sourcetree_withoutlogin.png)
+
+![](../src/imgs/sourcetree_withoutlogin.png)
 
 ### SourcegTree每次pull/push都要输入密码解决方法
 

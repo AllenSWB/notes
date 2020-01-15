@@ -1,6 +1,12 @@
-- [Swift Syntax](#swift-syntax)
-- [从 `OC` 到 `Swift`](#%e4%bb%8e-oc-%e5%88%b0-swift)
-## Swift Syntax
+- [Swift 语法](#swift-%e8%af%ad%e6%b3%95)
+- [`Swift` 中的初始化器不返回值，`OC` 中初始化方法返回一个实例](#swift-%e4%b8%ad%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96%e5%99%a8%e4%b8%8d%e8%bf%94%e5%9b%9e%e5%80%bcoc-%e4%b8%ad%e5%88%9d%e5%a7%8b%e5%8c%96%e6%96%b9%e6%b3%95%e8%bf%94%e5%9b%9e%e4%b8%80%e4%b8%aa%e5%ae%9e%e4%be%8b)
+- [`UIbutton` 添加响应事件](#uibutton-%e6%b7%bb%e5%8a%a0%e5%93%8d%e5%ba%94%e4%ba%8b%e4%bb%b6)
+- [类方法](#%e7%b1%bb%e6%96%b9%e6%b3%95)
+- [单例](#%e5%8d%95%e4%be%8b)
+- [`dealloc`](#dealloc)
+- [`Moya` 报错 `'Method' is ambiguous for type lookup in this context`](#moya-%e6%8a%a5%e9%94%99-method-is-ambiguous-for-type-lookup-in-this-context)
+- [pch 替代、宏](#pch-%e6%9b%bf%e4%bb%a3%e5%ae%8f)
+## Swift 语法
 
 > - [Swift5官方文档](https://swiftgg.gitbook.io/swift/)
 
@@ -593,130 +599,102 @@
       ```
 
 
-## 从 `OC` 到 `Swift`
+## `Swift` 中的初始化器不返回值，`OC` 中初始化方法返回一个实例
+## `UIbutton` 添加响应事件
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    btn.addTarget(self, action: #selector(btnAction), for: .touchUpInside)
+}
 
-1. `Swift`中的初始化器不返回值，`OC`中初始化方法返回一个实例
-2. `UIbutton` 添加响应事件
-     ```swift
-      override func viewDidLoad() {
-          super.viewDidLoad()
-          btn.addTarget(self, action: #selector(btnAction), for: .touchUpInside)
+@objc func btnAction() { 
+    let v = WBTestViewController()
+    v.modalPresentationStyle = .fullScreen
+    self.present(v, animated: true, completion: nil)
+}
+```
+
+## 类方法
+
+```swift
+class TestClass {
+  class func testMethod () {
+
+  }
+}
+```
+## 单例
+
+```swift
+class User {
+  static let sharedInstance = User()
+  var name: String?
+}
+
+let s1 = User.sharedInstance
+s1.name = "小明" 
+let s2 = User.sharedInstance
+print(s2.name ?? "无名氏") // 小明 
+```
+
+## `dealloc`
+
+- [dealloc in swift](https://stackoverflow.com/questions/25497928/dealloc-in-swift)
+
+  ```swift
+  deinit {
+          /* perform the deinitialization */
+  }
+  ```
+
+## `Moya` 报错 `'Method' is ambiguous for type lookup in this context`
+
+  ```swift
+  extension BWService : TargetType {
+      var method: Moya.Method {   // 这里要指定Moya.Method，否则就会报错'Method' is ambiguous for type lookup in this context
       }
-
-      @objc func btnAction() { 
-          let v = WBTestViewController()
-          v.modalPresentationStyle = .fullScreen
-          self.present(v, animated: true, completion: nil)
-      }
-     ```
-
-3. 类方法
-
-    ```swift
-      class TestClass {
-        class func testMethod () {
-
-        }
-      }
-    ```
-4. 单例
-
-    ```swift
-    class User {
-        static let sharedInstance = User()
-        var name: String?
-    }
-
-    let s1 = User.sharedInstance
-    s1.name = "小明" 
-    let s2 = User.sharedInstance
-    print(s2.name ?? "无名氏") // 小明 
-    ```
-
-5. Xcode11新建swift项目，去除SceneDelegate.swift
-
-   - 删除SceneDelegate.swift文件
-   - info.plist中移除`Application Scene Manifest`项
-    ![](../../src/imgs/ios/swift_tip/secen_plist.png)
-   - 注释掉相关代码
-     ```swift
-     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration { 
-     }
-
-     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) { 
-     }
-     ```
-   - 新增window属性
-     ```swift
-     var window: UIWindow?
-
-     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool { 
-         window = UIWindow.init()
-         window?.frame = UIScreen.main.bounds
-         window?.makeKeyAndVisible()
-         window?.rootViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
-         return true
-       } 
-     ```  
-
-6. `dealloc`
-
-    - [dealloc in swift](https://stackoverflow.com/questions/25497928/dealloc-in-swift)
-
-    ```swift
-    deinit {
-            /* perform the deinitialization */
-    }
-    ```
-
-7. `Moya`报错`'Method' is ambiguous for type lookup in this context`
-
-    ```swift
-    extension BWService : TargetType {
-        var method: Moya.Method {   // 这里要指定Moya.Method，否则就会报错'Method' is ambiguous for type lookup in this context
-        }
-    }
-    ```
+  }
+  ```
  
- 8. pch替代、宏
+ ## pch 替代、宏
 
-    ```swift
-    // in Global.swift file
-      import Foundation
-      @_exported import SwifterSwift
-      @_exported import Alamofire
-      @_exported import Cache
-      @_exported import Hero
-      @_exported import Kingfisher
-      @_exported import MJRefresh
-      @_exported import Moya
-      @_exported import ReactiveCocoa
-      @_exported import SnapKit
-      @_exported import StarShareDevUIKit
-      @_exported import SwiftyJSON
-      @_exported import SwiftyUserDefaults
-      @_exported import YYKit
-      
-      // MARK: 宏
-      let PixelOne: CGFloat = 0.5
-      let BG_ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
-      let BG_ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
-      ```
+  ```swift
+  // in Global.swift file
+    import Foundation
+    @_exported import SwifterSwift
+    @_exported import Alamofire
+    @_exported import Cache
+    @_exported import Hero
+    @_exported import Kingfisher
+    @_exported import MJRefresh
+    @_exported import Moya
+    @_exported import ReactiveCocoa
+    @_exported import SnapKit
+    @_exported import StarShareDevUIKit
+    @_exported import SwiftyJSON
+    @_exported import SwiftyUserDefaults
+    @_exported import YYKit
+    
+    // MARK: 宏
+    let PixelOne: CGFloat = 0.5
+    let BG_ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
+    let BG_ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
+    ```
 
-9. 自定义log
+## 自定义 log
 
-   ```swift
-   /* MARK: Log */
-   func printLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
-          #if DEBUG
-          print("\nLoooooog: \n[\(file.lastPathComponent) \(line)行] [\(method)] \n\(message)\n")
-          #endif
-      }
-    /* eg:  */
-   Loooooog: 
-   [BGMineViewController.swift 140行] [tableView(_:didSelectRowAt:)] 
-      我是一条没有梦想的log
-   ```
+```swift
+/* MARK: Log */
+func printLog<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
+      #if DEBUG
+      print("\nLoooooog: \n[\(file.lastPathComponent) \(line)行] [\(method)] \n\(message)\n")
+      #endif
+  }
+/* eg:  */
+Loooooog: 
+[BGMineViewController.swift 140行] [tableView(_:didSelectRowAt:)] 
+  我是一条没有梦想的log
+```
 
 
 
