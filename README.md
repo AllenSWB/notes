@@ -28,7 +28,7 @@
 ## 跨平台
 
 ### Flutter
-+ [从iOS原生到Flutter](https://shimo.im/docs/xqy3YkHg9X9RPVDq/)
++ [从 iOS 原生到 Flutter](./docs/flutter/from_ios_to_flutter.md) 、[shimo](https://shimo.im/docs/xqy3YkHg9X9RPVDq/)
 + [Tips in Flutter](docs/flutter/tips_in_flutter.md)
 + [Flutter 文章&库](docs/flutter/flutter_resources.md) 
 + [环境配置](docs/flutter/setup_env.md)
