@@ -19,6 +19,8 @@
 - [设置APP支持的文件类型 eg:PDF](#%e8%ae%be%e7%bd%aeapp%e6%94%af%e6%8c%81%e7%9a%84%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b-egpdf)
 - [`Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: "swift_lang")`方法获取不到文件解决](#bundlemainpathsforresourcesoftype-%22pdf%22-indirectory-%22swiftlang%22%e6%96%b9%e6%b3%95%e8%8e%b7%e5%8f%96%e4%b8%8d%e5%88%b0%e6%96%87%e4%bb%b6%e8%a7%a3%e5%86%b3)
 - [Xcode11新建项目，去除SceneDelegate.swift](#xcode11%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae%e5%8e%bb%e9%99%a4scenedelegateswift)
+- [Xcode 报错](#xcode-%e6%8a%a5%e9%94%99)
+  - [编译报错：xxx.modulemap' has been modified since the precompiled header 'xxx.pch.pch' was built](#%e7%bc%96%e8%af%91%e6%8a%a5%e9%94%99xxxmodulemap-has-been-modified-since-the-precompiled-header-xxxpchpch-was-built)
 
 ## iOS开发随手记 
   
@@ -967,3 +969,6 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
        return true
      } 
    ```  
+## Xcode 报错
+### 编译报错：xxx.modulemap' has been modified since the precompiled header 'xxx.pch.pch' was built
+解决：clean下工程

@@ -1,35 +1,28 @@
-### Swift 版开源库收集
-
----
-
-* [网络请求@](#title_network)
-* [JSON解析@](#title_json)
-* [LoadingHud@](#title_hud)
-* [Alert@](#title_alert)
-* [多线程@](#title_mutiThread)
-* [图片@](#title_img)
-* [存储@](#title_db)
-* [加密@](#title_encryption)
-* [KVO@](#title_KVO)
-* [Category@](#title_category)
-* [多媒体@](#title_media)
-* [二维码@](#title_qrcode)
-* [布局layout@](#title_layout)
-* [TableView@](#title_tableview)
-* [分栏View@](#title_segmentView)
-* [Tabbar@](#title_tabbar)
-* [Navgation@](#title_navbar)
-* [图文混排@](#title_richText)
-* [动画@](#title_animation)
-* [服务端@](#title_server)
-* [其他@](#title_other)
-* [APP@](#title_app)
-* [资源集合@](#title_resource)
-* [OCR@](#title_ocr)
-
----
-
-<h4 id="title_network">网络请求</h4>
+- [网络请求](#%e7%bd%91%e7%bb%9c%e8%af%b7%e6%b1%82)
+- [JSON解析](#json%e8%a7%a3%e6%9e%90)
+- [LoadingHud](#loadinghud)
+- [多线程](#%e5%a4%9a%e7%ba%bf%e7%a8%8b)
+- [图片](#%e5%9b%be%e7%89%87)
+- [存储](#%e5%ad%98%e5%82%a8)
+- [加密](#%e5%8a%a0%e5%af%86)
+- [KVO](#kvo)
+- [Category](#category)
+- [多媒体](#%e5%a4%9a%e5%aa%92%e4%bd%93)
+- [二维码](#%e4%ba%8c%e7%bb%b4%e7%a0%81)
+- [布局layout](#%e5%b8%83%e5%b1%80layout)
+- [TableView](#tableview)
+- [分栏 View](#%e5%88%86%e6%a0%8f-view)
+- [Tabbar](#tabbar)
+- [导航栏](#%e5%af%bc%e8%88%aa%e6%a0%8f)
+- [图文混排](#%e5%9b%be%e6%96%87%e6%b7%b7%e6%8e%92)
+- [动画](#%e5%8a%a8%e7%94%bb)
+- [服务端](#%e6%9c%8d%e5%8a%a1%e7%ab%af)
+- [其他](#%e5%85%b6%e4%bb%96)
+- [APP](#app)
+- [资源集合](#%e8%b5%84%e6%ba%90%e9%9b%86%e5%90%88)
+- [OCR](#ocr)
+ 
+#### 网络请求
 
 [Alamofire](https://github.com/Alamofire/Alamofire.git)	Elegant HTTP Networking in Swift
 
@@ -37,7 +30,9 @@
 
 [Reachability.swift](https://github.com/ashleymills/Reachability.swift.git) Replacement for Apple's Reachability re-written in Swift with closures
 
-<h4 id="title_json">JSON解析</h4>
+[Tiercel 下载文件](https://github.com/Danie1s/Tiercel)
+
+#### JSON解析 
 
 [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON.git) The better way to deal with JSON data in Swift
 
@@ -48,27 +43,27 @@ swift
 
 [JSONNeverDie](https://github.com/johnlui/JSONNeverDie.git) Auto reflection tool from JSON to Model, user friendly JSON encoder / decoder, aims to never die
 
-<h4 id="title_hud">LoadingHud</h4>
+#### LoadingHud 
 
 [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView.git) A collection of awesome loading animations
 
-<h4 id="title_alert">Alert</h4>
+Alert 
 
 [Whisper](https://github.com/hyperoslo/Whisper.git) 📣 Whisper is a component that will make the task of display messages and in-app notifications simple. It has three different views inside http://hyper.no 滴滴alert样式
 
-<h4 id="title_mutiThread">多线程</h4>
+#### 多线程 
 
 [PromiseKit](https://github.com/mxcl/PromiseKit.git) PromiseKit 是一款 swift 编写的支持 iOS，macOS，tvOS，watchOS 等多平台的轻量级异步编程库，同时 PromiseKit 完美的支持了 Objective-C 桥接
 
 [Async](https://github.com/duemunk/Async.git) Syntactic sugar in Swift for asynchronous dispatches in Grand Central Dispatch
 
-<h4 id="title_img">图片</h4>
+#### 图片
 
 [Kingfisher](https://github.com/onevcat/Kingfisher.git) A lightweight, pure-Swift library for downloading and caching images from the web.
 
 [ImagePicker](https://github.com/hyperoslo/ImagePicker.git)	 Reinventing the way ImagePicker works. http://hyper.no 图片选择
 
-<h4 id="title_db"> 存储 </h4>
+#### 存储 
 
 [SQLite.swift](https://github.com/stephencelis/SQLite.swift.git)	A type-safe, Swift-language layer over SQLite3.
 
@@ -78,29 +73,29 @@ swift
 
 [HanekeSwift](https://github.com/Haneke/HanekeSwift.git) 缓存 A lightweight generic cache for iOS written in Swift with extra love for images.
 
-<h4 id="title_encryption"> 加密 </h4>
+#### 加密 
 
 [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift.git) CryptoSwift is a growing collection of standard and secure cryptographic algorithms implemented in Swift
 
-<h4 id="title_KVO"> KVO </h4>
+#### KVO 
 
 [Observable-Swift](https://github.com/slazyk/Observable-Swift.git) KVO for Swift - Value Observing and Events
 
-<h4 id="title_category"> Category </h4>
+#### Category 
 
 [SwifterSwift](https://github.com/SwifterSwift/SwifterSwift.git) A handy collection of more than 500 native Swift 3 extensions to boost your productivity.
 
 [ExSwift](https://github.com/pNre/ExSwift.git) A set of Swift extensions for standard types and classes
 
-<h4 id="title_media"> 多媒体 </h4>
+#### 多媒体 
 
 [AudioKit](https://github.com/audiokit/AudioKit.git) Swift audio synthesis, processing, & analysis platform for iOS, macOS and tvOS 
 
-<h4 id="title_qrcode"> 二维码 </h4>
+#### 二维码 
 
 [EFQRCode](https://github.com/EyreFree/EFQRCode.git) A better way to operate quick response code in Swift
 
-<h4 id="title_layout"> 布局layout </h4>
+#### 布局layout 
 
 [SnapKit](https://github.com/SnapKit/SnapKit) A Swift Autolayout DSL for iOS & OS X 
 
@@ -108,7 +103,7 @@ swift
 
 [Neon](https://github.com/mamaral/Neon.git) A powerful Swift programmatic UI layout framework
 
-<h4 id="title_tableview"> TableView </h4>
+#### TableView 
 
 [folding-cell](https://github.com/Ramotion/folding-cell.git) FoldingCell is an expanding content cell inspired by folding paper material
 
@@ -116,7 +111,7 @@ swift
 
 [MessageKit](https://github.com/MessageKit/MessageKit.git) 聊天界面 In-progress: A community-driven replacement for JSQMessagesViewController
 
-<h4 id="title_segmentView"> 分栏View </h4>
+#### 分栏 View 
 
 [PageMenu](https://github.com/PageMenu/PageMenu.git) A paging menu controller built from other view controllers placed inside a scroll view (like Spotify, Windows Phone, Instagram)
 
@@ -128,16 +123,16 @@ swift
 
 [XLPagerTabStrip](https://github.com/xmartlabs/XLPagerTabStrip.git) Android PagerTabStrip for iOS
 
-<h4 id="title_tabbar"> Tabbar </h4>
+#### Tabbar 
 
 [animated-tab-bar](https://github.com/Ramotion/animated-tab-bar.git) RAMAnimatedTabBarController is a Swift module for adding animation to tabbar items
 
-<h4 id="title_navbar"> 导航栏 </h4>
+#### 导航栏 
 
 [KMNavigationBarTransition](https://github.com/MoZhouqi/KMNavigationBarTransition.git)  A drop-in universal library helps you to manage the navigation bar styles and makes transition animations smooth between different navigation bar styles while pushing or popping a view controller for all orientations. And you don't need to write any line of code for it, it all happens automatically.
 
 
-<h4 id="title_richText"> 图文混排 </h4>
+#### 图文混排 
 
 [RichEditorView](https://github.com/cjwirth/RichEditorView.git) RichEditorView is a simple, modular, drop-in UIView subclass for Rich Text Editing.
 
@@ -147,7 +142,7 @@ swift
 
 
 
-<h4 id="title_animation"> 动画 </h4>
+#### 动画 
 
 [Spring](https://github.com/MengTo/Spring.git) A library to simplify iOS animations in Swift
 
@@ -160,7 +155,7 @@ swift
 [Gemini](https://github.com/shoheiyokoyama/Gemini.git) Gemini is rich scroll based animation framework for iOS, written in Swift.
 
 
-<h4 id="title_server"> 服务端 </h4>
+#### 服务端 
 
 
 [vapor](https://github.com/vapor/vapor.git) A server-side Swift web framework.
@@ -169,7 +164,7 @@ swift
 
 [Kitura](https://github.com/IBM-Swift/Kitura.git) A Swift web framework and HTTP server
 
-<h4 id="title_other"> 其他 </h4>
+#### 其他 
 
 [SwiftDates](https://github.com/erica/SwiftDates.git) Practical real-world dates: timey-wimey date-y things, Swift successor to old NSDate repo
 
@@ -188,7 +183,7 @@ swift
 [SwiftTheme](https://github.com/jiecao-fm/SwiftTheme.git) 🎨 Powerful theme/skin manager for iOS 8+ 主题/换肤, 夜间模式
 
 
-<h4 id="title_app"> APP </h4>
+#### APP 
 
 [firefox-ios](https://github.com/mozilla-mobile/firefox-ios.git) 火狐浏览器
 
@@ -200,7 +195,7 @@ swift
 
 [Swift-MMP](https://github.com/johnlui/Swift-MMP.git) Stream Material-design Music Player written by Swift for iOS. 使用 Swift 语言编写的 Material Design 风格的 iOS 流媒体音乐播放器，简称 MMP。
 
-<h4 id="title_resource"> 资源集合 </h4>
+#### 资源集合 
 
 [awesome-swift](https://github.com/matteocrippa/awesome-swift.git) A collaborative list of awesome swift resources. Feel free to contribute!
 
@@ -214,6 +209,6 @@ swift
 
 [iOS-tech-set](https://github.com/southpeak/iOS-tech-set.git) iOS知识小集 by [南峰子_老驴](https://weibo.com/touristdiary?is_all=1)、[Lefe_x](https://weibo.com/u/5953150140)、[Vong_HUST](https://weibo.com/VongLo)、[故胤道长](https://weibo.com/soapyigu)、[高老师很忙](https://weibo.com/517082456)
 
-<h4 id="title_ocr"> OCR </h4>
+#### OCR 
 
 [ChineseIDCardOCR](https://github.com/KevinGong2013/ChineseIDCardOCR.git) 中国二代身份证光学识别
