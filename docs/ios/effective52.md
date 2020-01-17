@@ -112,6 +112,7 @@ OC 把实例变量当做一种存储偏移量的特殊变量，交由**类对象
 @implementation Person
 @synthesize firstname = _myFirstName;
 @synthesize lastname = _myLastName;
+@end
 ```
 
 阻止编译器生成存取方法：
@@ -168,7 +169,7 @@ OC 把实例变量当做一种存储偏移量的特殊变量，交由**类对象
 内存管理方法 `dealloc` 的实现中有一个步骤是：将指向该对象的弱引用指针置为 nil，这一过程通过 runtime 机制实现。
 
 #### 为什么要用 copy 修饰 NSString 属性？
-给属性赋值时候，可能传递过来的是一个 NSMutableString 属性的变量，这时候先 copy 一份不可变的值出来，再赋值给该属性。能够避免属性在不之情的情况下被篡改。
+给属性赋值时候，可能传递过来的是一个 NSMutableString 属性的变量，这时候先 copy 一份不可变的值出来，再赋值给该属性。能够避免属性在不知情的情况下被篡改。
 
 #### 对象等同性判断
 ```objc
