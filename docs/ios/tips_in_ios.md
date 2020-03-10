@@ -21,6 +21,7 @@
 - [Xcode11新建项目，去除SceneDelegate.swift](#xcode11%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae%e5%8e%bb%e9%99%a4scenedelegateswift)
 - [Xcode 报错](#xcode-%e6%8a%a5%e9%94%99)
   - [编译报错：xxx.modulemap' has been modified since the precompiled header 'xxx.pch.pch' was built](#%e7%bc%96%e8%af%91%e6%8a%a5%e9%94%99xxxmodulemap-has-been-modified-since-the-precompiled-header-xxxpchpch-was-built)
+- [旋转动画](#%e6%97%8b%e8%bd%ac%e5%8a%a8%e7%94%bb)
 
 ## iOS开发随手记 
   
@@ -972,3 +973,21 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 ## Xcode 报错
 ### 编译报错：xxx.modulemap' has been modified since the precompiled header 'xxx.pch.pch' was built
 解决：clean下工程
+
+
+## 旋转动画
+```objc
+CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+  // 默认是顺时针效果，若将fromValue和toValue的值互换，则为逆时针效果
+  animation.fromValue = [NSNumber numberWithFloat:0.f];
+  animation.toValue = [NSNumber numberWithFloat: M_PI *2];
+  animation.duration = 1;
+  animation.autoreverses = NO;
+  animation.fillMode = kCAFillModeForwards;
+  // 如果这里想设置成一直自旋转，可以设置为MAXFLOAT，否则设置具体的数值则代表执行多少次
+  animation.repeatCount = MAXFLOAT;
+  [self.indicatorView.layer addAnimation:animation forKey:nil];
+
+
+  // [self.indicatorView.layer removeAllAnimations];
+```
