@@ -27,12 +27,12 @@
 ## Flutter
 + [从 iOS 原生到 Flutter](./docs/flutter/from_ios_to_flutter.md) 、[shimo](https://shimo.im/docs/xqy3YkHg9X9RPVDq/)
 + [Tips in Flutter](docs/flutter/tips_in_flutter.md)
++ [Flutter Notes](docs/flutter/flutter_notes.md)
 + [Flutter 文章&库](docs/flutter/flutter_resources.md) 
 + [环境配置](docs/flutter/setup_env.md)
 + [入门](docs/flutter/flutter_intro.md)
 + [Dart](docs/flutter/dart.md)
 + [原生集成 Flutter](docs/flutter/add_flutter_to_native.md)
-+ [Widgets in Flutter](docs/flutter/widgets_in_flutter.md)
 + [JSON 解析](docs/flutter/json_parsing_in_flutter.md)
 + [Flutter 和 Native iOS 交互](docs/flutter/flutter_native_communication.md)
 + [Flutter 中的状态管理](docs/flutter/state_manage_in_flutter.md)
@@ -45,7 +45,7 @@
 
 ## 算法  
 + [栈](docs/algorithm/stack.md) 、[代码demo](https://github.com/AllenSWB/notes/tree/master/code/StackDemo)
- 
+
 ## 其他
 + [Code Review 代码审查：Merge Request 和Code Review](docs/CITools/mergerequest.md)
 + [Code Review 代码审查：Crucible + FishEye](docs/CITools/Crucible.md)
