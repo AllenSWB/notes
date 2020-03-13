@@ -1,5 +1,14 @@
 # 基础知识
 
+## 更新 Flutter 版本
+
+  ```shell
+    # 更新(加上--force参数，代表强制更新，会把你对flutter sdk本地修改直接丢弃)
+    flutter upgrade --force
+  ```
+
+  ![upgrade_force](/Users/wb/Desktop/Github/notes/src/imgs/flutter/tips/upgrade_force.png)
+
 ## 打开视觉调试开关
 
   ```dart
@@ -10,20 +19,6 @@
       debugPaintSizeEnabled = true;      //打开视觉调试开关
       runApp(MyApp());
     } 
-  ```
-
-## SingleChildScrollView嵌套ListView，防止内部的ListView滚动，设置`primary: false`
-
-  ```dart
-      ListView.builder(
-         itemExtent: 88,
-         itemCount: 3,
-         shrinkWrap: true,
-         primary: false, // 当我们使用SingleChildScrollView 整个布局包含了ListView 滑动时会产生冲突 滚动卡顿，不流畅。要关闭这个属性
-         itemBuilder: (BuildContext context ,int index) {
-           return OrderListCell();
-         },
-      ),
   ```
 
 ## 判断当前设备平台
@@ -47,7 +42,7 @@
     }
   ```
 
-## 判断当前是debug还是product
+## 判断当前是 debug 还是 product
 
   ```dart
     bool inProduction = const bool.fromEnvironment("dart.vm.product");//当前是否是production环境
@@ -74,20 +69,13 @@
       }
    ```
 
-## `pubspec.ymal`文件中的`dev_dependencies`和`dependencies`区别
-
-  > pubspec.ymal文件：https://dart.dev/tools/pub/pubspec
-
-  + `dependencies`：工程所依赖的库放在这里；[官方释义点我](https://dart.dev/tools/pub/pubspec#dependencies)
-  + `dev_dependencies`：仅在开发阶段才使用到的库放在这里；
-
-## `flutter attach`让你跑native工程也能享受hot-reload
+## `flutter attach` 让你跑 native 工程也能享受 hot-reload
 
    [flutter attach 文档](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#hot-restartreload-and-debugging-dart-code-1)
 
    ![flutter-attach](/Users/wb/Desktop/Github/notes/src/imgs/flutter/flutter-attach.png)
 
-## 修改`app`名和`logo`
+## 修改 `app` 名和 `logo`
 
   - 名称：
 
@@ -123,15 +111,6 @@
 
      ![auto_select_img_step4](/Users/wb/Desktop/Github/notes/src/imgs/flutter/tips/auto_select_img_step4.png)
 
-## 更新Flutter版本
-
-  ```shell
-    # 更新(加上--force参数，代表强制更新，会把你对flutter sdk本地修改直接丢弃)
-    flutter upgrade --force
-  ```
-
-  ![upgrade_force](/Users/wb/Desktop/Github/notes/src/imgs/flutter/tips/upgrade_force.png)
-
 ## StatelessWidget 和 StatefulWidget 区别
 
 StatelessWidget：无状态 Widget
@@ -163,6 +142,13 @@ https://pub.dev/
 dependencies:
   dio: ^3.0.0
 ```
+
+## `dev_dependencies` 和 `dependencies` 区别
+
+  > pubspec.ymal文件：https://dart.dev/tools/pub/pubspec
+
+  + `dependencies`：工程所依赖的库放在这里；[官方释义点我](https://dart.dev/tools/pub/pubspec#dependencies)
+  + `dev_dependencies`：仅在开发阶段才使用到的库放在这里；
 
 ## 使用 typedef
 
@@ -298,6 +284,20 @@ pubspec.ymal 中 assets 要和 uses-material-design 一栏左对齐
 ## GestureDetector 空白部分不能响应事件
 
 设置 behavior: HitTestBehavior.opaque 
+
+## SingleChildScrollView 嵌套 ListView，防止内部的 ListView 滚动，设置`primary: false`
+
+  ```dart
+      ListView.builder(
+         itemExtent: 88,
+         itemCount: 3,
+         shrinkWrap: true,
+         primary: false, // 当我们使用SingleChildScrollView 整个布局包含了ListView 滑动时会产生冲突 滚动卡顿，不流畅。要关闭这个属性
+         itemBuilder: (BuildContext context ,int index) {
+           return OrderListCell();
+         },
+      ),
+  ```
 
 ## 类似 iOS 的 present 效果，从底部弹出一个新页面
 
