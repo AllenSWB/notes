@@ -1,14 +1,4 @@
-# Native集成Flutter
-- [Native集成Flutter](#native%e9%9b%86%e6%88%90flutter)
-  - [官方文档上的方法](#%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%e4%b8%8a%e7%9a%84%e6%96%b9%e6%b3%95)
-    - [step 1：创建flutter模块](#step-1%e5%88%9b%e5%bb%baflutter%e6%a8%a1%e5%9d%97)
-    - [step2：原生工程依赖flutter模块](#step2%e5%8e%9f%e7%94%9f%e5%b7%a5%e7%a8%8b%e4%be%9d%e8%b5%96flutter%e6%a8%a1%e5%9d%97)
-    - [step3：添加一个Build Phase](#step3%e6%b7%bb%e5%8a%a0%e4%b8%80%e4%b8%aabuild-phase)
-    - [step 4：Xcode中编写代码](#step-4xcode%e4%b8%ad%e7%bc%96%e5%86%99%e4%bb%a3%e7%a0%81)
-  - [Flutter产物集成的方法](#flutter%e4%ba%a7%e7%89%a9%e9%9b%86%e6%88%90%e7%9a%84%e6%96%b9%e6%b3%95)
-    - [实现步骤](#%e5%ae%9e%e7%8e%b0%e6%ad%a5%e9%aa%a4)
-  - [遇到问题](#%e9%81%87%e5%88%b0%e9%97%ae%e9%a2%98)
-  
+# Native 集成 Flutter
 ## 官方文档上的方法
 
 > Add Flutter to existing apps ： https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps
@@ -364,4 +354,123 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
    end 
 
-    ```
+   ```
+
+# Native iOS 和 Flutter 交互
+
+![flutter_native_talk0](/Users/wb/Desktop/Github/notes/src/imgs/flutter/flutter_native_talk0.png)
+
+![flutter_native_talk1](/Users/wb/Desktop/Github/notes/src/imgs/flutter/flutter_native_talk1.png)
+
+
+## Flutter 调用 iOS 的方法
+
+1. Native iOS里注册方法
+
+   ```objc
+    // 1. 注册channel
+       NSString *channelName = @"bwcmt.flutter/yz_bench";  // 这里要跟flutter里的名字一致！！！
+       FlutterMethodChannel *messageChannel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:flutterViewController];
+       __weak typeof(self) weakSelf = self;
+       [messageChannel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
+           /*
+            * FlutterMethodCall * _Nonnull call
+            * @param call.method：flutter传过来的方法名
+            * @param call.arguments：flutter传过来的参数
+            *
+            * FlutterResult  _Nonnull result
+            * native给flutter的回掉，该回调只能使用一次
+            */
+           // method和WKWebView里面JS交互很像
+           if ([call.method isEqualToString:@"requestHomeInfo"]) {
+               result([weakSelf requestHomeInfo]);
+           }
+       }];
+    
+    // 2. 定义原生方法
+    - (NSString *)requestHomeInfo {
+        NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"yz_bench" ofType:@"json"]];
+        NSString *data = [[NSString alloc] initWithData:JSONData encoding:(NSUTF8StringEncoding)];
+        return data;
+    }
+   ```
+
+2. Flutter里调用
+
+   ```dart
+     class _YzBenchHomeState extends State<YzBenchHome> {
+   
+       // channel命名规则：bwcmt.flutter/页面
+       static const yzBenchChannel = const MethodChannel('bwcmt.flutter/yz_bench');
+   
+       Future<YzBenchModel> requestAPI() async {
+        String homeInfoJson;
+        try {
+          // 调用原生的requestHomeInfo方法
+          final String result = await yzBenchChannel.invokeMethod('requestHomeInfo');
+          homeInfoJson = result;
+          print('网络请求结束: $homeInfoJson');
+        } on PlatformException catch (e) {
+          homeInfoJson = "Failed to get battery level: '${e.message}'.";
+          print('网络请求结束: $homeInfoJson');
+        }
+      } 
+   
+     }
+   ```
+
+   如果Native iOS里没有定义requestHomeInfo方法，就会报错如下`MissingPluginException (MissingPluginException(No implementation found for method requestHomeInfo on channel requestApi/yzHomeInfo))`
+
+   ![methodchannel_error_no_imp](/Users/wb/Desktop/Github/notes/src/imgs/flutter/methodchannel_error_no_imp.png)
+
+3. 运行iOS工程，正常结果如下
+
+   ![methodchannel_success](/Users/wb/Desktop/Github/notes/src/imgs/flutter/methodchannel_success.png)
+
+## iOS 调用 Flutter 的方法
+
+1. OC文件
+
+   ```objc
+    /// ntf NativeToFlutter
+    @property (nonatomic, strong) FlutterMethodChannel *methodChannel_ntf;
+      
+    - (FlutterMethodChannel *)methodChannel_ntf {
+      if (!_methodChannel_ntf) {
+          _methodChannel_ntf = [FlutterMethodChannel methodChannelWithName:@"bwcmt.native/yz_bench" binaryMessenger:self.flutterVC];
+      }
+      return _methodChannel_ntf;
+    }
+   
+     // 调用flutter方法
+     [self.methodChannel_ntf invokeMethod:@"requestDataSuccessful" arguments:json];
+   ```
+
+2. Flutter文件
+
+   ```dart
+     void initState() {
+       super.initState();
+   
+       MethodChannel methodChannel = MethodChannel(yzBenchChannelName_ntf);
+       methodChannel.setMethodCallHandler(callbackHandler);
+     }
+   
+     Future<dynamic>callbackHandler(MethodCall call) { // 回调方法
+   
+       if (call.method == 'requestDataSuccessful') {
+         // 网络请求成功
+         print('原生请求网络成功');
+   
+         Map data = json.decode(call.arguments as String);
+         YzBenchModel model = YzBenchModel.fromJson(data);
+   
+         setState(() {
+           networkErrorMsg = null;
+           benchModel = model;
+         });
+       }
+       return call.arguments;
+     }
+   
+   ```

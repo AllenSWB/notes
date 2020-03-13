@@ -1,17 +1,5 @@
 # Dart 
-- [Dart](#dart)
-  - [语法](#%e8%af%ad%e6%b3%95)
-  - [核心库](#%e6%a0%b8%e5%bf%83%e5%ba%93)
-    - [一些基础类型 numbers, collections, strings, and more](#%e4%b8%80%e4%ba%9b%e5%9f%ba%e7%a1%80%e7%b1%bb%e5%9e%8b-numbers-collections-strings-and-more)
-    - [异步编程async](#%e5%bc%82%e6%ad%a5%e7%bc%96%e7%a8%8basync)
-    - [Math库: 数学运算](#math%e5%ba%93-%e6%95%b0%e5%ad%a6%e8%bf%90%e7%ae%97)
-    - [dart:html](#darthtml)
-    - [dart.io](#dartio)
-    - [convert: JSON转换](#convert-json%e8%bd%ac%e6%8d%a2)
-    - [mirrors: 反射机制](#mirrors-%e5%8f%8d%e5%b0%84%e6%9c%ba%e5%88%b6)
-
-    
-- 官网链接：https://dart.dev/guides
+>  官网链接：https://dart.dev/guides
 
 ## 语法
 
@@ -521,7 +509,7 @@
       抽象函数是只定义函数接口但是没有实现的函数，由子类来 实现该函数。如果**用分号来替代函数体**则这个函数就是抽象函数。
 
       调用一个没实现的抽象函数会导致运行时异常。
-      
+    
       ```dart
         abstract class Doer {       //  abstract ['æbstrækt] 抽象的
           // ...Define instance variables and methods...
@@ -568,6 +556,7 @@
           print(greetBob(new Person('kathy')));
           print(greetBob(new Imposter()));
         }
+    ```
 
 
         // 可以同时集成多个接口
@@ -736,7 +725,7 @@
       }
 
       lookUpVersion() async => /* ... */;
-      ```  
+      ```
 
     + 在一个方法上添加 async 关键字，则这个方法返回值为 Future
 
@@ -832,7 +821,7 @@
          assert(int.parse('0x42') == 66);
          assert(double.parse('0.50') == 0.5);
        ```
-     
+    
      + num 类也定义了一个 parse() 函数，这个函数会尝试解析 为整数，如果无法解析为整数，则会解析为浮点数(double)。
 
         ```dart
@@ -858,7 +847,7 @@
            assert(double.parse('1.2e+2') == 120.0);
          ```
 
-   
+
 2. String & 正则表达式
    
       + 在字符串内查找特定字符的位置；判断字符串是否以特定字符串开始和结尾

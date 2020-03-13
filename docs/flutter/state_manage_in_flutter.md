@@ -182,18 +182,19 @@
           );
         }
       }
+    ```
 
 
       // 2. 创建Event
       enum MyEvent {
         add,
       }
-
+    
       // 3. 创建Bloc
       class MyBloc extends Bloc<MyEvent, int> {
         @override
         int get initialState => 0;  // 初始化状态 (本例中状态是个num值传递)
-
+    
         @override
         Stream<int> mapEventToState(
           MyEvent event,
@@ -204,14 +205,14 @@
           }
         }
       }
-
+    
       class MyHomePage extends StatelessWidget {
         MyHomePage({Key key, this.title}) : super(key: key);
-
+    
         final String title;
-
+    
         final MyBloc _myBloc = MyBloc();
-
+    
         @override
         Widget build(BuildContext context) {
           return Scaffold(
@@ -243,14 +244,11 @@
             ),
           );
         }
-
+    
       }
-      
 
-    ```
+![bloc_example](../../src/imgs/flutter/state_manage/bloc_example.GIF)
 
-    ![bloc_example](../../src/imgs/flutter/state_manage/bloc_example.GIF)
-  
   - VSCode扩展
     
     ![bloc_extension](../../src/imgs/flutter/state_manage/bloc_extension.png)
