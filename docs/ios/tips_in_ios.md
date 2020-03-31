@@ -933,13 +933,12 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
    ```
  - 新增window属性
    ```swift
-   var window: UIWindow?
+   var win: UIWindow?
 
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool { 
-       window = UIWindow.init()
-       window?.frame = UIScreen.main.bounds
-       window?.makeKeyAndVisible()
-       window?.rootViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
+       win = UIWindow.init(frame: UIScreen.main.bounds)
+        win?.rootViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
+        win?.makeKeyAndVisible()
        return true
      } 
    ```
@@ -973,5 +972,30 @@ CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform
 - (instancetype)init DEPRECATED_MSG_ATTRIBUTE("使用 initWithVin");
 ```
 
-## 安装多个版本的 cocoapods
+## NSURL 的 query 、path 等方法
+```objc
+NSURL *url = [NSURL URLWithString:@"http://www.testurl.com:8080/subpath/subsubpath?uid=123&gid=456"];  
+[url scheme]  // http  
+[url host]  // www.testurl.com  
+[url port]  // 8080  
+[url path]  // /subpath/subsubpath  
+[url lastPathComponent]  // subsubpath  
+[url query]     // uid=123&gid=456  
+```
+
+## 修改 UIPickerView 中的文字大小
+```objc
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view { 
+    NSString *titleString = self.typeArray[row]; 
+    
+    UILabel *itemlabel = [[UILabel alloc] init];
+    itemlabel.attributedText = [[NSAttributedString alloc] initWithString:titleString
+                                                               attributes:@{
+                                                                   NSFontAttributeName: [UIFont systemFontOfSize:16],
+                                                                   NSForegroundColorAttributeName: UCAR_ColorFromHexStringAndAlpha(@"#333333", (1))}];
+        
+    return itemlabel;
+}
+```
+ 
 

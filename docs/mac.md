@@ -30,6 +30,12 @@
 - [ ] PS
 - [ ] `brew install annie` [视频下载](https://github.com/iawia002/annie#download-a-video) 
 - [ ] Ummy Video Downloader (YouTube视频下载)
+- [ ] 打印目录结构 `brew install tree`    
+    ```shell
+    # https://www.jianshu.com/p/9411d60950bf
+    
+    tree -d -N 
+    ```
 
 ——
 
