@@ -1023,3 +1023,51 @@ NSURL *url = [NSURL URLWithString:@"http://www.testurl.com:8080/subpath/subsubpa
 }
 @end
 ```
+
+## [Application] The app delegate must implement the window property if it wants to use a main storyboard file.
+
+终端log出上面一段话，解决方式是添加 window 属性
+
+![](./../../src/imgs/ios/xcode_error_implement.png)
+```swift
+var window: UIWindow?
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool { 
+    window = UIWindow.init(frame: UIScreen.main.bounds)
+    window?.rootViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
+    window?.makeKeyAndVisible() 
+    return true
+}
+```
+## 秒数转成 00:00:00 格式  eg: 60s -> 00:01:00
+```objc 
++ (NSString *)timeStringWithDuration:(NSTimeInterval)duration {
+    NSInteger seconds ;
+    NSInteger mins ;
+    NSInteger hours ;
+    
+    if (duration < 60) {
+        seconds = duration;
+        mins = 0;
+        hours = 0;
+    } else if (duration >= 60 && duration < 3600) {
+        seconds = (int)duration % 60;
+        mins = duration / 60;
+        hours = 0;
+    } else {
+        hours = (int)duration / 3600;
+        mins = ((int)duration % 3600) / 60;
+        seconds = ((int)duration % 3600) % 60;
+    }
+    
+    NSString *hourString = hours < 10 ? [NSString stringWithFormat:@"0%ld", (long)hours] : [NSString stringWithFormat:@"%ld", (long)hours];
+    NSString *minString = mins < 10 ? [NSString stringWithFormat:@"0%ld", (long)mins] : [NSString stringWithFormat:@"%ld", (long)mins];
+    NSString *secondString = seconds < 10 ? [NSString stringWithFormat:@"0%ld", (long)seconds] : [NSString stringWithFormat:@"%ld",(long)seconds];
+    NSString *result = [NSString stringWithFormat:@"%@:%@:%@", hourString, minString, secondString];
+    
+    return result;
+}s
+```
+
+## 添加 pch 文件时候路径怎么写
+![](./../../src/imgs/ios/pch_path.png)
