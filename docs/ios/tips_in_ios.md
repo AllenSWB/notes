@@ -1071,3 +1071,72 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## 添加 pch 文件时候路径怎么写
 ![](./../../src/imgs/ios/pch_path.png)
+
+## iOS 添加点击效果，方便录屏时候看触点
+```objc
+//
+//  UIWindow+UCARRobot.m
+//  UCARRobot
+//
+//  Created by wb on 2020/4/3.
+//
+
+#import "UIWindow+UCARRobot.h" 
+#import <objc/runtime.h>
+
+@implementation UIWindow (UCARRobot)
+
++ (void)load {
+    Method m1 = class_getInstanceMethod([self class], @selector(sendEvent:));
+    Method m2 = class_getInstanceMethod([self class], @selector(ucar_sendEvent:));
+    method_exchangeImplementations(m1, m2);
+}
+
+- (void)ucar_sendEvent:(UIEvent *)event {
+    [self ucar_sendEvent:event];
+    [self dealTouch:event];
+}
+
+- (void)dealTouch:(UIEvent *)event {
+    UITouch *touch = event.allTouches.anyObject;
+    if (touch.phase == UITouchPhaseEnded) {
+        return;
+    }
+    
+   NSNumber *value = [[NSUserDefaults standardUserDefaults] valueForKey:@"UCARTouchAnimationOn_Key"];
+    if (!value.boolValue) {
+        return;
+    }
+    
+    static CGFloat width = 20;
+    if (event.type == UIEventTypeTouches) {
+        
+        CGPoint point = [event.allTouches.anyObject locationInView:self];
+        
+        CGFloat oringX = point.x - width / 2;
+        CGFloat oringY = point.y - width / 2;
+        CGRect rect = CGRectMake(oringX, oringY, width, width);
+        UIView *blackV = [[UIView alloc] initWithFrame:rect];
+        blackV.alpha = 0.3;
+        blackV.layer.cornerRadius = width / 2;
+        blackV.backgroundColor = [UIColor purpleColor];
+        [self addSubview:blackV];
+        [self bringSubviewToFront:blackV];
+        // 设置动画
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        animation.duration = 0.3;
+        animation.fromValue = @1;
+        animation.toValue = @2;
+        animation.fillMode = @"backwards";
+        animation.removedOnCompletion = YES;
+        [blackV.layer addAnimation:animation forKey:@"an1"];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.27 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [blackV removeFromSuperview];
+        });
+    }
+}
+
+@end
+
+```
