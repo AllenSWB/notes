@@ -1185,3 +1185,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return [self getObjectData:obj];
 }
 ```
+
+## iOS10上的 navgaitionBarItem 不显示问题
+
+  要设置一个frame，否则10上显示不出来
+  
+```objc
+    UIButton *historyBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    historyBtn.frame = CGRectMake(0, 0, 24, 24); //  要设置一个frame，否则10上显示不出来
+    [historyBtn setImage:[CKContext imageNamed:@"ck_charge_history"] forState:(UIControlStateNormal)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:historyBtn];
+    [historyBtn addTarget:self action:@selector(toHistory) forControlEvents:(UIControlEventTouchUpInside)];
+```
