@@ -1197,3 +1197,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:historyBtn];
     [historyBtn addTarget:self action:@selector(toHistory) forControlEvents:(UIControlEventTouchUpInside)];
 ```
+
+## class_copyPropertyList 不能复制父类的属性
+
+- https://www.jianshu.com/p/bfe42b9cb37f
+
+todo
