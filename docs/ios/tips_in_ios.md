@@ -1203,3 +1203,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 - https://www.jianshu.com/p/bfe42b9cb37f
 
 todo
+
+## git 报错：refusing to merge unrelated histories
+
+```shell
+git pull origin master --allow-unrelated-histories
+```
