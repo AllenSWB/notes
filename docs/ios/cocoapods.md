@@ -8,6 +8,9 @@
 - [iOS 多target 项目使用 pod 管理三方库的方法](#ios-%e5%a4%9atarget-%e9%a1%b9%e7%9b%ae%e4%bd%bf%e7%94%a8-pod-%e7%ae%a1%e7%90%86%e4%b8%89%e6%96%b9%e5%ba%93%e7%9a%84%e6%96%b9%e6%b3%95)
 - [常用`pod`命令](#%e5%b8%b8%e7%94%a8pod%e5%91%bd%e4%bb%a4)
 - [cocoapods资源文件怎么管理](#cocoapods%e8%b5%84%e6%ba%90%e6%96%87%e4%bb%b6%e6%80%8e%e4%b9%88%e7%ae%a1%e7%90%86)
+- [cocoapods 安装问题](#cocoapods-%e5%ae%89%e8%a3%85%e9%97%ae%e9%a2%98)
+  - [gem 源](#gem-%e6%ba%90)
+  - [多版本共存](#%e5%a4%9a%e7%89%88%e6%9c%ac%e5%85%b1%e5%ad%98)
 - [参考链接](#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5)
 
 ## 封装私有库
@@ -288,6 +291,60 @@ s.resources = ['BWCMT_MMC/ThirdFrameworks/WBCloudReflectionFaceVerify/bundles/*'
     return targetBundle;
 }
 ```
+
+## cocoapods 安装问题
+
+### gem 源
+```shell
+# 查看
+gem source
+# 移除镜像源
+gem source --remove https://rubygems.org/
+# 添加镜像源
+gem source -a https://ruby.taobao.org/ 
+# 安装
+sudo gem install cocoapods
+# 安装指定版本
+sudo gem install cocoapods -v 1.9.1
+```
+### 多版本共存
+
+安装 rvm(ruby version manager)，可以切换ruby环境，安装多个ruby版本.
+
+```shell
+# 查看ruby环境
+gem environment
+
+# 安装 rvm
+curl -L get.rvm.io | bash -s stable
+# 安装完要 rvm 命令生效还得执行下面命令
+source ~/.rvm/scripts/rvm
+
+# 列出可安装的ruby版本信息
+rvm list known
+# 安装一个ruby版本
+rvm install 2.6.5
+# 设置默认ruby版本
+rvm use 2.6.5 --default
+# 查看已安装的ruby
+rvm list
+# 卸载ruby
+rvm remove 2.6.5
+# 切换 ruby（切换ruby版本后，gem也会跟着切换，这样就可以使用两个版本的cocoapods了）
+rvm use system # 使用系统ruby
+rvm use 2.6.5 # 使用rvm ruby
+
+
+# wenbo-imac:~ wb$ rvm use system
+# Now using system ruby.
+# wenbo-imac:~ wb$ pod --version
+# 1.6.1
+# wenbo-imac:~ wb$ rvm use 2.6.5
+# Using /Users/wb/.rvm/gems/ruby-2.6.5
+# wenbo-imac:~ wb$ pod --version
+# 1.9.1
+```
+
 
 ## 参考链接
 
