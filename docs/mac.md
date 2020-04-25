@@ -44,6 +44,8 @@
 - [x] MAC应用无法打开或文件损坏的处理方法 ： 设置允许任何来源的app  (打开终端，输入`sudo spctl --master-disable`然后按回车)
 - [x] 切换输入法快捷键 系统输入法大写按钮
 - [x] 命令行安装 `command line developer tool` : `xcode-select --install` 
+- [ ] [JetBrains Mono 字体](https://www.jetbrains.com/lp/mono/)
+
 
 ——
 
