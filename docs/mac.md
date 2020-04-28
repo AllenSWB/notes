@@ -52,7 +52,7 @@
 - [软件资源站 xclient](xclient.info)  
 - https://wxkxsw.com/link/Ce6mLeDTepd5W34C?mu=0
 
-### 启用`root`用户
+### 启用 root 用户
 
 ![](../src/imgs/mac_root.png)
 
@@ -86,18 +86,21 @@
 ![](../src/imgs/vscode_extension_0.png)
 ![](../src/imgs/vscode_extension_1.png)
 
-### SourceTree免登陆使用
+### sourcetree 免登陆使用
 
 ![](../src/imgs/sourcetree_withoutlogin.png)
 
-### SourcegTree每次pull/push都要输入密码解决方法
+### sourcetree 设置全局忽略文件
+![](../src/imgs/ios/sourcetree_ignore.png)
+
+### sourcetree 每次 pull/push 都要输入密码解决方法
 
 终端输入:(第一次需要输入账号密码，以后就不用了)
 ```shell
 git config --global credential.helper osxkeychain  
 ```
 
-### Xcode常用的快捷键 
+### Xcode 常用的快捷键 
 
 + `Ctrl` + `command` + `上/下箭头` 切换`.h`和`.m`
 + `shift` + `command` + `O` 打开`quick open`
