@@ -1209,3 +1209,27 @@ todo
 ```shell
 git pull origin master --allow-unrelated-histories
 ```
+
+## 字符串某些变色
+```objc
+ NSAttributedString *attr0 = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d",textView.text.length] attributes:@{
+            NSForegroundColorAttributeName: UCAR_ColorFromHexString(@"#F12E49"),
+            NSFontAttributeName: [UIFont systemFontOfSize:14]
+        }];
+        NSAttributedString *attr1 = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"/%d",row.charactersLimit] attributes:@{
+            NSForegroundColorAttributeName: UCAR_ColorFromHexString(@"#CCCCCC"),
+            NSFontAttributeName: [UIFont systemFontOfSize:14]
+        }];
+        NSMutableAttributedString *att = [[NSMutableAttributedString alloc] init];
+        [att appendAttributedString:attr0];
+        [att appendAttributedString:attr1];
+        self.countlabel.attributedText = att;
+```
+
+## 编译不过，storyboard 报错 : internal error.
+
+![internal](../../src/imgs/ios/internalerror.png)
+
+1. 试着把最近拖进来的视图删掉，配合 cmd + z
+2. 试着把视图的宽度约束由<按比例 >改成<固定值>
+
