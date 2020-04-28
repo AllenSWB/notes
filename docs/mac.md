@@ -77,8 +77,15 @@
 + `command` + `option` + `c` 最近复制的内容
 
 ### go2shell
+
 - App Store 下载 go2shell
 - 在application目录下找到go2shell，按住 command 拖动 go2shell 到 finder 工具栏
+
+### vscode 插件
+
+![](../src/imgs/vscode_extension_0.png)
+![](../src/imgs/vscode_extension_1.png)
+
 ### SourceTree免登陆使用
 
 ![](../src/imgs/sourcetree_withoutlogin.png)
