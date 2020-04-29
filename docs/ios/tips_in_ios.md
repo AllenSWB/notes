@@ -1233,3 +1233,13 @@ git pull origin master --allow-unrelated-histories
 1. 试着把最近拖进来的视图删掉，配合 cmd + z
 2. 试着把视图的宽度约束由<按比例 >改成<固定值>
 
+## 让 UITableViewController 的 tableview 内容在状态栏下
+```objc
+// 如果iOS的系统是11.0，会有这样一个宏定义“#define __IPHONE_11_0  110000”；如果系统版本低于11.0则没有这个宏定义
+  #ifdef __IPHONE_11_0
+  if ([self.tableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+      self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+  }
+  #endif
+```
+![](../../src/imgs/ios/tableviewcontroller.png)
