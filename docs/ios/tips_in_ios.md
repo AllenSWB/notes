@@ -1252,4 +1252,50 @@ override func tableView(_ tableView: UITableView, heightForFooterInSection secti
   #endif
 ```
 ![](../../src/imgs/ios/tableviewcontroller.png)
- 
+
+# xib & storyboard
+
+## UIView xib 修改 frame 为 free 
+![](../../src/imgs/ios/xib_uiview.png)
+
+## UITableViewController 静态 cell 和动态 cell 混用
+
+> 静态 cell 只能在 UITableViewController 中使用
+- 动态section必须要保留1个cell
+- cell的缩进级别代理方法，动态静态cell必须重写，否则会造成崩溃
+```objc
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(section == SectionTypeSKU){// （动态cell）
+        return self.pinModel.skuList.count;
+    }
+    if (section == SectionTypeLimit && !self.switchBtn.on) {
+        return 0;
+    }
+    return [super tableView:tableView numberOfRowsInSection:section];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(SectionTypeSKU == indexPath.section){//（动态cell）
+        SkuInputCell *cell = [SkuInputCell cellWithTableView:tableView];
+        return cell;
+    }
+    return [super tableView:tableView cellForRowAtIndexPath:indexPath];
+}
+
+// MARK: - tableviewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(SectionTypeSKU == indexPath.section){//（动态cell）
+        return 154;
+    }
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+}
+
+//cell的缩进级别，动态静态cell必须重写，否则会造成崩溃
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(SectionTypeSKU == indexPath.section){// （动态cell）
+        return [super tableView:tableView indentationLevelForRowAtIndexPath: [NSIndexPath indexPathForRow:0 inSection:indexPath.section]];
+    }
+    return [super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
+}
+```
