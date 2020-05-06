@@ -1,15 +1,10 @@
 - [Swift 语法](#swift-%e8%af%ad%e6%b3%95)
-- [`Swift` 中的初始化器不返回值，`OC` 中初始化方法返回一个实例](#swift-%e4%b8%ad%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96%e5%99%a8%e4%b8%8d%e8%bf%94%e5%9b%9e%e5%80%bcoc-%e4%b8%ad%e5%88%9d%e5%a7%8b%e5%8c%96%e6%96%b9%e6%b3%95%e8%bf%94%e5%9b%9e%e4%b8%80%e4%b8%aa%e5%ae%9e%e4%be%8b)
-- [`UIbutton` 添加响应事件](#uibutton-%e6%b7%bb%e5%8a%a0%e5%93%8d%e5%ba%94%e4%ba%8b%e4%bb%b6)
-- [类方法](#%e7%b1%bb%e6%96%b9%e6%b3%95)
-- [单例](#%e5%8d%95%e4%be%8b)
-- [`dealloc`](#dealloc)
 - [`Moya` 报错 `'Method' is ambiguous for type lookup in this context`](#moya-%e6%8a%a5%e9%94%99-method-is-ambiguous-for-type-lookup-in-this-context)
 - [pch 替代、宏](#pch-%e6%9b%bf%e4%bb%a3%e5%ae%8f)
+- [自定义 log](#%e8%87%aa%e5%ae%9a%e4%b9%89-log)
+ 
 ## Swift 语法
-
-> - [Swift5官方文档](https://swiftgg.gitbook.io/swift/)
-
+  
 1. `for-in`
 
    ```swift
@@ -56,23 +51,7 @@
     }
 
     ```
-
-3. 用`if`和`let`操作可能丢失的值
-
-   ```swift
-    var food: String?
-    if let f = food { // 如果可选项值为nil，则跳过大括号里的代码
-        print("i have \(f)")
-    }
-   ```
-
-4. 可选项的默认值 `??`
-
-   ```swift
-    var food: String? = "饺子"
-    print(food ?? "西瓜")
-   ```
-
+  
 5. `switch`支持任意类型的数据和各种类型的比较操作，不再限于整型和测试相等上
 
    ```swift
@@ -96,106 +75,8 @@
     let (errCode, errMsg) = http404Error
     print("error code is \(errCode), error message is '\(errMsg)'") // error code is 404, error message is 'Not Found'
    ```
-
-7. 可选项
-
-   ```swift
-    let str = "32"
-    var numResult: Int? = Int(str)  
-
-    // 强制展开
-    if numResult != nil { // 确定有值可以用!强制展开
-        print("string转成int值为\(numResult!)")
-    }
-   ```
-
-8. 函数定义
-
-   ```swift
-   func <#name#>(<#parameters#>) -> <#return type#> {
-         <#function body#>
-   }
-   ```
  
- 1. 函数的形参和实参
-
-    每个函数的形式参数都包含*实际参数标签*和*形式参数名*。默认情况下，形式参数名就是实际参数标签。
-    
-      ```swift
-       override func viewDidLoad() {
-           super.viewDidLoad()
-
-           let s0 = test0(32)
-           let s1 = test1(realTag: 43)
-           let s2 = test2(code: 89)
-           let s3 = test3() // 参数不传，则默认code=90
-           let s33 = test3(code: 99) // 传入参数，则按传入的值来
-           let s4 = test4(code: 9,3,2)
-           print(s0, s1, s2, s3, s33, s4)
-
-           var tempCode = 9
-           _ = test5(code: &tempCode)
-           print("tempCode new value is \(tempCode)")
-       }
-
-       // 省略实参标签
-       func test0(_ code: Int) -> String {
-           return String(code)
-       }
-
-       // 指定实参标签
-       func test1(realTag code: Int) -> String {
-           return String(code)
-       }
-
-       // 默认实参标签
-       func test2(code: Int) -> String {
-           return String(code)
-       }
-
-       // 默认形式参数值
-       func test3(code: Int = 90) -> String {
-           return String(code)
-       }
-
-       // 可变形式参数
-       func test4(code: Int...) -> String {
-           let codeType = type(of: code)
-           return "code type is \(codeType)"
-       }
-
-       // 输入输出形式参数
-       func test5(code: inout Int) -> String {
-           code += 1
-           return String(code)
-       }
-
-       // 函数类型：由形式参数类型，返回类型组成
-       print(type(of: test5(code:))) // (inout Int) -> String 
-      ```
-
-9.  内嵌函数
-
-    全局范围内定义的函数叫做*全局函数*
-    
-    在函数内部定义的函数叫做*内嵌函数*
-    
-   ```swift
-    override func viewDidLoad() {
-        super.viewDidLoad()
-         
-        print(test(plus: true)(4))  // 5
-        print(test(plus: false)(4)) // 3
-    }
-
-    func test(plus: Bool) -> (Int) -> (Int) {
-        func plusMethod(num: Int) -> Int {return num + 1}
-        func subtractMethod(num: Int) -> Int {return num - 1}
-        return plus ? plusMethod : subtractMethod
-    } 
-   ```
-
-11. 闭包
+8.  闭包
 
     + 全局函数是一个有名字但不会捕获任何值得闭包
     + 内嵌函数是一个有名字且能从其上层函数捕获值的闭包
@@ -208,14 +89,14 @@
     ```
     + 闭包和函数都是引用类型
 
-12. 枚举
+9.  枚举
 
     + 枚举成员可以指定任意类型的值与不同的成员值关联存储
     + Swift中的枚举是具有自己权限的一类类型。支持了许多一般只被类所支持的特性。例如计算属性用来提供关于枚举当前值得额外信息，并且实例方法用来提供与枚举表示的值相关的功能。
     + 可以定义初始化器来初始化成员值
     + 能够遵循协议来提供标准功能
 
-13. 遍历枚举 
+10. 遍历枚举 
 
     ```swift
     enum Sex : CaseIterable { // 遵循CaseIterable协议
@@ -226,7 +107,7 @@
     print("性别种类:\(Sex.allCases.count)") // 性别种类:2
     ```
 
-14. 枚举的关联值
+11. 枚举的关联值
 
     ```swift
     // 将其他类型的关联值和成员值一期存储
@@ -248,7 +129,7 @@
     //console log:  信息是 : 二维码携带的信息
     ```
 
-15. 枚举的原始值
+12. 枚举的原始值
      + 定义枚举时指定`rawValue`的类型
      + 隐式指定的原始值，默认比上一个成员值大一
      
@@ -264,7 +145,7 @@
       print(s.rawValue) // 6
      ```
 
-16. 从原始值初始化枚举
+13. 从原始值初始化枚举
     
     ```swift
     /* 
@@ -285,21 +166,8 @@
     // console log :
     //              没有值
     //              bottom 
-    ```
-    
-17. 类和结构体的定义
-
-    ```swift
-    class TestClass {
-
-    }
-
-    struct TestStuct {
-
-    } 
-    ```
-
-18. 结构体类型的成员初始化器
+    ``` 
+15. 结构体类型的成员初始化器
     
     所有结构体都有一个自动生成的*成员初始化器*，类不会自动生成。
     ```swift
@@ -310,19 +178,8 @@
     let s = TestStuct.init(para1: 32)
     print(s.para1) // 32
     ```
-
-19. 值类型和引用类型
-    
-    **值类型：** 是一种当它被指定到常量或者变量，或者被传递给函数时会被拷贝的类型
-    + 结构体和枚举是值类型
-    + Swift中所有的基本类型：整数、浮点数、布尔、字符串、数组、字典都是值类型，并且以结构体的形式在后台实现
-    + OC中的集合类型(`NSDictionary` `NSArray` `NSString`等)是类，swift中是结构体
-    
-    **引用类型：** 当它被指定到常量或变量或被传递给函数时，不会被拷贝，而是对现存实例的引用。
-    + 类是引用类型
-    + 函数和闭包是引用类型 
-
-20. 特征运算符 
+  
+17. 特征运算符 
     
     + `===` 相同于. 
         - `相同于 ===` 意味着两个变量引用相同的实例
@@ -341,33 +198,9 @@
     if c0 === c1 {
       print("c1和c0引用的是同一个实例")
     } 
-    ```
-
-21. 类和结构体的选择
-
-    类是引用类型，结构体是值类型。
-    
-    当符合以下一个或几个条件时，应当考虑使用结构体：
-    + 结构体的主要目的是封装一些相关的简单数据值
-    + 需要封装的数据想要拷贝而不是引用
-    + 任何存储在结构体中的属性是值类型，也将被拷贝而非引用
-    + 结构体不需要从一个已存在类型继承属性或者行为
-    
-
-22. `OC`和`Swift`的区别
-    
-    + `OC`中 `NSDictionary NSArray NSString`是引用类型，而在 `Swift`中`Array Dictionary String`是值类型。 
-
-23. 属性
-    
-    属性：可以将值与特定的类、结构体或者枚举联系起来。
-    
-    + 存储属性：会存储常量或变量作为实例的一部分
-        - 只能由类和结构体定义
-    + 计算属性：会计算值（而非存储）
-        - 可以由类、结构体和枚举定义
-    
-24. 常量结构体实例的存储属性
+    ``` 
+ 
+21. 常量结构体实例的存储属性
     
     一个常量结构体实例，即便它的存储属性被定义为变量，也会成为一个常量。 
 
@@ -380,24 +213,8 @@
     let s = TestStruct.init(para1: 1, para2: 2)
     s.para1 = 32 // 这一行会报错: Cannot assign to property: 's' is a 'let' constant
     ```
-
-25. `lazy` 延迟存储属性    
     
-    ```swift
-    struct TestStuct {
-        /*
-            1. lazy只能修饰var变量；必须有一个初始化的值
-            2. 必须有一个初始化的值
-        */ 
-        lazy var para1 = [String]() 
-        var para2: Int = 0
-    }
-    ```
-26. 存储属性和实例变量
-
-    `OC`里有两种方式(`.`和`_`)存储和引用值 。`Swift`把这些概念统一到了属性声明里。
-    
-27. 计算属性
+22. 计算属性
     
     只读计算属性: 只有*读取器get* 没有*设置器set*
  
@@ -428,7 +245,7 @@
     } 
     ```
 
-28. 属性观察者 `willSet` `didSet`
+23. 属性观察者 `willSet` `didSet`
 
     + 可以为任意存储属性添加属性观察者（延迟存储属性除外）
     + 可以通过在子类里重写属性为继承属性（无论是存储属性还是计算属性）添加属性观察者
@@ -484,26 +301,7 @@
 30. 方法
 
     方法：是关联了特定类型的函数。类、结构体、枚举都能定义实例方法
-
-31. `self`属性
-
-    每个类的实例都隐含一个叫做`self`的属性
-
-    ```swift
-    class TempRootViewController: UIViewController { 
-        func test() {
-            print(TestClass.para1)
-        }
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            self.view.backgroundColor = UIColor.white 
-            
-            self.test() // 调用方法
-        }
-    }
-    ```
-
+ 
 32. 在实例方法中修改值类型 `mutating`
 
   + 结构体和枚举是值类型。默认情况下，值类型属性不能被自身的实例方法修改。
@@ -522,18 +320,6 @@
     print(s.name) /* fs */
     print(s.testM())   /* fd */
     ```
-
-33. 类方法
-
-  ```swift
-  class TestClass {
-    class func test() -> String{
-        return "类方法"
-    }
-  } 
-
-  print(TestClass.test()) // 类方法
-  ```
 
 34. 类
 
@@ -596,91 +382,42 @@
               return nil
           }
       } 
-      ```
-
-
-## `Swift` 中的初始化器不返回值，`OC` 中初始化方法返回一个实例
-## `UIbutton` 添加响应事件
-```swift
-override func viewDidLoad() {
-    super.viewDidLoad()
-    btn.addTarget(self, action: #selector(btnAction), for: .touchUpInside)
-}
-
-@objc func btnAction() { 
-    let v = WBTestViewController()
-    v.modalPresentationStyle = .fullScreen
-    self.present(v, animated: true, completion: nil)
-}
-```
-
-## 类方法
-
-```swift
-class TestClass {
-  class func testMethod () {
-
-  }
-}
-```
-## 单例
-
-```swift
-class User {
-  static let sharedInstance = User()
-  var name: String?
-}
-
-let s1 = User.sharedInstance
-s1.name = "小明" 
-let s2 = User.sharedInstance
-print(s2.name ?? "无名氏") // 小明 
-```
-
-## `dealloc`
-
-- [dealloc in swift](https://stackoverflow.com/questions/25497928/dealloc-in-swift)
-
-  ```swift
-  deinit {
-          /* perform the deinitialization */
-  }
-  ```
-
+      ```  
+  
 ## `Moya` 报错 `'Method' is ambiguous for type lookup in this context`
 
-  ```swift
-  extension BWService : TargetType {
-      var method: Moya.Method {   // 这里要指定Moya.Method，否则就会报错'Method' is ambiguous for type lookup in this context
-      }
-  }
-  ```
+```swift
+extension BWService : TargetType {
+    var method: Moya.Method {   // 这里要指定Moya.Method，否则就会报错'Method' is ambiguous for type lookup in this context
+    }
+}
+```
  
  ## pch 替代、宏
 
-  ```swift
-  // in Global.swift file
-    import Foundation
-    @_exported import SwifterSwift
-    @_exported import Alamofire
-    @_exported import Cache
-    @_exported import Hero
-    @_exported import Kingfisher
-    @_exported import MJRefresh
-    @_exported import Moya
-    @_exported import ReactiveCocoa
-    @_exported import SnapKit
-    @_exported import StarShareDevUIKit
-    @_exported import SwiftyJSON
-    @_exported import SwiftyUserDefaults
-    @_exported import YYKit
-    
-    // MARK: 宏
-    let PixelOne: CGFloat = 0.5
-    let BG_ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
-    let BG_ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
-    ```
-
+```swift
+// in Global.swift file
+  import Foundation
+  @_exported import SwifterSwift
+  @_exported import Alamofire
+  @_exported import Cache
+  @_exported import Hero
+  @_exported import Kingfisher
+  @_exported import MJRefresh
+  @_exported import Moya
+  @_exported import ReactiveCocoa
+  @_exported import SnapKit
+  @_exported import StarShareDevUIKit
+  @_exported import SwiftyJSON
+  @_exported import SwiftyUserDefaults
+  @_exported import YYKit
+  
+  // MARK: 宏
+  let PixelOne: CGFloat = 0.5
+  let BG_ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
+  let BG_ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
+```
+ 
 ## 自定义 log
 
 ```swift
@@ -695,20 +432,3 @@ Loooooog:
 [BGMineViewController.swift 140行] [tableView(_:didSelectRowAt:)] 
   我是一条没有梦想的log
 ```
-
-
-
-<!-- ## todo 
-+ 错误处理do-catch try! try?
-+ 断言
-+ 引用类型 值类型？？
-+ rxSwfit vs Combine 
-+ SwiftUI
-+ 递归枚举??
-+ 混编
-+ 网络请求库
-+ Swift中类方法和实例方法
-+ 全局导入头文件 (pch作用)
-+ public方法和private方法
-+ KVO in Swift
-+ Runtime in Swift -->

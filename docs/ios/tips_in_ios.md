@@ -1233,3 +1233,12 @@ git pull origin master --allow-unrelated-histories
 1. 试着把最近拖进来的视图删掉，配合 cmd + z
 2. 试着把视图的宽度约束由<按比例 >改成<固定值>
 
+## UITableView haader 悬浮效果
+
+- plain 样式 header 悬浮
+- group 样式取消 section 之间间隔：设置 footer 高度 0.01
+```swift
+override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    return 0.01     
+}
+```
