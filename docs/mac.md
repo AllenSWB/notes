@@ -105,3 +105,7 @@ git config --global credential.helper osxkeychain
 + `Ctrl` + `command` + `上/下箭头` 切换`.h`和`.m`
 + `shift` + `command` + `O` 打开`quick open`
 + `option` + `command` + `[ / ]` 整行的上下移动代码
+
+### 使用 soundflower 解决 QuickTime 录屏没有声音的问题
+
+- https://www.jianshu.com/p/db035dad616a
