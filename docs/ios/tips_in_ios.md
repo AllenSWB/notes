@@ -1253,11 +1253,26 @@ override func tableView(_ tableView: UITableView, heightForFooterInSection secti
 ```
 ![](../../src/imgs/ios/tableviewcontroller.png)
 
+## 关闭 iOS13 的黑暗模式
+info.plist 添加 UIUserInterfaceStyle = Light
+![](../../src/imgs/ios/darkoff.png)
+
 # xib & storyboard
 
-## UIView xib 修改 frame 为 free 
+## xib 创建 UIView 
+```swift
+let v = Bundle.main.loadNibNamed("ExpressSingleInfoView", owner: nil, options: nil)?.last as! ExpressSingleInfoView
+```
+
 ![](../../src/imgs/ios/xib_uiview.png)
 
+## 获取故事版上的vc
+```swift
+private class func getVCFromStoryboard(storyboard: String, vcIdentifier: String )-> UIViewController {
+        let vc = UIStoryboard.init(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: vcIdentifier)
+        return vc;
+}
+```
 ## UITableViewController 静态 cell 和动态 cell 混用
 
 > 静态 cell 只能在 UITableViewController 中使用
