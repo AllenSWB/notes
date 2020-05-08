@@ -217,6 +217,8 @@
 + [SDCycleScrollView](https://github.com/gsdios/SDCycleScrollView.git) Autoscroll Banner. 无限循环图片、文字轮播器。
 
 + [LazyScrollView](https://github.com/alibaba/LazyScrollView.git) 天猫首页视图复用解决方案An iOS ScrollView to resolve the problem of reusability in views.
++ [FSCalendar] 日历
++ [YYStarView] 评分
 
 <h4 id="title_textfield">表单</h4>
 
@@ -231,6 +233,7 @@
 <h4 id="title_tableview">UITableView</h4>
 
 + [IGListKit](https://github.com/Instagram/IGListKit) instagram 出品
++ [XLForm](https://github.com/xmartlabs/XLForm)
 
 + [LYEmptyView](https://github.com/yangli-dev/LYEmptyView.git) 一行代码集成空白页面占位图(基于runtime+MJRefresh思想) 空内容界面占位视图。emptyView-empty set-支持TableView、CollectionView
 
@@ -302,6 +305,7 @@
 + [RESideMenu](https://github.com/romaonthego/RESideMenu.git) iOS 7/8 style side menu with parallax effect.
 
 + [ZYSideSlipFilter](https://github.com/liuzhiyi1992/ZYSideSlipFilter.git) Awesome side slip filter for your display rack, 侧边栏条件筛选器，筛选区域模块插拔，AutoLayout动态适配区域高度
++ [CWLateralSlide] 抽屉
 
 
 <h4 id="title_tabbar">底边栏</h4>
@@ -319,8 +323,8 @@
 + [RTRootNavigationController](https://github.com/rickytan/RTRootNavigationController.git) Implicitly make every view controller has its own navigation bar
 
 + [HBDNavigationBar](https://github.com/listenzz/HBDNavigationBar.git) A custom UINavigationBar for smooth switching between various states, including bar style, bar tint color, background image, background alpha, bar hidden, title text attributes, tint color, shadow hidden...
-
-
++ [YPNavigationBarTransition] 隐藏系统导航栏
+   
 <h4 id="title_routes">路由跳转</h4>
 
 + 文章列表

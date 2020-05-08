@@ -81,6 +81,13 @@
 - App Store 下载 go2shell
 - 在application目录下找到go2shell，按住 command 拖动 go2shell 到 finder 工具栏
 
+#### 设置go2shell打开的终端为iterm2
+
+- 在终端中输入 `open -a Go2Shell --args config`
+- 选择iterm2，保存。
+
+![](../src/imgs/ios/go2shell_iterm2.png) 
+
 ### vscode 插件
 
 ![](../src/imgs/vscode_extension_0.png)
