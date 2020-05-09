@@ -1,3 +1,17 @@
+- [新Mac安装软件](#%e6%96%b0mac%e5%ae%89%e8%a3%85%e8%bd%af%e4%bb%b6)
+- [启用 root 用户](#%e5%90%af%e7%94%a8-root-%e7%94%a8%e6%88%b7)
+- [Alfred](#alfred)
+  - [设置百度搜索](#%e8%ae%be%e7%bd%ae%e7%99%be%e5%ba%a6%e6%90%9c%e7%b4%a2)
+  - [常用快捷键](#%e5%b8%b8%e7%94%a8%e5%bf%ab%e6%8d%b7%e9%94%ae)
+- [go2shell](#go2shell)
+  - [设置go2shell打开的终端为iterm2](#%e8%ae%be%e7%bd%aego2shell%e6%89%93%e5%bc%80%e7%9a%84%e7%bb%88%e7%ab%af%e4%b8%baiterm2)
+- [VSCode 插件](#vscode-%e6%8f%92%e4%bb%b6)
+- [SourceTree](#sourcetree)
+  - [免登陆使用](#%e5%85%8d%e7%99%bb%e9%99%86%e4%bd%bf%e7%94%a8)
+  - [sourcetree 设置全局忽略文件](#sourcetree-%e8%ae%be%e7%bd%ae%e5%85%a8%e5%b1%80%e5%bf%bd%e7%95%a5%e6%96%87%e4%bb%b6)
+  - [sourcetree 每次 pull/push 都要输入密码解决方法](#sourcetree-%e6%af%8f%e6%ac%a1-pullpush-%e9%83%bd%e8%a6%81%e8%be%93%e5%85%a5%e5%af%86%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95)
+- [Xcode 常用的快捷键](#xcode-%e5%b8%b8%e7%94%a8%e7%9a%84%e5%bf%ab%e6%8d%b7%e9%94%ae)
+- [使用 soundflower 解决 QuickTime 录屏没有声音的问题](#%e4%bd%bf%e7%94%a8-soundflower-%e8%a7%a3%e5%86%b3-quicktime-%e5%bd%95%e5%b1%8f%e6%b2%a1%e6%9c%89%e5%a3%b0%e9%9f%b3%e7%9a%84%e9%97%ae%e9%a2%98)
 ### 新Mac安装软件
 
 - [x] 输入法
@@ -56,7 +70,8 @@
 
 ![](../src/imgs/mac_root.png)
 
-### Alfred 设置百度搜索
+### Alfred 
+#### 设置百度搜索
 
 ![](../src/imgs/aflred_search.jpg)
 
@@ -72,7 +87,7 @@
     # pub.dev 搜索
     https://pub.dev/packages?q={query}
 ```
-### Alfred 常用快捷键
+#### 常用快捷键
 
 + `command` + `option` + `c` 最近复制的内容
 
@@ -88,19 +103,20 @@
 
 ![](../src/imgs/ios/go2shell_iterm2.png) 
 
-### vscode 插件
+### VSCode 插件
 
 ![](../src/imgs/vscode_extension_0.png)
 ![](../src/imgs/vscode_extension_1.png)
 
-### sourcetree 免登陆使用
+### SourceTree 
+#### 免登陆使用
 
 ![](../src/imgs/sourcetree_withoutlogin.png)
 
-### sourcetree 设置全局忽略文件
+#### sourcetree 设置全局忽略文件
 ![](../src/imgs/ios/sourcetree_ignore.png)
 
-### sourcetree 每次 pull/push 都要输入密码解决方法
+#### sourcetree 每次 pull/push 都要输入密码解决方法
 
 终端输入:(第一次需要输入账号密码，以后就不用了)
 ```shell
