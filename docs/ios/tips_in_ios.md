@@ -1314,3 +1314,94 @@ private class func getVCFromStoryboard(storyboard: String, vcIdentifier: String 
     return [super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
 }
 ```
+## 让自定义 view 在 xib 或 storyboard 上也能用
+
+```swift 
+/* 创建一个 CustomButtonView
+关键步骤： 
+    1. IBDesignable
+    2. override func prepareForInterfaceBuilder()
+*/
+import UIKit
+
+@IBDesignable
+class CustomButtonView: UIView {
+    
+    lazy var label: UILabel = {
+        let l = UILabel()
+        l.textAlignment = .center
+        self.addSubview(l)
+        l.snp.makeConstraints { (make) in
+            make.left.equalTo(icon.snp.right).offset(5)
+            make.centerY.top.equalToSuperview()
+            make.right.equalTo(-10)
+        }
+        return l
+    }()
+    
+    lazy var icon : UIImageView = {
+        let img = UIImageView()
+        self.addSubview(img)
+        img.snp.makeConstraints { (make) in
+            make.left.equalTo(10)
+            make.centerY.equalToSuperview()
+            make.width.equalTo(10)
+            make.height.equalTo(14)
+        }
+        return img
+    }()
+     
+    var tapBlock: DoctorVoidBlock?
+    
+    lazy var tapBtn: UIButton = {
+        let b = UIButton()
+        b.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
+        self.addSubview(b)
+        b.snp.makeConstraints { (make) in
+            make.left.top.centerX.centerY.equalToSuperview()
+        }
+        return b
+    }()
+    
+    @IBInspectable var bgColor: UIColor = UIColor.cyan {
+        didSet {
+            self.backgroundColor = bgColor
+        }
+    }
+    
+    @IBInspectable var iconImg: UIImage? {
+        didSet {
+            self.icon.image = iconImg
+        }
+    }
+    
+    @IBInspectable var labelStr: String? {
+        didSet {
+            self.label.text = labelStr
+        }
+    }
+    
+    @IBInspectable var labelTextFontSize: CGFloat = 12 {
+        didSet {
+            self.label.font = UIFont.systemFont(ofSize: labelTextFontSize)
+        }
+    }
+    
+    @IBInspectable var labelTextColor: UIColor = .white {
+           didSet {
+               self.label.textColor = labelTextColor
+           }
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        
+    }
+    
+    @objc func tapAction () {
+        if let b = tapBlock {
+            b()
+        }
+    }
+}
+```
+![](../../src/imgs/ios/xib_view.png)

@@ -165,6 +165,7 @@
 + [DTCoreText](https://github.com/Cocoanetics/DTCoreText.git) Methods to allow using HTML code with CoreText
 
 + [WordPress-Editor-iOS](https://github.com/wordpress-mobile/WordPress-Editor-iOS.git) A reusable iOS rich text editor component.
++ [SJAttributesFactory  SJAttributesStringMaker](https://github.com/changsanjiang/SJAttributesFactory) iOS 富文本编辑, 让代码更清晰. 文本编辑, 高度计算, 正则匹配等待... 简便操作, 让你爽到爆!
 
 
 <h4 id="title_block">Block</h4>
@@ -233,10 +234,10 @@
 <h4 id="title_tableview">UITableView</h4>
 
 + [IGListKit](https://github.com/Instagram/IGListKit) instagram 出品
+
 + [XLForm](https://github.com/xmartlabs/XLForm)
 
 + [LYEmptyView](https://github.com/yangli-dev/LYEmptyView.git) 一行代码集成空白页面占位图(基于runtime+MJRefresh思想) 空内容界面占位视图。emptyView-empty set-支持TableView、CollectionView
-
 
 + [DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet.git) A drop-in UITableView/UICollectionView superclass category for showing empty datasets whenever the view has no content to display
 
@@ -253,7 +254,7 @@
 + [AwesomeMenu](https://github.com/levey/AwesomeMenu.git) Path 2.0 menu using CoreAnimation :)
 
 + [BTNavigationDropdownMenu](https://github.com/PhamBaTho/BTNavigationDropdownMenu.git) The elegant dropdown menu, written in Swift, appears underneath navigation bar to display a list of related items when a user click on the navigation title.
-
+  
 + [DOPDropDownMenu](https://github.com/dopcn/DOPDropDownMenu.git) Drop down menu like we see on website for iPhone
 
 <h4 id="title_tableviewCell">UITableViewCell</h4>
