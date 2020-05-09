@@ -1317,7 +1317,7 @@ private class func getVCFromStoryboard(storyboard: String, vcIdentifier: String 
 ## 让自定义 view 在 xib 或 storyboard 上也能用
 
 ```swift 
-/* 创建一个 CustomButtonView
+/* 创建一个 CustomButtonView    https://www.jianshu.com/p/4c9f9286f293
 关键步骤： 
     1. IBDesignable
     2. override func prepareForInterfaceBuilder()
