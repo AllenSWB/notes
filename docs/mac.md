@@ -12,6 +12,7 @@
   - [sourcetree 每次 pull/push 都要输入密码解决方法](#sourcetree-%e6%af%8f%e6%ac%a1-pullpush-%e9%83%bd%e8%a6%81%e8%be%93%e5%85%a5%e5%af%86%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95)
 - [Xcode 常用的快捷键](#xcode-%e5%b8%b8%e7%94%a8%e7%9a%84%e5%bf%ab%e6%8d%b7%e9%94%ae)
 - [使用 soundflower 解决 QuickTime 录屏没有声音的问题](#%e4%bd%bf%e7%94%a8-soundflower-%e8%a7%a3%e5%86%b3-quicktime-%e5%bd%95%e5%b1%8f%e6%b2%a1%e6%9c%89%e5%a3%b0%e9%9f%b3%e7%9a%84%e9%97%ae%e9%a2%98)
+- [微信小助手](#%e5%be%ae%e4%bf%a1%e5%b0%8f%e5%8a%a9%e6%89%8b)
 ### 新Mac安装软件
 
 - [x] 输入法
@@ -43,6 +44,7 @@
 - [ ] Sketch
 - [ ] PS
 - [ ] `brew install annie` [视频下载](https://github.com/iawia002/annie#download-a-video) 
+- [ ] listen1
 - [ ] Ummy Video Downloader (YouTube视频下载)
 - [ ] 打印目录结构 `brew install tree`    
     ```shell
@@ -132,3 +134,7 @@ git config --global credential.helper osxkeychain
 ### 使用 soundflower 解决 QuickTime 录屏没有声音的问题
 
 - https://www.jianshu.com/p/db035dad616a
+
+### 微信小助手
+
+- https://github.com/lmk123/oh-my-wechat

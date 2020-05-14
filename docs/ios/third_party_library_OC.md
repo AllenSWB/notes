@@ -151,6 +151,7 @@
 + [EZAudio](https://github.com/syedhali/EZAudio.git) An iOS and OSX audio visualization framework built upon Core Audio useful for anyone doing real-time, low-latency audio processing and visualizations.
 
 + [DOUAudioStreamer](https://github.com/douban/DOUAudioStreamer.git)  豆瓣音频 A Core Audio based streaming audio player for iOS and macOS
++ [DFPlayer](https://github.com/ihoudf/DFPlayer)
 
 <h4 id="title_richText">富文本</h4>
 
@@ -325,6 +326,7 @@
 
 + [HBDNavigationBar](https://github.com/listenzz/HBDNavigationBar.git) A custom UINavigationBar for smooth switching between various states, including bar style, bar tint color, background image, background alpha, bar hidden, title text attributes, tint color, shadow hidden...
 + [YPNavigationBarTransition] 隐藏系统导航栏
++ [HWPanModal](https://github.com/HeathWang/HWPanModal)  iOS13 default modalPresentationStyle. 任意形式的底部弹框动画；头条、知乎、抖音弹出评论效果；地图浮层，iOS13 present默认模态效果。
    
 <h4 id="title_routes">路由跳转</h4>
 

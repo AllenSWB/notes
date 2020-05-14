@@ -34,6 +34,7 @@
   - [UITableView haader 悬浮效果](#uitableview-haader-%e6%82%ac%e6%b5%ae%e6%95%88%e6%9e%9c)
   - [让 UITableViewController 的 tableview 内容在状态栏下](#%e8%ae%a9-uitableviewcontroller-%e7%9a%84-tableview-%e5%86%85%e5%ae%b9%e5%9c%a8%e7%8a%b6%e6%80%81%e6%a0%8f%e4%b8%8b)
   - [关闭 iOS13 的黑暗模式](#%e5%85%b3%e9%97%ad-ios13-%e7%9a%84%e9%bb%91%e6%9a%97%e6%a8%a1%e5%bc%8f)
+  - [贝塞尔曲线添加阴影](#%e8%b4%9d%e5%a1%9e%e5%b0%94%e6%9b%b2%e7%ba%bf%e6%b7%bb%e5%8a%a0%e9%98%b4%e5%bd%b1)
 - [xib & storyboard](#xib--storyboard)
   - [xib 创建 UIView](#xib-%e5%88%9b%e5%bb%ba-uiview)
   - [获取故事版上的vc](#%e8%8e%b7%e5%8f%96%e6%95%85%e4%ba%8b%e7%89%88%e4%b8%8a%e7%9a%84vc)
@@ -1298,6 +1299,20 @@ override func tableView(_ tableView: UITableView, heightForFooterInSection secti
 ## 关闭 iOS13 的黑暗模式
 info.plist 添加 UIUserInterfaceStyle = Light
 ![](../../src/imgs/ios/darkoff.png)
+
+## 贝塞尔曲线添加阴影 
+```objc
+UIView *bgV = [[UIView alloc] initWithFrame:CGRectMake(8 * SCALE, 11 * SCALE, 80 * SCALE, 67 * SCALE)];
+bgV.backgroundColor = [UIColor clearColor];
+bgV.layer.shadowOffset = CGSizeMake(0, 0);
+bgV.layer.shadowColor = UIColorFromRGB(0xD0D0D0).CGColor;
+bgV.layer.shadowOpacity = 0.5;
+bgV.layer.shadowRadius = 2;
+UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(-2 * SCALE, -2 * SCALE, 80 * SCALE + 4 * SCALE, 67 * SCALE + 4 * SCALE)];
+bgV.layer.shadowPath = path.CGPath;
+[self.view addSubview:bgV];
+[self.view addSubview:self.topView];
+```
 
 # xib & storyboard
 
