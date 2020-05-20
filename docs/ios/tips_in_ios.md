@@ -35,6 +35,9 @@
   - [让 UITableViewController 的 tableview 内容在状态栏下](#%e8%ae%a9-uitableviewcontroller-%e7%9a%84-tableview-%e5%86%85%e5%ae%b9%e5%9c%a8%e7%8a%b6%e6%80%81%e6%a0%8f%e4%b8%8b)
   - [关闭 iOS13 的黑暗模式](#%e5%85%b3%e9%97%ad-ios13-%e7%9a%84%e9%bb%91%e6%9a%97%e6%a8%a1%e5%bc%8f)
   - [贝塞尔曲线添加阴影](#%e8%b4%9d%e5%a1%9e%e5%b0%94%e6%9b%b2%e7%ba%bf%e6%b7%bb%e5%8a%a0%e9%98%b4%e5%bd%b1)
+  - [两个角切圆角](#%e4%b8%a4%e4%b8%aa%e8%a7%92%e5%88%87%e5%9c%86%e8%a7%92)
+  - [修改UIAlertAction文字颜色](#%e4%bf%ae%e6%94%b9uialertaction%e6%96%87%e5%ad%97%e9%a2%9c%e8%89%b2)
+  - [设置 UITextField 和 UIDatePicker 联动](#%e8%ae%be%e7%bd%ae-uitextfield-%e5%92%8c-uidatepicker-%e8%81%94%e5%8a%a8)
 - [xib & storyboard](#xib--storyboard)
   - [xib 创建 UIView](#xib-%e5%88%9b%e5%bb%ba-uiview)
   - [获取故事版上的vc](#%e8%8e%b7%e5%8f%96%e6%95%85%e4%ba%8b%e7%89%88%e4%b8%8a%e7%9a%84vc)
@@ -1312,6 +1315,63 @@ UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(-2 * SCALE, -2 
 bgV.layer.shadowPath = path.CGPath;
 [self.view addSubview:bgV];
 [self.view addSubview:self.topView];
+```
+## 两个角切圆角
+```objc
+CGFloat leftMargin = 10.f;
+CGFloat hGap = 12.5;
+CGFloat cardW = (kScreenWidth - leftMargin * 2 - hGap * 2) / 3;
+
+UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, cardW, 17) byRoundingCorners:UIRectCornerTopRight | UIRectCornerTopLeft cornerRadii:CGSizeMake(10, 10)];
+CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+maskLayer.frame = self.popularlabel.bounds;
+maskLayer.path = maskPath.CGPath;
+self.popularlabel.layer.mask = maskLayer;
+```
+## 修改UIAlertAction文字颜色
+```objc 
+UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    
+}]; 
+[action2 setValue:[UIColor redColor] forKey:@"titleTextColor"];
+```
+## 设置 UITextField 和 UIDatePicker 联动
+```objc 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code 
+
+    //创建时间选择对象
+    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    //设置地区: zh-中国
+    datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh"];
+    //设置日期模式 4种
+    //    UIDatePickerModeTime,
+    //    UIDatePickerModeDate,
+    //    UIDatePickerModeDateAndTime,
+    //    UIDatePickerModeCountDownTimer,
+    datePicker.datePickerMode = UIDatePickerModeDate;
+    // 设置当前显示时间
+    [datePicker setDate:[NSDate date] animated:YES];
+    // 设置显示最大时间（此处为当前时间）
+    [datePicker setMaximumDate:[NSDate date]];
+    //设置时间格式
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init]; 
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateOneString = @"1990-05-02";
+    NSDate *dateOne = [formatter dateFromString:dateOneString]; 
+    [datePicker setMinimumDate:dateOne]; 
+    // 监听DataPicker的滚动 
+    [datePicker addTarget:self action:@selector(dateChange:) forControlEvents:UIControlEventValueChanged]; 
+    // 设置时间输入框的键盘框样式为时间选择器
+    self.birthTextField.inputView = datePicker;
+}
+- (void)dateChange:(UIDatePicker *)picker {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"YYYY-MM-dd";
+    NSString *str = [formatter stringFromDate:picker.date];
+    self.birthTextField.text = str;
+}
 ```
 
 # xib & storyboard
