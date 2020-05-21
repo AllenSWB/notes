@@ -38,6 +38,7 @@
   - [两个角切圆角](#%e4%b8%a4%e4%b8%aa%e8%a7%92%e5%88%87%e5%9c%86%e8%a7%92)
   - [修改UIAlertAction文字颜色](#%e4%bf%ae%e6%94%b9uialertaction%e6%96%87%e5%ad%97%e9%a2%9c%e8%89%b2)
   - [设置 UITextField 和 UIDatePicker 联动](#%e8%ae%be%e7%bd%ae-uitextfield-%e5%92%8c-uidatepicker-%e8%81%94%e5%8a%a8)
+  - [使用 CoreLocation 定位](#%e4%bd%bf%e7%94%a8-corelocation-%e5%ae%9a%e4%bd%8d)
 - [xib & storyboard](#xib--storyboard)
   - [xib 创建 UIView](#xib-%e5%88%9b%e5%bb%ba-uiview)
   - [获取故事版上的vc](#%e8%8e%b7%e5%8f%96%e6%95%85%e4%ba%8b%e7%89%88%e4%b8%8a%e7%9a%84vc)
@@ -1373,7 +1374,110 @@ UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertA
     self.birthTextField.text = str;
 }
 ```
+## 使用 CoreLocation 定位
+> info.plist 加权限请求 
+> Privacy - Location Always Usage Description
+> Privacy - Location When In Use Usage Description
+```objc
+// .h 
+@interface CMLocationTool : NSObject 
+@property (nonatomic, strong) NSString *latitude;//纬
+@property (nonatomic, strong) NSString *longitude;//经 
++ (instancetype)sharedInstance; 
+- (void)startUpdateLocation;
+- (void)endUpdateLocation; 
+@end
 
+// .m
+
+#import "CMLocationTool.h"
+#import <CoreLocation/CoreLocation.h>
+
+@interface CMLocationTool () <CLLocationManagerDelegate> {
+    CLLocationManager *_locationManager;//定位服务管理类
+    CLGeocoder * _geocoder;//初始化地理编码器
+}
+@end
+@implementation CMLocationTool
+
++ (instancetype)sharedInstance {
+    static CMLocationTool *obj = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        obj = [[CMLocationTool alloc] init];
+        [obj initializeLocationService];
+    });
+    return obj;
+}
+
+- (void)initializeLocationService {
+    // 初始化定位管理器
+    _locationManager = [[CLLocationManager alloc] init];
+    [_locationManager requestWhenInUseAuthorization];
+    //[_locationManager requestAlwaysAuthorization];//iOS8必须，这两行必须有一行执行，否则无法获取位置信息，和定位
+    // 设置代理
+    _locationManager.delegate = self;
+    // 设置定位精确度到米
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    // 设置过滤器为无
+    _locationManager.distanceFilter = kCLDistanceFilterNone;
+    //初始化地理编码器
+    _geocoder = [[CLGeocoder alloc] init];
+}
+- (void)startUpdateLocation {
+    [_locationManager startUpdatingLocation];// 开始定位之后会不断的执行代理方法更新位置会比较费电所以建议获取完位置即时关闭更新位置服务
+}
+- (void)endUpdateLocation {
+    [_locationManager stopUpdatingLocation]; //不用的时候关闭更新位置服务
+}
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+
+        NSLog(@"%lu",(unsigned long)locations.count);
+        CLLocation * location = locations.lastObject;
+        // 纬度
+        CLLocationDegrees latitude = location.coordinate.latitude;
+        // 经度
+        CLLocationDegrees longitude = location.coordinate.longitude;
+    
+    
+    self.latitude = [NSString stringWithFormat:@"%lf", latitude];
+    self.longitude = [NSString stringWithFormat:@"%lf", longitude];
+    
+        NSLog(@"%@",[NSString stringWithFormat:@"%lf", location.coordinate.longitude]);
+    //    NSLog(@"经度：%f,纬度：%f,海拔：%f,航向：%f,行走速度：%f", location.coordinate.longitude, location.coordinate.latitude,location.altitude,location.course,location.speed);
+        
+//        [_geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+//            if (placemarks.count > 0) {
+//                CLPlacemark *placemark = [placemarks objectAtIndex:0];
+//                NSLog(@"%@",placemark.name);
+//                //获取城市
+//                NSString *city = placemark.locality;
+//                if (!city) {
+//                    //四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
+//                    city = placemark.administrativeArea;
+//                }
+//                // 位置名
+//        　　NSLog(@"name,%@",placemark.name);
+//        　　// 街道
+//        　　NSLog(@"thoroughfare,%@",placemark.thoroughfare);
+//        　　// 子街道
+//        　　NSLog(@"subThoroughfare,%@",placemark.subThoroughfare);
+//        　　// 市
+//        　　NSLog(@"locality,%@",placemark.locality);
+//        　　// 区
+//        　　NSLog(@"subLocality,%@",placemark.subLocality);
+//        　　// 国家
+//        　　NSLog(@"country,%@",placemark.country);
+//            }else if (error == nil && [placemarks count] == 0) {
+//                NSLog(@"No results were returned.");
+//            } else if (error != nil){
+//                NSLog(@"An error occurred = %@", error);
+//            }
+//        }];
+}
+
+```
 # xib & storyboard
 
 ## xib 创建 UIView 
