@@ -13,6 +13,7 @@
 - [Xcode 常用的快捷键](#xcode-%e5%b8%b8%e7%94%a8%e7%9a%84%e5%bf%ab%e6%8d%b7%e9%94%ae)
 - [使用 soundflower 解决 QuickTime 录屏没有声音的问题](#%e4%bd%bf%e7%94%a8-soundflower-%e8%a7%a3%e5%86%b3-quicktime-%e5%bd%95%e5%b1%8f%e6%b2%a1%e6%9c%89%e5%a3%b0%e9%9f%b3%e7%9a%84%e9%97%ae%e9%a2%98)
 - [微信小助手](#%e5%be%ae%e4%bf%a1%e5%b0%8f%e5%8a%a9%e6%89%8b)
+- [macbook 外接显示器发虚问题](#macbook-%e5%a4%96%e6%8e%a5%e6%98%be%e7%a4%ba%e5%99%a8%e5%8f%91%e8%99%9a%e9%97%ae%e9%a2%98)
 ### 新Mac安装软件
 
 - [x] 输入法
@@ -138,3 +139,16 @@ git config --global credential.helper osxkeychain
 ### 微信小助手
 
 - https://github.com/lmk123/oh-my-wechat
+
+### macbook 外接显示器发虚问题
+
+> 一些软件：[点我](../src/mac_extend_screen/)
+[可能是目前解决Mac外接显示器字体发虚的最好方法](https://www.jianshu.com/p/6274253b78d8)
+[0.15 公测版，关闭 SIP 后，还是无法将文件拷贝进 System 下](https://www.v2ex.com/t/579672)
+
+```shell
+# 开启和关闭 sip
+csrutil disable
+csrutil enable
+csrutil status # 查看状态
+```

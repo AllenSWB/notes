@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>DisplayProductName</key>
+  <string>Q2490W1 - forced RGB mode (EDID override)</string>
+  <key>IODisplayEDID</key>
+  <data>AP///////wAF45Ak0AEAAAIcAQOANR54It11pVVOnScLUFS/7wDRwLMAlQCB
+gIFAgcABAQEBVl4AoKCgKVAwIDUADyghAAAeAAAA/QAyTB5jHgAKICAgICAg
+AAAA/ABRMjQ5MFcxCiAgICAgAAAA/wBBUDkwODAyWjAwNDY0AEo=
+</data>
+  <key>DisplayVendorID</key>
+  <integer>1507</integer>
+  <key>DisplayProductID</key>
+  <integer>9360</integer>
+</dict>
+</plist>
