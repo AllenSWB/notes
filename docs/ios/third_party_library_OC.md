@@ -167,6 +167,7 @@
 
 + [WordPress-Editor-iOS](https://github.com/wordpress-mobile/WordPress-Editor-iOS.git) A reusable iOS rich text editor component.
 + [SJAttributesFactory  SJAttributesStringMaker](https://github.com/changsanjiang/SJAttributesFactory) iOS 富文本编辑, 让代码更清晰. 文本编辑, 高度计算, 正则匹配等待... 简便操作, 让你爽到爆!
++ [RZRichTextView](https://github.com/rztime/RZRichTextView) iOS 原生UITextView 富文本编辑器
 
 
 <h4 id="title_block">Block</h4>
