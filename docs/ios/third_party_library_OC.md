@@ -408,6 +408,7 @@
 + [AppDevKit](https://github.com/yahoo/AppDevKit.git) AppDevKit is an iOS development library that provides developers with useful features to fulfill their everyday iOS app development needs. https://yahoo.github.io/AppDevKit
 
 + [code-prettify](https://github.com/google/code-prettify.git) Automatically exported from code.google.com/p/google-code-prettify
++ [NullSafe](https://github.com/nicklockwood/NullSafe)
 
 <h4 id="title_log">Debug&Log</h4>
 
