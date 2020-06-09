@@ -1,49 +1,50 @@
-- [iOS 开发随手记](#ios-%e5%bc%80%e5%8f%91%e9%9a%8f%e6%89%8b%e8%ae%b0)
-  - [多 target](#%e5%a4%9a-target)
-  - [加快编译速度](#%e5%8a%a0%e5%bf%ab%e7%bc%96%e8%af%91%e9%80%9f%e5%ba%a6)
-  - [扩大 button 响应区域](#%e6%89%a9%e5%a4%a7-button-%e5%93%8d%e5%ba%94%e5%8c%ba%e5%9f%9f)
-  - [UILabel 文本靠左上角](#uilabel-%e6%96%87%e6%9c%ac%e9%9d%a0%e5%b7%a6%e4%b8%8a%e8%a7%92)
-  - [UILabel 设置行间隙](#uilabel-%e8%ae%be%e7%bd%ae%e8%a1%8c%e9%97%b4%e9%9a%99)
-  - [去除 String 中的空格](#%e5%8e%bb%e9%99%a4-string-%e4%b8%ad%e7%9a%84%e7%a9%ba%e6%a0%bc)
-  - [UILabel 部分文字可点击](#uilabel-%e9%83%a8%e5%88%86%e6%96%87%e5%ad%97%e5%8f%af%e7%82%b9%e5%87%bb)
-  - [找到所有 subviewClass 类](#%e6%89%be%e5%88%b0%e6%89%80%e6%9c%89-subviewclass-%e7%b1%bb)
-  - [找到 subviewClass 这个类的父视图](#%e6%89%be%e5%88%b0-subviewclass-%e8%bf%99%e4%b8%aa%e7%b1%bb%e7%9a%84%e7%88%b6%e8%a7%86%e5%9b%be)
-  - [iOS13 适配](#ios13-%e9%80%82%e9%85%8d)
-  - [RAC 通知的移除](#rac-%e9%80%9a%e7%9f%a5%e7%9a%84%e7%a7%bb%e9%99%a4)
-  - [类方法里使用 self](#%e7%b1%bb%e6%96%b9%e6%b3%95%e9%87%8c%e4%bd%bf%e7%94%a8-self)
-  - [拍照后修复图片方向 `fixOrientation` & 剪切图片 `imageByCroppingWithRect`](#%e6%8b%8d%e7%85%a7%e5%90%8e%e4%bf%ae%e5%a4%8d%e5%9b%be%e7%89%87%e6%96%b9%e5%90%91-fixorientation--%e5%89%aa%e5%88%87%e5%9b%be%e7%89%87-imagebycroppingwithrect)
-  - [设置APP支持的文件类型 eg:PDF](#%e8%ae%be%e7%bd%aeapp%e6%94%af%e6%8c%81%e7%9a%84%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b-egpdf)
-  - [`Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: "swift_lang")` 方法获取不到文件解决](#bundlemainpathsforresourcesoftype-%22pdf%22-indirectory-%22swiftlang%22-%e6%96%b9%e6%b3%95%e8%8e%b7%e5%8f%96%e4%b8%8d%e5%88%b0%e6%96%87%e4%bb%b6%e8%a7%a3%e5%86%b3)
-  - [Xcode11 新建项目，去除 SceneDelegate.swift](#xcode11-%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae%e5%8e%bb%e9%99%a4-scenedelegateswift)
-  - [Xcode 报错](#xcode-%e6%8a%a5%e9%94%99)
-  - [旋转动画](#%e6%97%8b%e8%bd%ac%e5%8a%a8%e7%94%bb)
-  - [方法废弃](#%e6%96%b9%e6%b3%95%e5%ba%9f%e5%bc%83)
-  - [NSURL 的 query 、path 等方法](#nsurl-%e7%9a%84-query-path-%e7%ad%89%e6%96%b9%e6%b3%95)
-  - [修改 UIPickerView 中的文字大小](#%e4%bf%ae%e6%94%b9-uipickerview-%e4%b8%ad%e7%9a%84%e6%96%87%e5%ad%97%e5%a4%a7%e5%b0%8f)
-  - [深拷贝](#%e6%b7%b1%e6%8b%b7%e8%b4%9d)
+- [iOS 开发随手记](#ios-开发随手记)
+  - [多 target](#多-target)
+  - [加快编译速度](#加快编译速度)
+  - [扩大 button 响应区域](#扩大-button-响应区域)
+  - [UILabel 文本靠左上角](#uilabel-文本靠左上角)
+  - [UILabel 设置行间隙](#uilabel-设置行间隙)
+  - [去除 String 中的空格](#去除-string-中的空格)
+  - [UILabel 部分文字可点击](#uilabel-部分文字可点击)
+  - [找到所有 subviewClass 类](#找到所有-subviewclass-类)
+  - [找到 subviewClass 这个类的父视图](#找到-subviewclass-这个类的父视图)
+  - [iOS13 适配](#ios13-适配)
+  - [RAC 通知的移除](#rac-通知的移除)
+  - [类方法里使用 self](#类方法里使用-self)
+  - [拍照后修复图片方向 `fixOrientation` & 剪切图片 `imageByCroppingWithRect`](#拍照后修复图片方向-fixorientation--剪切图片-imagebycroppingwithrect)
+  - [设置APP支持的文件类型 eg:PDF](#设置app支持的文件类型-egpdf)
+  - [`Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: "swift_lang")` 方法获取不到文件解决](#bundlemainpathsforresourcesoftype-pdf-indirectory-swift_lang-方法获取不到文件解决)
+  - [Xcode11 新建项目，去除 SceneDelegate.swift](#xcode11-新建项目去除-scenedelegateswift)
+  - [Xcode 报错](#xcode-报错)
+  - [旋转动画](#旋转动画)
+  - [方法废弃](#方法废弃)
+  - [NSURL 的 query 、path 等方法](#nsurl-的-query-path-等方法)
+  - [修改 UIPickerView 中的文字大小](#修改-uipickerview-中的文字大小)
+  - [深拷贝](#深拷贝)
   - [[Application] The app delegate must implement the window property if it wants to use a main storyboard file.](#application-the-app-delegate-must-implement-the-window-property-if-it-wants-to-use-a-main-storyboard-file)
-  - [秒数转成 00:00:00 格式  eg: 60s -> 00:01:00](#%e7%a7%92%e6%95%b0%e8%bd%ac%e6%88%90-000000-%e6%a0%bc%e5%bc%8f-eg-60s---000100)
-  - [添加 pch 文件时候路径怎么写](#%e6%b7%bb%e5%8a%a0-pch-%e6%96%87%e4%bb%b6%e6%97%b6%e5%80%99%e8%b7%af%e5%be%84%e6%80%8e%e4%b9%88%e5%86%99)
-  - [iOS 添加点击效果，方便录屏时候看触点](#ios-%e6%b7%bb%e5%8a%a0%e7%82%b9%e5%87%bb%e6%95%88%e6%9e%9c%e6%96%b9%e4%be%bf%e5%bd%95%e5%b1%8f%e6%97%b6%e5%80%99%e7%9c%8b%e8%a7%a6%e7%82%b9)
-  - [model类转字典](#model%e7%b1%bb%e8%bd%ac%e5%ad%97%e5%85%b8)
-  - [iOS10上的 navgaitionBarItem 不显示问题](#ios10%e4%b8%8a%e7%9a%84-navgaitionbaritem-%e4%b8%8d%e6%98%be%e7%a4%ba%e9%97%ae%e9%a2%98)
-  - [class_copyPropertyList 不能复制父类的属性](#classcopypropertylist-%e4%b8%8d%e8%83%bd%e5%a4%8d%e5%88%b6%e7%88%b6%e7%b1%bb%e7%9a%84%e5%b1%9e%e6%80%a7)
-  - [git 报错：refusing to merge unrelated histories](#git-%e6%8a%a5%e9%94%99refusing-to-merge-unrelated-histories)
-  - [字符串某些变色](#%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%9f%90%e4%ba%9b%e5%8f%98%e8%89%b2)
-  - [编译不过，storyboard 报错 : internal error.](#%e7%bc%96%e8%af%91%e4%b8%8d%e8%bf%87storyboard-%e6%8a%a5%e9%94%99--internal-error)
-  - [UITableView haader 悬浮效果](#uitableview-haader-%e6%82%ac%e6%b5%ae%e6%95%88%e6%9e%9c)
-  - [让 UITableViewController 的 tableview 内容在状态栏下](#%e8%ae%a9-uitableviewcontroller-%e7%9a%84-tableview-%e5%86%85%e5%ae%b9%e5%9c%a8%e7%8a%b6%e6%80%81%e6%a0%8f%e4%b8%8b)
-  - [关闭 iOS13 的黑暗模式](#%e5%85%b3%e9%97%ad-ios13-%e7%9a%84%e9%bb%91%e6%9a%97%e6%a8%a1%e5%bc%8f)
-  - [贝塞尔曲线添加阴影](#%e8%b4%9d%e5%a1%9e%e5%b0%94%e6%9b%b2%e7%ba%bf%e6%b7%bb%e5%8a%a0%e9%98%b4%e5%bd%b1)
-  - [两个角切圆角](#%e4%b8%a4%e4%b8%aa%e8%a7%92%e5%88%87%e5%9c%86%e8%a7%92)
-  - [修改UIAlertAction文字颜色](#%e4%bf%ae%e6%94%b9uialertaction%e6%96%87%e5%ad%97%e9%a2%9c%e8%89%b2)
-  - [设置 UITextField 和 UIDatePicker 联动](#%e8%ae%be%e7%bd%ae-uitextfield-%e5%92%8c-uidatepicker-%e8%81%94%e5%8a%a8)
-  - [使用 CoreLocation 定位](#%e4%bd%bf%e7%94%a8-corelocation-%e5%ae%9a%e4%bd%8d)
+  - [秒数转成 00:00:00 格式  eg: 60s -> 00:01:00](#秒数转成-000000-格式-eg-60s---000100)
+  - [添加 pch 文件时候路径怎么写](#添加-pch-文件时候路径怎么写)
+  - [iOS 添加点击效果，方便录屏时候看触点](#ios-添加点击效果方便录屏时候看触点)
+  - [model类转字典](#model类转字典)
+  - [iOS10上的 navgaitionBarItem 不显示问题](#ios10上的-navgaitionbaritem-不显示问题)
+  - [class_copyPropertyList 不能复制父类的属性](#class_copypropertylist-不能复制父类的属性)
+  - [git 报错：refusing to merge unrelated histories](#git-报错refusing-to-merge-unrelated-histories)
+  - [字符串某些变色](#字符串某些变色)
+  - [编译不过，storyboard 报错 : internal error.](#编译不过storyboard-报错--internal-error)
+  - [UITableView haader 悬浮效果](#uitableview-haader-悬浮效果)
+  - [让 UITableViewController 的 tableview 内容在状态栏下](#让-uitableviewcontroller-的-tableview-内容在状态栏下)
+  - [关闭 iOS13 的黑暗模式](#关闭-ios13-的黑暗模式)
+  - [贝塞尔曲线添加阴影](#贝塞尔曲线添加阴影)
+  - [两个角切圆角](#两个角切圆角)
+  - [修改UIAlertAction文字颜色](#修改uialertaction文字颜色)
+  - [设置 UITextField 和 UIDatePicker 联动](#设置-uitextfield-和-uidatepicker-联动)
+  - [使用 CoreLocation 定位](#使用-corelocation-定位)
+  - [监听网络变化、获取wifi信息](#监听网络变化获取wifi信息)
 - [xib & storyboard](#xib--storyboard)
-  - [xib 创建 UIView](#xib-%e5%88%9b%e5%bb%ba-uiview)
-  - [获取故事版上的vc](#%e8%8e%b7%e5%8f%96%e6%95%85%e4%ba%8b%e7%89%88%e4%b8%8a%e7%9a%84vc)
-  - [UITableViewController 静态 cell 和动态 cell 混用](#uitableviewcontroller-%e9%9d%99%e6%80%81-cell-%e5%92%8c%e5%8a%a8%e6%80%81-cell-%e6%b7%b7%e7%94%a8)
-  - [让自定义 view 在 xib 或 storyboard 上也能用](#%e8%ae%a9%e8%87%aa%e5%ae%9a%e4%b9%89-view-%e5%9c%a8-xib-%e6%88%96-storyboard-%e4%b8%8a%e4%b9%9f%e8%83%bd%e7%94%a8)
+  - [xib 创建 UIView](#xib-创建-uiview)
+  - [获取故事版上的vc](#获取故事版上的vc)
+  - [UITableViewController 静态 cell 和动态 cell 混用](#uitableviewcontroller-静态-cell-和动态-cell-混用)
+  - [让自定义 view 在 xib 或 storyboard 上也能用](#让自定义-view-在-xib-或-storyboard-上也能用)
 
 # iOS 开发随手记 
 
@@ -1477,6 +1478,36 @@ UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertA
 //        }];
 }
 
+```
+
+## 监听网络变化、获取wifi信息
+```objc
+// 利用afn通知监听
+[[[NSNotificationCenter defaultCenter] rac_addObserverForName:AFNetworkingReachabilityDidChangeNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+    self.wifiname = [self checkNetwork];
+}];
+
+/// 获取wifi信息
+- (id)fetchSSIDInfo {
+    NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
+    id info = nil;
+    for (NSString *ifnam in ifs) {
+        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
+        
+        if (info && [info count]) {
+            break;
+        }
+    }
+    return info;
+}
+/// 获取WIFI名字
+- (NSString *)getWifiSSID {
+    return (NSString *)[self fetchSSIDInfo][@"SSID"];
+}
+/// 获取WIFI的MAC地址
+- (NSString *)getWifiBSSID {
+    return (NSString *)[self fetchSSIDInfo][@"BSSID"];
+}
 ```
 # xib & storyboard
 
