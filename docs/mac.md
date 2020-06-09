@@ -94,6 +94,12 @@
 
 + `command` + `option` + `c` 最近复制的内容
 
+#### workflow 资源
+
+- [workflow-collect](./src/../../workflow-collect/)
+- https://pacmax.org
+
+
 ### go2shell
 
 - App Store 下载 go2shell
