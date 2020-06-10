@@ -56,4 +56,5 @@
 + [Linux](./docs/linux.md)
 + [一个上传图片到 GitHub 的 Alfred workflow](docs/applescript.md)
 + [新 Mac 配置](./docs/mac.md)
++ [Xcode Tip](./docs/ios/xcode_tip.md)
 + [iPhone 手机尺寸](docs/ios/ios_design.md) 
