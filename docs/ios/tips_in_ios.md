@@ -40,6 +40,7 @@
   - [设置 UITextField 和 UIDatePicker 联动](#设置-uitextfield-和-uidatepicker-联动)
   - [使用 CoreLocation 定位](#使用-corelocation-定位)
   - [监听网络变化、获取wifi信息](#监听网络变化获取wifi信息)
+  - [使用DZNEmptyDataSet自定义空白视图高度为0](#使用dznemptydataset自定义空白视图高度为0)
 - [xib & storyboard](#xib--storyboard)
   - [xib 创建 UIView](#xib-创建-uiview)
   - [获取故事版上的vc](#获取故事版上的vc)
@@ -1508,6 +1509,16 @@ UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertA
 - (NSString *)getWifiBSSID {
     return (NSString *)[self fetchSSIDInfo][@"BSSID"];
 }
+```
+## 使用DZNEmptyDataSet自定义空白视图高度为0
+```swift
+ func customView(forEmptyDataSet scrollView: UIScrollView!) -> UIView! {
+        let v = UIView(frame: CGRect.init(x: 0, y: 0, width: Tools.width(), height: 500))
+        v.snp.makeConstraints { (make) in // 使用autolayout设置高度，使用frame是没有用的  https://www.jianshu.com/p/a6312836b310
+            make.height.equalTo(500)
+        }
+        return v
+    }
 ```
 # xib & storyboard
 
