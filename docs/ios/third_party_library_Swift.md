@@ -187,6 +187,7 @@ Alert
 - [SwiftTheme](https://github.com/jiecao-fm/SwiftTheme.git) 🎨 Powerful theme/skin manager for iOS 8+ 主题/换肤, 夜间模式
 
 - [Repeat](https://github.com/malcommac/Repeat) 计时器timer
+- [HorizonCalendar](https://github.com/airbnb/HorizonCalendar) 日历 Airbnb
 
 #### APP 
 

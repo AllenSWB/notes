@@ -40,6 +40,7 @@
   - [设置 UITextField 和 UIDatePicker 联动](#设置-uitextfield-和-uidatepicker-联动)
   - [使用 CoreLocation 定位](#使用-corelocation-定位)
   - [监听网络变化、获取wifi信息](#监听网络变化获取wifi信息)
+  - [UILabel 显示 HTML](#uilabel-显示-html)
 - [xib & storyboard](#xib--storyboard)
   - [xib 创建 UIView](#xib-创建-uiview)
   - [获取故事版上的vc](#获取故事版上的vc)
@@ -1508,6 +1509,18 @@ UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertA
 - (NSString *)getWifiBSSID {
     return (NSString *)[self fetchSSIDInfo][@"BSSID"];
 }
+```
+
+## UILabel 显示 HTML
+```swift
+class func getHtmlString(str: String) -> NSAttributedString? {
+    return try? NSAttributedString.init(data: str.data(using: .unicode)!, options: [NSAttributedString.DocumentReadingOptionKey.documentType : NSAttributedString.DocumentType.html], documentAttributes: nil)
+}
+
+
+cell.label.attributedText = Tools.getHtmlString(str: str)
+// 如果想要改变文字的字体,请在设置attributedText之后设置
+cell.label.font = UIFont.systemFont(ofSize: 14)
 ```
 # xib & storyboard
 
