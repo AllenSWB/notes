@@ -16,7 +16,6 @@
 + [Cocoapods](docs/ios/cocoapods.md)
 + [响应者链](docs/ios/responderchain.md)
 + [深拷贝的应用](docs/ios/deep_copy.md)
-+ [读书笔记 - Effective 52个方法](./docs/ios/effective52.md)
 
 ## 三方库
 + [MJRerfresh](./docs/ios/mjrefresh.md)
