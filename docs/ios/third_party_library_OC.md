@@ -493,11 +493,12 @@
 
 #### 其他
 
-[free-programming-books-zh_CN](https://github.com/justjavac/free-programming-books-zh_CN.git) 📚 免费的计算机编程类中文书籍，欢迎投稿 http://weibo.com/justjavac
+- [free-programming-books-zh_CN](https://github.com/justjavac/free-programming-books-zh_CN.git) 📚 免费的计算机编程类中文书籍，欢迎投稿 http://weibo.com/justjavac
 
-[BQL_iOSProjectMix](https://github.com/biqinglin/BQL_iOSProjectMix.git) 代码混淆
+- [BQL_iOSProjectMix](https://github.com/biqinglin/BQL_iOSProjectMix.git) 代码混淆
 
-[LEETheme](https://github.com/lixiang1994/LEETheme.git) 优雅的主题管理库- 一行代码完成多样式切换
+- [LEETheme](https://github.com/lixiang1994/LEETheme.git) 优雅的主题管理库- 一行代码完成多样式切换
+- [TYSnapshotScroll](https://github.com/TonyReet/TYSnapshotScroll) 一句代码保存截图，将 UIScrollView UITableView UICollectionView UIWebView WKWebView 网页 保存 为 长图 查看。
 
 <h4 id="title_codemix">代码混淆</h4>
 
