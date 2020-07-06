@@ -1,54 +1,50 @@
 # VenderCollection
 
+ - [VenderCollection](#vendercollection)
+    - [网络](#网络)
+    - [Json & Model](#json--model)
+    - [自适应](#自适应)
+    - [数据库](#数据库)
+    - [图片](#图片)
+    - [音视频](#音视频)
+    - [富文本](#富文本)
+    - [Block](#block)
+    - [动画](#动画)
+    - [HUD](#hud)
+    - [UIView](#uiview)
+    - [刷新](#刷新)
+    - [UITableView](#uitableview)
+    - [UITableViewCell](#uitableviewcell)
+    - [UICollectionView](#uicollectionview)
+    - [聊天界面](#聊天界面)
+    - [分栏](#分栏)
+    - [侧边栏](#侧边栏)
+    - [底边栏](#底边栏)
+    - [导航栏](#导航栏)
+    - [路由跳转](#路由跳转)
+    - [Alert](#alert)
+    - [表格／折线图](#表格折线图)
+    - [推送](#推送)
+    - [加解密](#加解密)
+    - [蓝牙](#蓝牙)
+    - [键盘](#键盘)
+    - [JavaScript](#javascript)
+    - [热修复](#热修复)
+    - [Category](#category)
+    - [其他](#其他)
+    - [Debug&Log](#debuglog)
+    - [内存监测](#内存监测)
+    - [服务器](#服务器)
+    - [开源项目](#开源项目)
+    - [上线APP Store](#上线app-store)
+    - [面试](#面试)
+    - [资源集合](#资源集合)
+    - [辅助工具](#辅助工具)
+    - [OCR](#ocr)
+    - [其他](#其他-1)
+    - [代码混淆](#代码混淆)
 
-* [网络@](#title_network)
-* [Json & Model@](#title_json)
-* [自适应@](#title_autolayout)
-* [数据库@](#title_db)
-* [图片@](#title_picture)
-* [视频@](#title_video)
-* [声音@](#title_audio)
-* [富文本@](#title_richText)
-* [Block@](#title_block)
-* [动画@](#title_animation)
-* [HUD@](#title_hud)
-* [UIView@](#title_view)
-* [表单@](#title_textfield)
-* [刷新@](#title_refresh)
-* [UITableView@](#title_tableview)
-* [UITableViewCell@](#title_tableviewCell)
-* [UICollectionView@](#title_collectionview)
-* [聊天界面@](#title_chatUI)
-* [分栏@](#title_segment)
-* [侧边栏@](#title_sideMenu)
-* [底边栏@](#title_tabbar)
-* [导航栏@](#title_navigation)
-* [路由跳转@](#title_routes)
-* [Alert@](#title_alert)
-* [表格／折线图@](#title_chart)
-* [推送@](#title_push)
-* [加解密@](#title_encode)
-* [蓝牙@](#title_bluetooth)
-* [键盘@](#title_keyboard)
-* [JavaScript@](#title_js)
-* [热修复@](#title_hotfix)
-* [Category@](#title_category)
-* [其他@](#title_other)
-* [Debug&Log@](#title_log)
-* [内存监测](#title_leaks)
-* [服务器@](#title_service)
-* [Demo@](#title_demo)
-* [开源项目@](#title_openProject)
-* [上线APP Store@](#title_online)
-* [面试@](#title_interview)
-* [资源集合@](#title_collect)
-* [辅助工具@](#title_tool)
-* [OCR@](#title_ocr)
-* [代码混淆@](#title_codemix)
-
---------------------------------
-
-<h4 id="title_network">网络</h4>
+### 网络
 
 + [AFNetworking](https://github.com/AFNetworking/AFNetworking.git) A delightful networking framework for iOS, OS X, watchOS, and tvOS.
 
@@ -65,7 +61,7 @@
 + [XMNetworking](https://github.com/kangzubin/XMNetworking.git) A lightweight but powerful network library with simplified and expressive syntax based on AFNetworking. Xcode Man 团队
 
 
-<h4 id="title_json">Json & Model</h4>
+### Json & Model
 
 + [MJExtension](https://github.com/CoderMJLee/MJExtension.git) A fast, convenient and nonintrusive conversion between JSON and model. Your model class don't need to extend another base class. You don't need to modify any model file.
 
@@ -77,7 +73,7 @@
 
 + [JSONKit](https://github.com/johnezang/JSONKit.git) Objective-C JSON
 
-<h4 id="title_autolayout">自适应</h4>
+### 自适应
 
 + [SDAutoLayout](https://github.com/gsdios/SDAutoLayout.git)  一行代码搞定自动布局！支持Cell和Tableview高度自适应，Label和ScrollView内容自适应，致力于做最简单易用的AutoLayout库。
 
@@ -95,7 +91,7 @@
 
 + [Texture](https://github.com/TextureGroup/Texture.git) Smooth asynchronous user interfaces for iOS apps. http://texturegroup.org 原[AsyncDisplayKit](https://github.com/facebookarchive/AsyncDisplayKit.git)
 
-<h4 id="title_db">数据库</h4>
+### 数据库
 
 + [realm-cocoa](https://github.com/realm/realm-cocoa.git) Realm is a mobile database: a replacement for Core Data & SQLite
 
@@ -110,7 +106,7 @@
 + [BGFMDB](https://github.com/huangzhibiao/BGFMDB.git) BGFMDB让数据的增删改查分别只需要一行代码即可,就是这么简单任性，本库几乎支持存储ios所有基本的自带数据类型.
 
 
-<h4 id="title_picture">图片</h4>
+### 图片
 
 + [FlyImage](https://github.com/northwind/FlyImage.git) Download, cache, render small images with UIImageView category
 
@@ -138,7 +134,7 @@
 
 + [PINRemoteImage](https://github.com/pinterest/PINRemoteImage.git) A thread safe, performant, feature rich image fetcher
 
-<h4 id="title_video">视频</h4>
+### 音视频
 
 + [ijkplayer](https://github.com/Bilibili/ijkplayer.git)  Android/iOS video player based on FFmpeg n3.2, with MediaCodec, VideoToolbox support.
 
@@ -146,14 +142,12 @@
 
 + [JPVideoPlayer](https://github.com/newyjp/JPVideoPlayer.git)  Automatic play video & cache video data in UITableView like Weibo and Douyin.
 
-<h4 id="title_audio">声音</h4>
-
 + [EZAudio](https://github.com/syedhali/EZAudio.git) An iOS and OSX audio visualization framework built upon Core Audio useful for anyone doing real-time, low-latency audio processing and visualizations.
 
 + [DOUAudioStreamer](https://github.com/douban/DOUAudioStreamer.git)  豆瓣音频 A Core Audio based streaming audio player for iOS and macOS
 + [DFPlayer](https://github.com/ihoudf/DFPlayer)
 
-<h4 id="title_richText">富文本</h4>
+### 富文本
 
 + [YYText](https://github.com/ibireme/YYText.git) Powerful text framework for iOS to display and edit rich text.
 
@@ -170,11 +164,11 @@
 + [RZRichTextView](https://github.com/rztime/RZRichTextView) iOS 原生UITextView 富文本编辑器
 
 
-<h4 id="title_block">Block</h4>
+### Block
 
 + [BlocksKit](https://github.com/zwaldowski/BlocksKit.git) The Objective-C block utilities you always wish you had.
 
-<h4 id="title_animation">动画</h4>
+### 动画
 
 + [pop](https://github.com/facebook/pop.git) An extensible iOS and OS X animation library, useful for physics-based interactions.
 
@@ -188,7 +182,7 @@
 
 + [Context-Menu.iOS](https://github.com/Yalantis/Context-Menu.iOS.git) You can easily add awesome animated context menu to your app
 
-<h4 id="title_hud">HUD</h4>
+### HUD
 
 + [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD.git)  A clean and lightweight progress HUD for your iOS and tvOS app.
 
@@ -197,7 +191,7 @@
 + [JGProgressHUD](https://github.com/JonasGessner/JGProgressHUD.git) Modern and extensive Apple-style progress HUD for iOS.
 
 
-<h4 id="title_view">UIView</h4>
+### UIView
 
 + [FXBlurView](https://github.com/nicklockwood/FXBlurView.git) UIView subclass that replicates the iOS 7 realtime background blur effect, but works on iOS 5 and above.
 
@@ -222,18 +216,15 @@
 + [LazyScrollView](https://github.com/alibaba/LazyScrollView.git) 天猫首页视图复用解决方案An iOS ScrollView to resolve the problem of reusability in views.
 + [FSCalendar] 日历
 + [YYStarView] 评分
-
-<h4 id="title_textfield">表单</h4>
-
 + [JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField.git) UITextField subclass with floating labels - inspired by Matt D.
 
-<h4 id="title_refresh">刷新</h4>
+### 刷新
 
 + [MJRefresh](https://github.com/CoderMJLee/MJRefresh.git) An easy way to use pull-to-refresh.
 
 + [BreakOutToRefresh](https://github.com/dasdom/BreakOutToRefresh.git) Play BreakOut while loading - A playable pull to refresh view using SpriteKit
 
-<h4 id="title_tableview">UITableView</h4>
+### UITableView
 
 + [IGListKit](https://github.com/Instagram/IGListKit) instagram 出品
 
@@ -259,13 +250,14 @@
   
 + [DOPDropDownMenu](https://github.com/dopcn/DOPDropDownMenu.git) Drop down menu like we see on website for iPhone
 
-<h4 id="title_tableviewCell">UITableViewCell</h4>
+### UITableViewCell
 
 + [SWTableViewCell](https://github.com/CEWendel/SWTableViewCell.git) An easy-to-use UITableViewCell subclass that implements a swippable content view which exposes utility buttons (similar to iOS 7 Mail Application)
 
 + [ABMenuTableViewCell](https://github.com/alexbumbu/ABMenuTableViewCell.git) Highly customizable, yet simple to use, solution for UITableViewCell right menu, shown by ''swipe to delete' gesture.
 
-<h4 id="title_collectionview">UICollectionView</h4>
+### UICollectionView
++ [BMLongPressDragCellCollectionView](https://github.com/liangdahong/BMLongPressDragCellCollectionView) 让你轻松实现类似支付宝的拖拽重排功能, 支持各种自定义操作。
 
 + [CollectionView](https://github.com/chenyufeng1991/CollectionView.git) 这里我在iOS中使用三种不同的方式实现UICollectionView，也就是一种瀑布流视图。分别使用storyboard、nib和纯代码的方式来实现。
 
@@ -281,13 +273,13 @@
 
 + [CHTCollectionViewWaterfallLayout](https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git) 瀑布流
 
-<h4 id="title_chatUI">聊天界面</h4>
-
+### 聊天界面
++ [ChatKit-OC](https://github.com/leancloud/ChatKit-OC.git) An IM App UI Framework, support sending text, pictures, audio, video, location messaging, managing address book, more interesting features. Server is available Both in China and US.
++ [JSQMessagesViewController](https://github.com/jessesquires/JSQMessagesViewController.git) An elegant messages UI library for iOS
 + [PonyChatUIV2](https://github.com/PonyGroup/PonyChatUIV2.git) PonyChatUI is an easy to use Chatting Flow UI Library. It constructed on AsyncDisplayKit and WeChat Resource. You will find it really like WeChat.
 
 + [UUChatTableView](https://github.com/ZhipingYang/UUChatTableView.git) Cocoa UI component for group or private chat bubbles with text, images and audio support
-
-<h4 id="title_segment">分栏</h4>
+### 分栏
 
 + [VTMagic](https://github.com/tianzhuo112/VTMagic.git) VTMagic is a page container library for iOS.网易新闻分类
 
@@ -303,7 +295,7 @@
 
 + [SwipeTableView](https://github.com/Roylee-ML/SwipeTableView) — 类似半糖、美丽说主页与QQ音乐歌曲列表布局效果，实现不同菜单的左右滑动切换，同时支持类似tableview的顶部工具栏悬停（既可以左右滑动，又可以上下滑动）。兼容下拉刷新，自定义 collectionview实现自适应 contentSize 还可实现瀑布流功能
 
-<h4 id="title_sideMenu">侧边栏</h4>
+### 侧边栏
 
 + [RESideMenu](https://github.com/romaonthego/RESideMenu.git) iOS 7/8 style side menu with parallax effect.
 
@@ -311,11 +303,11 @@
 + [CWLateralSlide] 抽屉
 
 
-<h4 id="title_tabbar">底边栏</h4>
+### 底边栏
 
 + [CYLTabBarController](https://github.com/ChenYilong/CYLTabBarController.git)  最低只需传两个数组即可完成主流App框架搭建
 
-<h4 id="title_navigation">导航栏</h4>
+### 导航栏
 
 + [FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture.git) A UINavigationController's category to enable fullscreen pop gesture with iOS7+ system style.全屏滑动返回
 
@@ -329,7 +321,7 @@
 + [YPNavigationBarTransition] 隐藏系统导航栏
 + [HWPanModal](https://github.com/HeathWang/HWPanModal)  iOS13 default modalPresentationStyle. 任意形式的底部弹框动画；头条、知乎、抖音弹出评论效果；地图浮层，iOS13 present默认模态效果。
    
-<h4 id="title_routes">路由跳转</h4>
+### 路由跳转
 
 + 文章列表
 
@@ -343,7 +335,7 @@
 
 + [MGJRouter](https://github.com/meili/MGJRouter.git)   一个高效/灵活的 iOS URL Router
 
-<h4 id="title_alert">Alert</h4>
+### Alert
 
 + [MMPopupView](https://github.com/adad184/MMPopupView.git) Pop-up based view(e.g. alert sheet), can easily customize.
 
@@ -351,36 +343,35 @@
 
 + [RKDropdownAlert](https://github.com/cwRichardKim/RKDropdownAlert.git) iOS / Objective C: an extremely simple UIAlertView alternative
 
-<h4 id="title_chart">表格／折线图</h4>
+### 表格／折线图
 
 + [PNChart](https://github.com/kevinzhow/PNChart.git) A simple and beautiful chart lib used in Piner and CoinsMan for iOS
 
-<h4 id="title_push">推送</h4>
+### 推送
 
 + [NWPusher](https://github.com/noodlewerk/NWPusher.git) OS X and iOS application and framework to play with the Apple Push Notification service (APNs)
 
-<h4 id="title_encode">加解密</h4>
+### 加解密
 
 + [GBEncodeTool](https://github.com/mokey1422/GBEncodeTool.git) 包含了市面上所有常用的加密方式
 
-<h4 id="title_bluetooth">蓝牙</h4>
+### 蓝牙
 
 + [BabyBluetooth](https://github.com/coolnameismy/BabyBluetooth.git) 👶 The easiest way to use Bluetooth (BLE )in ios/os ,even bady can use . 一个非常容易使用的蓝牙库,适用于ios和os
-
-
-<h4 id="title_keyboard">键盘</h4>
+ 
+### 键盘
 
 + [YYKeyboardManager](https://github.com/ibireme/YYKeyboardManager.git) iOS utility class allows you to access keyboard view and track keyboard animation.
 
 + [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager.git) Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
 
-<h4 id="title_js">JavaScript</h4>
+### JavaScript
 
 + [WebViewJavascriptBridge](https://github.com/marcuswestin/WebViewJavascriptBridge.git)  An iOS/OSX bridge for sending messages between Obj-C and JavaScript in UIWebViews/WebViews  
 
 + [NJKWebViewProgress](https://github.com/ninjinkun/NJKWebViewProgress.git) UIWebView progress interface
 
-<h4 id="title_hotfix">热修复</h4>
+### 热修复
 
 + [JSPatch](https://github.com/bang590/JSPatch.git) JSPatch bridge Objective-C and Javascript using the Objective-C runtime. You can call any Objective-C class and method in JavaScript by just including a small engine. JSPatch is generally used to hotfix iOS App.
 
@@ -388,7 +379,7 @@
 
 + [LuaViewSDK](https://github.com/alibaba/LuaViewSDK.git) LuaView 是一种运行在一个 ViewController/Activity 中，可以灵活加载Lua 脚本，并能够按照 Native 的方式运行的一种面向业务的开发技术方案。可以快速开发电商应用中既要求体验又要求灵活性的页面功能，例如首页，类目首页，垂直频道，大促活动会场等。
 
-<h4 id="title_category">Category</h4>
+### Category
 
 + [YYCategories](https://github.com/ibireme/YYCategories.git) A set of useful categories for Foundation and UIKit.
 
@@ -396,7 +387,7 @@
 
 + [ObjectiveSugar](https://github.com/supermarin/ObjectiveSugar.git) ObjectiveC additions for humans. Ruby style.
 
-<h4 id="title_other">其他</h4>
+### 其他
 
 + [SimulateIDFA](https://github.com/youmi/SimulateIDFA.git) SimulateIDFA: iOS10 IDFA AD tracking limit solution
 
@@ -411,7 +402,7 @@
 + [code-prettify](https://github.com/google/code-prettify.git) Automatically exported from code.google.com/p/google-code-prettify
 + [NullSafe](https://github.com/nicklockwood/NullSafe)
 
-<h4 id="title_log">Debug&Log</h4>
+### Debug&Log
 
 + [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack.git) A fast & simple, yet powerful & flexible logging framework for Mac and iOS
 
@@ -421,13 +412,13 @@
 
 + [JustLog](https://github.com/justeat/JustLog.git) JustLog brings logging on iOS to the next level. It supports console, file and remote Logstash logging via TCP socket with no effort. Support for logz.io available.
 
-<h4 id="title_leaks">内存监测</h4>
+### 内存监测
 
 + [MLeaksFinder](https://github.com/Zepo/MLeaksFinder.git) Find memory leaks in your iOS app at develop time. 检测内存泄漏
 
 + [PLeakSniffer](https://github.com/music4kid/PLeakSniffer.git) Detect memory leaks for your iOS project automatically. http://mrpeak.cn
 
-<h4 id="title_service">服务器</h4>
+### 服务器
 
 + [Perfect](https://github.com/PerfectlySoft/Perfect.git) Server-side Swift. The Perfect library, application server, connectors and example apps.
 
@@ -439,14 +430,7 @@
 
 + [CocoaHTTPServer](https://github.com/robbiehanson/CocoaHTTPServer.git) A small, lightweight, embeddable HTTP server for Mac OS X or iOS applications
 
-
-<h4 id="title_demo">Demo</h4>
-
-+ [ChatKit-OC](https://github.com/leancloud/ChatKit-OC.git) An IM App UI Framework, support sending text, pictures, audio, video, location messaging, managing address book, more interesting features. Server is available Both in China and US.
-
-+ [JSQMessagesViewController](https://github.com/jessesquires/JSQMessagesViewController.git) An elegant messages UI library for iOS
-
-<h4 id="title_openProject">开源项目</h4>
+### 开源项目
 
 + [Eleven](https://github.com/coderyi/Eleven.git) Eleven Player is a simple powerful video player.use ffmpeg.音乐播放器
 
@@ -459,11 +443,11 @@
 + [WebDriverAgent](A WebDriver server for iOS that runs inside the Simulator.) A WebDriver server for iOS that runs inside the Simulator. facebook 出品
 
 
-<h4 id="title_online">上线APP Store</h4>
+### 上线APP Store
 
 + [Solve-App-Store-Review-Problem](https://github.com/wg689/Solve-App-Store-Review-Problem.git) a collection to solve app store review problem (ipv6,ipv6被拒绝,后台定位等审核问题的终极解决方案汇总)
 
-<h4 id="title_interview">面试</h4>
+### 面试
 
 + [iOS-Developer-Interview-Questions](https://github.com/lzyy/iOS-Developer-Interview-Questions.git) 面试 iOS 开发时可以问的一些问题
 
@@ -471,7 +455,7 @@
 
 + [ResumeSample](https://github.com/geekcompany/ResumeSample.git) 程序员简历模板系列
 
-<h4 id="title_collect">资源集合</h4>
+### 资源集合
 
 + [SwiftGuide](https://github.com/ipader/SwiftGuide.git) 这份指南汇集了Swift语言主流学习资源，并以开发者的视角整理编排。
 
@@ -479,28 +463,25 @@
 
 + [gold-miner](https://github.com/xitu/gold-miner.git) 掘金翻译计划，翻译掘金上优质的英文文章
 
-<h4 id="title_tool">辅助工具</h4>
+### 辅助工具
 
 + [WHC_DataModelFactory](https://github.com/netyouli/WHC_DataModelFactory.git) Mac上iOS开发辅助工具，快速把json/xml数据转换生成对应模型类属性，省去麻烦手动创建，提高开发效率。
 
 + [Markdown语法](https://github.com/othree/markdown-syntax-zhtw.git) Markdown 語法說明中文版 http://markdown.tw/
 
-<h4 id="title_ocr">OCR</h4>
+### OCR
 
 + [IDCardRecognition](https://github.com/zhongfenglee/IDCardRecognition.git) OCR身份证识别
 
 + [Tesseract-OCR-iOS](https://github.com/gali8/Tesseract-OCR-iOS.git) Tesseract OCR iOS is a Framework for iOS7+, compiled also for armv7s and arm64. http://www.g8production.com
 
-#### 其他
-
+### 其他 
 - [free-programming-books-zh_CN](https://github.com/justjavac/free-programming-books-zh_CN.git) 📚 免费的计算机编程类中文书籍，欢迎投稿 http://weibo.com/justjavac
-
 - [BQL_iOSProjectMix](https://github.com/biqinglin/BQL_iOSProjectMix.git) 代码混淆
-
 - [LEETheme](https://github.com/lixiang1994/LEETheme.git) 优雅的主题管理库- 一行代码完成多样式切换
 - [TYSnapshotScroll](https://github.com/TonyReet/TYSnapshotScroll) 一句代码保存截图，将 UIScrollView UITableView UICollectionView UIWebView WKWebView 网页 保存 为 长图 查看。
 
-<h4 id="title_codemix">代码混淆</h4>
+### 代码混淆
 
  + [BQL_iOSProjectMix](https://github.com/biqinglin/BQL_iOSProjectMix)
 
