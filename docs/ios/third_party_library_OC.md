@@ -320,7 +320,7 @@
 + [HBDNavigationBar](https://github.com/listenzz/HBDNavigationBar.git) A custom UINavigationBar for smooth switching between various states, including bar style, bar tint color, background image, background alpha, bar hidden, title text attributes, tint color, shadow hidden...
 + [YPNavigationBarTransition] 隐藏系统导航栏
 + [HWPanModal](https://github.com/HeathWang/HWPanModal)  iOS13 default modalPresentationStyle. 任意形式的底部弹框动画；头条、知乎、抖音弹出评论效果；地图浮层，iOS13 present默认模态效果。
-   
++ [VHLNavigation](https://github.com/huanglins/VHLNavigation) 导航栏切换之颜色过渡切换，导航栏背景图片切换，微信红包两种不同颜色切换，导航栏透明度，有无导航栏切换
 ### 路由跳转
 
 + 文章列表
