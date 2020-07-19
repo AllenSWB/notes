@@ -1,15 +1,15 @@
-# VenderCollection
+# VenderCollection 
 - [VenderCollection](#vendercollection)
     - [网络](#网络)
     - [Json & Model](#json--model)
     - [自适应](#自适应)
     - [数据库](#数据库)
     - [图片](#图片)
-    - [视频](#视频)
-    - [声音](#声音)
+    - [音视频](#音视频)
     - [富文本](#富文本)
     - [Block](#block)
     - [动画](#动画)
+    - [HUD](#hud)
     - [UIView](#uiview)
     - [表单](#表单)
     - [UITableView](#uitableview)
@@ -104,14 +104,10 @@
 + [YLGIFImage](https://github.com/liyong03/YLGIFImage.git) Async GIF image decoder and Image viewer supporting play GIF images. It just use very less memory.
 + [PINRemoteImage](https://github.com/pinterest/PINRemoteImage.git) A thread safe, performant, feature rich image fetcher
 
-
-### 视频 
-
+### 音视频
 + [ijkplayer](https://github.com/Bilibili/ijkplayer.git)  Android/iOS video player based on FFmpeg n3.2, with MediaCodec, VideoToolbox support.
 + [ZFPlayer](https://github.com/renzifeng/ZFPlayer.git) Based on AVPlayer, support the vertical, horizontal screen(lock screen direction). Support adjust volume, brigtness and video progress.基于AVPlayer，支持横屏、竖屏（全屏播放还可锁定屏幕方向），上下滑动调节音量、屏幕亮度，左右滑动调节播放进度。
 + [JPVideoPlayer](https://github.com/newyjp/JPVideoPlayer.git)  Automatic play video & cache video data in UITableView like Weibo and Douyin.
-
-### 声音
 
 + [EZAudio](https://github.com/syedhali/EZAudio.git) An iOS and OSX audio visualization framework built upon Core Audio useful for anyone doing real-time, low-latency audio processing and visualizations.
 + [DOUAudioStreamer](https://github.com/douban/DOUAudioStreamer.git)  豆瓣音频 A Core Audio based streaming audio player for iOS and macOS
@@ -142,6 +138,15 @@
 + [Context-Menu.iOS](https://github.com/Yalantis/Context-Menu.iOS.git) You can easily add awesome animated context menu to your app
 
 
+### HUD
+
++ [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD.git)  A clean and lightweight progress HUD for your iOS and tvOS app.
+
++ [MBProgressHUD](https://github.com/jdg/MBProgressHUD.git)  MBProgressHUD + Customizations
+
++ [JGProgressHUD](https://github.com/JonasGessner/JGProgressHUD.git) Modern and extensive Apple-style progress HUD for iOS.
+
+
 ### UIView
 
 + [LEETheme](https://github.com/lixiang1994/LEETheme.git) 优雅的主题管理库- 一行代码完成多样式切换
@@ -159,11 +164,11 @@
 + [LazyScrollView](https://github.com/alibaba/LazyScrollView.git) 天猫首页视图复用解决方案An iOS ScrollView to resolve the problem of reusability in views.
 + [FSCalendar] 日历
 + [YYStarView] 评分
-
 + [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD.git)  A clean and lightweight progress HUD for your iOS and tvOS app.
 + [MBProgressHUD](https://github.com/jdg/MBProgressHUD.git)  MBProgressHUD + Customizations
 + [JGProgressHUD](https://github.com/JonasGessner/JGProgressHUD.git) Modern and extensive Apple-style progress HUD for iOS.
 
++ [JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField.git) UITextField subclass with floating labels - inspired by Matt D.
 
 ### 表单 
 + [JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField.git) UITextField subclass with floating labels - inspired by Matt D.
@@ -192,6 +197,7 @@
 + [ABMenuTableViewCell](https://github.com/alexbumbu/ABMenuTableViewCell.git) Highly customizable, yet simple to use, solution for UITableViewCell right menu, shown by ''swipe to delete' gesture.
 
 ### UICollectionView
++ [BMLongPressDragCellCollectionView](https://github.com/liangdahong/BMLongPressDragCellCollectionView) 让你轻松实现类似支付宝的拖拽重排功能, 支持各种自定义操作。
 
 + [CollectionView](https://github.com/chenyufeng1991/CollectionView.git) 这里我在iOS中使用三种不同的方式实现UICollectionView，也就是一种瀑布流视图。分别使用storyboard、nib和纯代码的方式来实现。
 + [CollectionViewClassifyMenu](https://github.com/ChenYilong/CollectionViewClassifyMenu.git) CollectionView做的两级菜单，可以折叠第二级菜单
@@ -203,6 +209,8 @@
 
 ### 聊天界面
 
++ [ChatKit-OC](https://github.com/leancloud/ChatKit-OC.git) An IM App UI Framework, support sending text, pictures, audio, video, location messaging, managing address book, more interesting features. Server is available Both in China and US.
++ [JSQMessagesViewController](https://github.com/jessesquires/JSQMessagesViewController.git) An elegant messages UI library for iOS
 + [PonyChatUIV2](https://github.com/PonyGroup/PonyChatUIV2.git) PonyChatUI is an easy to use Chatting Flow UI Library. It constructed on AsyncDisplayKit and WeChat Resource. You will find it really like WeChat.
 + [UUChatTableView](https://github.com/ZhipingYang/UUChatTableView.git) Cocoa UI component for group or private chat bubbles with text, images and audio support
 
@@ -238,6 +246,7 @@
    
 ### 路由跳转
 
++ [VHLNavigation](https://github.com/huanglins/VHLNavigation) 导航栏切换之颜色过渡切换，导航栏背景图片切换，微信红包两种不同颜色切换，导航栏透明度，有无导航栏切换
 + [JLRoutes](https://github.com/joeldev/JLRoutes.git)   路由跳转URL routing library for iOS with a simple block-based API
 + [routable-ios](https://github.com/clayallsopp/routable-ios.git)   Routable, an in-app native URL router, for iOS
 + [HHRouter](https://github.com/lightory/HHRouter.git)  Yet another URL Router for iOS.
@@ -349,10 +358,11 @@
 + [IDCardRecognition](https://github.com/zhongfenglee/IDCardRecognition.git) OCR身份证识别
 + [Tesseract-OCR-iOS](https://github.com/gali8/Tesseract-OCR-iOS.git) Tesseract OCR iOS is a Framework for iOS7+, compiled also for armv7s and arm64. http://www.g8production.com
 
-### 其他
-
-+ [free-programming-books-zh_CN](https://github.com/justjavac/free-programming-books-zh_CN.git) 📚 免费的计算机编程类中文书籍，欢迎投稿 http://weibo.com/justjavac
-+ [BQL_iOSProjectMix](https://github.com/biqinglin/BQL_iOSProjectMix.git) 代码混淆
+### 其他 
+- [free-programming-books-zh_CN](https://github.com/justjavac/free-programming-books-zh_CN.git) 📚 免费的计算机编程类中文书籍，欢迎投稿 http://weibo.com/justjavac
+- [BQL_iOSProjectMix](https://github.com/biqinglin/BQL_iOSProjectMix.git) 代码混淆
+- [LEETheme](https://github.com/lixiang1994/LEETheme.git) 优雅的主题管理库- 一行代码完成多样式切换
+- [TYSnapshotScroll](https://github.com/TonyReet/TYSnapshotScroll) 一句代码保存截图，将 UIScrollView UITableView UICollectionView UIWebView WKWebView 网页 保存 为 长图 查看。
 
 ### 代码混淆
 

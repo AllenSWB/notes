@@ -142,19 +142,17 @@
 
 > Podfile中的代码是ruby
 
-```ruby
-
-  # 本地导入指明podspec文件路径
-  pod 'Whoops', :path => '../'
-
+```ruby 
+  pod 'Objection', :path => '../' # 本地导入  
+  pod 'Objection', :git => 'git' # git地址
+  pod 'Objection', :git => 'git', :commit => 'commit' # 指定commit
+  pod 'Objection', :git => 'git', :branch => 'branch'  # 分支
+  pod 'Objection', :git => 'git', :tag => 'tag'   # tag
+ 
   # 版本号
   pod 'ZCComponent', '0.1.2' # 指定版本号
   pod 'ZBarSDK', '~> 1.3.1' # 不小于1.3.1版本
-
-  # tag
-
-  # 分支
-
+ 
   # 仅Debug
   pod 'UCARRobot', :configurations => ['Debug']
 

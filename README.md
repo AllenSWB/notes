@@ -5,7 +5,7 @@
 ## iOS 
 
 + [Tips in iOS](docs/ios/tips_in_ios.md)
-+ [Tips in Swift](./docs/ios/tips_in_swift.md)
++ [Swift 实践](https://www.yuque.com/docs/share/fdcd7dcb-aaf3-4a43-8e6d-f16f64dfa210?#)
 + [iOS 开发文章](docs/ios/articles.md) 、[三方库 OC](docs/ios/third_party_library_OC.md) 、[三方库 Swift](docs/ios/third_party_library_Swift.md)
 + [GCD](docs/ios/gcd.md)
 + [KVO](./docs/ios/kvo_ios.md)、 [demo](./code/UcarShareDemo/)
@@ -16,7 +16,6 @@
 + [Cocoapods](docs/ios/cocoapods.md)
 + [响应者链](docs/ios/responderchain.md)
 + [深拷贝的应用](docs/ios/deep_copy.md)
-+ [读书笔记 - Effective 52个方法](./docs/ios/effective52.md)
 
 ## 三方库
 + [MJRerfresh](./docs/ios/mjrefresh.md)
@@ -25,6 +24,7 @@
 + [FDFullscreenPopGesture](docs/ios/FDFullscreenPopGesture.md)
 
 ## Flutter
++ [Flutter 三方库](./docs/flutter/flutter_vender.md)
 + [Flutter 介绍](docs/flutter/flutter_intro.md)
 + [Dart](docs/flutter/dart.md)
 + [Widgets](docs/flutter/widget.md)
@@ -34,7 +34,8 @@
 + [代码：实现一个 HUD 和 Toast](docs/flutter/flutter_progresshud_toast.md)
 + [代码：Json 解析](docs/flutter/json_parsing_in_flutter.md)
 + [代码：状态管理](docs/flutter/state_manage_in_flutter.md)
-  
++ [Flutter 实践 - 语雀文档](https://www.yuque.com/docs/share/6b275965-74d5-41b4-8879-8d39ffa1622e?)
++ [马蜂窝Flutter分享观后感 - 20190521](https://shimo.im/slides/mqu8dFUTkpAPRuwT/) 
 ## React Native
 + [JavaScript 语法](./docs/js/javascript.md)
 + [React Native 0. 项目创建](docs/reactnative/reactnative_tutorial_0.md)
