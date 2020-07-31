@@ -48,6 +48,8 @@
   - [获取故事版上的vc](#获取故事版上的vc)
   - [UITableViewController 静态 cell 和动态 cell 混用](#uitableviewcontroller-静态-cell-和动态-cell-混用)
   - [让自定义 view 在 xib 或 storyboard 上也能用](#让自定义-view-在-xib-或-storyboard-上也能用)
+- [Xcode 编译错误](#xcode-编译错误)
+  - [1 duplicate symbol for architecture arm64](#1-duplicate-symbol-for-architecture-arm64)
 
 # iOS 开发随手记 
 
@@ -1686,3 +1688,12 @@ class CustomButtonView: UIView {
 }
 ```
 ![](../../src/imgs/ios/xib_view.png)
+
+# Xcode 编译错误
+
+## 1 duplicate symbol for architecture arm64
+
+原因： 两个c函数重名了
+
+![](../../src/imgs/ios/build_error/builderror0.png)
+![](../../src/imgs/ios/build_error/builderror1.png)
