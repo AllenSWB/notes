@@ -102,20 +102,16 @@ Alert
 
 #### 布局layout 
 
-[SnapKit](https://github.com/SnapKit/SnapKit) A Swift Autolayout DSL for iOS & OS X 
-
-[Cartography](https://github.com/robb/Cartography.git) A declarative Auto Layout DSL for Swift 📱
-
-[Neon](https://github.com/mamaral/Neon.git) A powerful Swift programmatic UI layout framework
+- [SnapKit](https://github.com/SnapKit/SnapKit) A Swift Autolayout DSL for iOS & OS X 
+- [Cartography](https://github.com/robb/Cartography.git) A declarative Auto Layout DSL for Swift 📱
+- [Neon](https://github.com/mamaral/Neon.git) A powerful Swift programmatic UI layout framework
 
 #### TableView 
 
-[folding-cell](https://github.com/Ramotion/folding-cell.git) FoldingCell is an expanding content cell inspired by folding paper material
-
-[Eureka](https://github.com/xmartlabs/Eureka.git) Elegant iOS form builder in Swift
-
-[MessageKit](https://github.com/MessageKit/MessageKit.git) 聊天界面 In-progress: A community-driven replacement for JSQMessagesViewController
-
+- [folding-cell](https://github.com/Ramotion/folding-cell.git) FoldingCell is an expanding content cell inspired by folding paper material
+- [Eureka](https://github.com/xmartlabs/Eureka.git) Elegant iOS form builder in Swift
+- [MessageKit](https://github.com/MessageKit/MessageKit.git) 聊天界面 In-progress: A community-driven replacement for JSQMessagesViewController
+- [FSPagerView](https://github.com/WenchaoD/FSPagerView) 轮播图
 #### 分栏 View 
 
 - [PageMenu](https://github.com/PageMenu/PageMenu.git) A paging menu controller built from other view controllers placed inside a scroll view (like Spotify, Windows Phone, Instagram)
