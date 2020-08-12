@@ -324,6 +324,7 @@ rvm list known
 rvm install 2.6.5
 # 设置默认ruby版本
 rvm use 2.6.5 --default
+rvm use system --default
 # 查看已安装的ruby
 rvm list
 # 卸载ruby
