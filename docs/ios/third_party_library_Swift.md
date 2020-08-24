@@ -131,7 +131,7 @@ Alert
 #### 导航栏 
 
 - [KMNavigationBarTransition](https://github.com/MoZhouqi/KMNavigationBarTransition.git)  A drop-in universal library helps you to manage the navigation bar styles and makes transition animations smooth between different navigation bar styles while pushing or popping a view controller for all orientations. And you don't need to write any line of code for it, it all happens automatically.
-
+- [WXNavigationBar](https://github.com/alexiscn/WXNavigationBar/blob/master/README_CN.md)类似微信一样的导航栏
 
 #### 图文混排 
 
