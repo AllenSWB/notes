@@ -169,6 +169,7 @@
 + [JGProgressHUD](https://github.com/JonasGessner/JGProgressHUD.git) Modern and extensive Apple-style progress HUD for iOS.
 
 + [JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField.git) UITextField subclass with floating labels - inspired by Matt D.
++ [CCDraggableCard-Master](https://github.com/liuzechen/CCDraggableCard-Master) 类似陌陌探探中可滑动的卡牌视图
 
 ### 表单 
 + [JVFloatLabeledTextField](https://github.com/jverdi/JVFloatLabeledTextField.git) UITextField subclass with floating labels - inspired by Matt D.
@@ -290,6 +291,7 @@
 + [JSPatch](https://github.com/bang590/JSPatch.git) JSPatch bridge Objective-C and Javascript using the Objective-C runtime. You can call any Objective-C class and method in JavaScript by just including a small engine. JSPatch is generally used to hotfix iOS App.
 + [DynamicCocoa](https://github.com/DynamicCocoa/DynamicCocoa.git) A framework for running Cocoa code dynamically.
 + [LuaViewSDK](https://github.com/alibaba/LuaViewSDK.git) LuaView 是一种运行在一个 ViewController/Activity 中，可以灵活加载Lua 脚本，并能够按照 Native 的方式运行的一种面向业务的开发技术方案。可以快速开发电商应用中既要求体验又要求灵活性的页面功能，例如首页，类目首页，垂直频道，大促活动会场等。
++ [DynamicOC](https://github.com/letqingbin/DynamicOC)
 
 ### Category
 
