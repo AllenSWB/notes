@@ -366,6 +366,7 @@
 - [BQL_iOSProjectMix](https://github.com/biqinglin/BQL_iOSProjectMix.git) 代码混淆
 - [LEETheme](https://github.com/lixiang1994/LEETheme.git) 优雅的主题管理库- 一行代码完成多样式切换
 - [TYSnapshotScroll](https://github.com/TonyReet/TYSnapshotScroll) 一句代码保存截图，将 UIScrollView UITableView UICollectionView UIWebView WKWebView 网页 保存 为 长图 查看。
+- [MFSIdentifier](https://github.com/maxfong/MFSIdentifier)  iOS App获取唯一标识符方案
 
 ### 代码混淆
 
