@@ -50,6 +50,7 @@
   - [让自定义 view 在 xib 或 storyboard 上也能用](#让自定义-view-在-xib-或-storyboard-上也能用)
 - [Xcode 编译错误](#xcode-编译错误)
   - [1 duplicate symbol for architecture arm64](#1-duplicate-symbol-for-architecture-arm64)
+  - [Pod::StandardError - [Bug] Failed to find known source with the URL "trunk"](#podstandarderror---bug-failed-to-find-known-source-with-the-url-trunk)
 
 # iOS 开发随手记 
 
@@ -1697,3 +1698,10 @@ class CustomButtonView: UIView {
 
 ![](../../src/imgs/ios/build_error/builderror0.png)
 ![](../../src/imgs/ios/build_error/builderror1.png)
+
+## Pod::StandardError - [Bug] Failed to find known source with the URL "trunk"
+- [链接](https://blog.csdn.net/zero_jones/article/details/52793862)
+原因：电脑上装了俩版本的 Xcode，要在 Podfile 同级目录执行以下命令
+```shell
+sudo xcode-select -switch /Applications/Xcode.app/
+```
