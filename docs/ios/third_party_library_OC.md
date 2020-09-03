@@ -309,6 +309,7 @@
 + [code-prettify](https://github.com/google/code-prettify.git) Automatically exported from code.google.com/p/google-code-prettify
 + [NullSafe](https://github.com/nicklockwood/NullSafe)
 + [JFCitySelector](https://github.com/zhifenx/JFCitySelector) JFCitySelector 是一个轻量、灵活、可自定义的三级城市选择器（City selector、City picker）。
++ [TYSnapshotScroll](https://github.com/TonyReet/TYSnapshotScroll) 一句代码保存截图，将 UIScrollView UITableView UICollectionView UIWebView WKWebView 网页 保存 为 长图 查看。
 
 ### Debug&Log
 
