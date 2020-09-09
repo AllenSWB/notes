@@ -40,10 +40,22 @@
   end 
   ```
   校验时候要指明索引库
-  ```shell
-  # 默认索引源是https://github.com/artsy/Specs， 多个源的话要用逗号分隔。可以写索引源地址或者名字
-  pod lib lint bwcmt_network.podspec --sources=master,ucar_ios_platform
+  ```shell 
+  # 本地校验  
+  # 使用静态库加参数 --use-libraries
+  # 使用私有索引源加参数，多个用逗号分隔 --sources=master,ucar_ios_platform
+  pod lib lint UCarNavService.podspec --sources=master,ucar_ios_platform --no-clean --use-libraries --allow-warnings
+  # 远端校验
+  pod spec lint UCarNavService.podspec --sources=master,ucar_ios_platform --no-clean --use-libraries --allow-warnings
+  # 更新远端源
+  pod repo push ucar_ios_platform UCarNavService.podspec --use-libraries --allow-warnings --sources="http://gitlab.10101111.com:8888/ucar_ios_platform/specs.git,master"
   ```
+
+总结：
+1. 编辑podspec文件
+2. 打tag，推送到远端
+3. lint校验
+4. 把库推送到远端
 
 ## 封装开源库
 
