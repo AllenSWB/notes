@@ -37,6 +37,14 @@
 + [Flutter 实践 - 语雀文档](https://www.yuque.com/docs/share/6b275965-74d5-41b4-8879-8d39ffa1622e?)
 + [马蜂窝Flutter分享观后感 - 20190521](https://shimo.im/slides/mqu8dFUTkpAPRuwT/) 
 
+## React Native 笔记 
+
+> 热更新 [code-push](https://github.com/microsoft/react-native-code-push)
+
+- [JS 基础语法](./rn/js_lang.md)
+- [React Native 入门](./rn/rn_0_start.md)
+- [错误记录](./rn/rn_error.md)
+
 ## 算法  
 + [栈](docs/algorithm/stack.md) 、[代码demo](https://github.com/AllenSWB/notes/tree/master/code/StackDemo)
 
