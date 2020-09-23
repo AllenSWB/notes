@@ -310,6 +310,7 @@
 + [NullSafe](https://github.com/nicklockwood/NullSafe)
 + [JFCitySelector](https://github.com/zhifenx/JFCitySelector) JFCitySelector 是一个轻量、灵活、可自定义的三级城市选择器（City selector、City picker）。
 + [TYSnapshotScroll](https://github.com/TonyReet/TYSnapshotScroll) 一句代码保存截图，将 UIScrollView UITableView UICollectionView UIWebView WKWebView 网页 保存 为 长图 查看。
++ [BRPickerView](https://github.com/91renb/BRPickerView) BRPickerView 封装的是iOS中常用的选择器组件，主要包括：日期选择器（支持年月日、年月等15种日期样式选择，支持设置星期、至今等）、地址选择器（支持省市区、省市、省三种地区选择）、自定义字符串选择器（支持单列、多列、二级联动、三级联动选择）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
 
 ### Debug&Log
 

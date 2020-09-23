@@ -41,6 +41,7 @@
 
 > 热更新 [code-push](https://github.com/microsoft/react-native-code-push)
 
+- [React Native 资料](./rn/rn_blogs.md)
 - [JS 基础语法](./rn/js_lang.md)
 - [React Native 入门](./rn/rn_0_start.md)
 - [错误记录](./rn/rn_error.md)

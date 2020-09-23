@@ -1,4 +1,3 @@
-- [资料](#资料)
 - [搭建开发环境](#搭建开发环境)
 - [创建 rn 项目](#创建-rn-项目)
 - [rn 设计思路](#rn-设计思路)
@@ -9,14 +8,7 @@
 - [集成RN到原生App](#集成rn到原生app)
   - [安装依赖](#安装依赖)
   - [代码集成](#代码集成)
-
-## 资料
-
-+ [80节实战课精通RN开发](https://www.youtube.com/watch?v=PHnM1sD30dY&list=PLXbU-2B80FvDgo7wQjdu5zAJG2boO9q2C)
-+ [es6入门 by 阮一峰](http://es6.ruanyifeng.com/)
-+ [给所有开发者的React Native详细入门指南](https://juejin.im/post/5898388b128fe1006cb943e3#heading-6)
-+ [React教程 by 菜鸟教程](http://www.runoob.com/react/react-tutorial.html)
-
+ 
 ## 搭建开发环境
 
 > 必须安装的依赖有：Node、Watchman、RN命令行工具、Xcode（JDK和Android Studio）
