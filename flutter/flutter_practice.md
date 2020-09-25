@@ -20,17 +20,17 @@
  
 ## 自动选择二倍图三倍图资源
 
-  ![auto_select_img](../../src/imgs/flutter/tips/auto_select_img.png)
+  ![auto_select_img](./imgs/tips/auto_select_img.png)
 
   eg: 
 
   1. 在`/resources`目录下放入三个不同倍率的图片
 
-     ![auto_select_img_step1](../../src/imgs/flutter/tips/auto_select_img_step1.png)
+     ![auto_select_img_step1](./imgs/tips/auto_select_img_step1.png)
 
   2. 在`pubspec.ymal`里引入资源
 
-     ![auto_select_img_step2](../../src/imgs/flutter/tips/auto_select_img_step2.png)
+     ![auto_select_img_step2](./imgs/tips/auto_select_img_step2.png)
 
   3. 使用
 
@@ -42,7 +42,7 @@
 
   4. 效果 (在6Plus上)
 
-     ![auto_select_img_step4](../../src/imgs/flutter/tips/auto_select_img_step4.png)
+     ![auto_select_img_step4](./imgs/tips/auto_select_img_step4.png)
 
 ## StatelessWidget 和 StatefulWidget 区别
 
@@ -108,11 +108,11 @@ class _TextFieldState extends State<TextField> implements TextSelectionGestureDe
 
 ## 真机运行，flutter run报错 : Error connecting to the service protocol: HttpException
 
-  ![flutter_err_httpexc](../../src/imgs/flutter/tips/flutter_err_httpexc.png)
+  ![flutter_err_httpexc](./imgs/tips/flutter_err_httpexc.png)
 
 ## Runner找不到头文件
 
-  ![flutter_err_install](../../src/imgs/flutter/tips/flutter_err_install.png)
+  ![flutter_err_install](./imgs/tips/flutter_err_install.png)
 
 ## [VERBOSE-2:ui_dart_state.cc(148)] Unhandled Exception: NoSuchMethodError: Class 'Window' has no instance setter 'onReportTimings='.
 
