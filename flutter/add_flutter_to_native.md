@@ -7,7 +7,7 @@
 
 现在有个iOS原生工程，放在目录`_projs`下面
 
-![IMG_2766](../../src/imgs/flutter/IMG_2766.PNG)
+![IMG_2766](./imgs/IMG_2766.PNG)
 
 打开终端，执行命令，会自动生成一个目录`my_flutter`
 
@@ -15,7 +15,7 @@
 $ flutter create -t module my_flutter
 ```
 
-![IMG_2769](../../src/imgs/flutter/IMG_2769.PNG)
+![IMG_2769](./imgs/IMG_2769.PNG)
 
 ### step2：原生工程依赖flutter模块
 
@@ -35,11 +35,11 @@ eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper
 
 另外，Flutter不支持bitcode，需要在Xcode中关闭它
 
-![bitcode_off](../../src/imgs/flutter/bitcode_off.png)
+![bitcode_off](./imgs/bitcode_off.png)
 
 ### step3：添加一个Build Phase
 
-![IMG_2771](../../src/imgs/flutter/IMG_2771.PNG)
+![IMG_2771](./imgs/IMG_2771.PNG)
 
 将以下脚本复制进去
 
@@ -50,7 +50,7 @@ eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper
 
 然后拖动`Run Script`一栏到`Target Dependencies`下面
 
-![IMG_2773](../../src/imgs/flutter/IMG_2773.PNG)
+![IMG_2773](./imgs/IMG_2773.PNG)
 
 编译程序 `Command + B`
 
@@ -266,7 +266,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
 实现思路：将flutter的依赖抽取为一个flutter依赖库发布到远程。
 
-![xianyu_flutter_native](../../src/imgs/flutter/xianyu_flutter_native.png)
+![xianyu_flutter_native](./imgs/xianyu_flutter_native.png)
 
 ### 实现步骤
 
@@ -284,7 +284,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
   这一步耗时会比较长，因为他会下载一个新的flutter SDK下来，放到当前flutter工程目录下。这样就不会出现协作开发时每人电脑里的SDK版本不一致的问题了。
 
-  ![install_flutterwrapper](../../src/imgs/flutter/install_flutterwrapper.png)
+  ![install_flutterwrapper](./imgs/install_flutterwrapper.png)
 
 ## 遇到问题
 
@@ -358,9 +358,9 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
 # Native iOS 和 Flutter 交互
 
-![flutter_native_talk0](/Users/wb/Desktop/Github/notes/src/imgs/flutter/flutter_native_talk0.png)
+![flutter_native_talk0](./imgs/flutter_native_talk0.png)
 
-![flutter_native_talk1](/Users/wb/Desktop/Github/notes/src/imgs/flutter/flutter_native_talk1.png)
+![flutter_native_talk1](./imgs/flutter_native_talk1.png)
 
 
 ## Flutter 调用 iOS 的方法
@@ -421,11 +421,11 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
    如果Native iOS里没有定义requestHomeInfo方法，就会报错如下`MissingPluginException (MissingPluginException(No implementation found for method requestHomeInfo on channel requestApi/yzHomeInfo))`
 
-   ![methodchannel_error_no_imp](/Users/wb/Desktop/Github/notes/src/imgs/flutter/methodchannel_error_no_imp.png)
+   ![methodchannel_error_no_imp](./imgs/methodchannel_error_no_imp.png)
 
 3. 运行iOS工程，正常结果如下
 
-   ![methodchannel_success](/Users/wb/Desktop/Github/notes/src/imgs/flutter/methodchannel_success.png)
+   ![methodchannel_success](./imgs/methodchannel_success.png)
 
 ## iOS 调用 Flutter 的方法
 

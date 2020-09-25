@@ -43,11 +43,11 @@
 
 + 执行`flutter doctor`时候，检查出如下问题。
 
-    ![执行flutter doctor](http://ww1.sinaimg.cn/large/006hznE2ly1fxh0uivphhj30on0eydje.jpg)
+    ![执行flutter doctor](./imgs/flutter_img_01.png)
 
     提示我没装`libimobiledevice`和`ideviceinstaller`。没关系，我们可以先用模拟器跑工程。
 
-    ![](http://ww1.sinaimg.cn/large/006hznE2ly1fxhuqgbgwnj311v0kmn4g.jpg)
+    ![](./imgs/flutter_img_0.png)
 
 + 运行命令`brew install --HEAD usbmuxd `报错如下
 

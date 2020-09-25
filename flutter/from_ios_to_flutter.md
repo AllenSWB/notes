@@ -1,32 +1,32 @@
-- [搭建Flutter开发环境](#%e6%90%ad%e5%bb%baflutter%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83)
-  - [一、下载Flutter SDK](#%e4%b8%80%e4%b8%8b%e8%bd%bdflutter-sdk)
-  - [二、配置 VSCode or Android Studio](#%e4%ba%8c%e9%85%8d%e7%bd%ae-vscode-or-android-studio)
-  - [三、Flutter工程分类](#%e4%b8%89flutter%e5%b7%a5%e7%a8%8b%e5%88%86%e7%b1%bb)
-- [混编](#%e6%b7%b7%e7%bc%96)
-  - [现有原生工程引入Flutter](#%e7%8e%b0%e6%9c%89%e5%8e%9f%e7%94%9f%e5%b7%a5%e7%a8%8b%e5%bc%95%e5%85%a5flutter)
-    - [Flutter 1.9版本的 官方集成方法](#flutter-19%e7%89%88%e6%9c%ac%e7%9a%84-%e5%ae%98%e6%96%b9%e9%9b%86%e6%88%90%e6%96%b9%e6%b3%95)
-    - [Flutter产物集成方法](#flutter%e4%ba%a7%e7%89%a9%e9%9b%86%e6%88%90%e6%96%b9%e6%b3%95)
-    - [使用 flutter-boot](#%e4%bd%bf%e7%94%a8-flutter-boot)
-  - [启动Flutter](#%e5%90%af%e5%8a%a8flutter)
-  - [原生和Flutter页面间的跳转](#%e5%8e%9f%e7%94%9f%e5%92%8cflutter%e9%a1%b5%e9%9d%a2%e9%97%b4%e7%9a%84%e8%b7%b3%e8%bd%ac)
-- [创建私有Flutter Plugin](#%e5%88%9b%e5%bb%ba%e7%a7%81%e6%9c%89flutter-plugin)
-  - [一、创建plugin：使用原生的网络请求](#%e4%b8%80%e5%88%9b%e5%bb%baplugin%e4%bd%bf%e7%94%a8%e5%8e%9f%e7%94%9f%e7%9a%84%e7%bd%91%e7%bb%9c%e8%af%b7%e6%b1%82)
-    - [step1：创建plugin](#step1%e5%88%9b%e5%bb%baplugin)
-    - [step2：编写代码](#step2%e7%bc%96%e5%86%99%e4%bb%a3%e7%a0%81)
-  - [二、发布plugin](#%e4%ba%8c%e5%8f%91%e5%b8%83plugin)
-    - [方式一：上传代码flutter_ucar_network到gitlab上](#%e6%96%b9%e5%bc%8f%e4%b8%80%e4%b8%8a%e4%bc%a0%e4%bb%a3%e7%a0%81flutterucarnetwork%e5%88%b0gitlab%e4%b8%8a)
-    - [方式二：上传plugin到私有pub server](#%e6%96%b9%e5%bc%8f%e4%ba%8c%e4%b8%8a%e4%bc%a0plugin%e5%88%b0%e7%a7%81%e6%9c%89pub-server)
-  - [!](#)
+- [搭建Flutter开发环境](#搭建flutter开发环境)
+  - [一、下载Flutter SDK](#一下载flutter-sdk)
+  - [二、配置 VSCode or Android Studio](#二配置-vscode-or-android-studio)
+  - [三、Flutter工程分类](#三flutter工程分类)
+- [混编](#混编)
+  - [现有原生工程引入Flutter](#现有原生工程引入flutter)
+    - [Flutter 1.9版本的 官方集成方法](#flutter-19版本的-官方集成方法httpsgithubcomflutterflutterwikiadd-flutter-to-existing-appsios)
+    - [Flutter产物集成方法](#flutter产物集成方法)
+    - [使用 flutter-boot](#使用-flutter-boothttpsgithubcomalibaba-flutterflutter-boot)
+  - [启动Flutter](#启动flutter)
+  - [原生和Flutter页面间的跳转](#原生和flutter页面间的跳转)
+- [创建私有Flutter Plugin](#创建私有flutter-plugin)
+  - [一、创建plugin：使用原生的网络请求](#一创建plugin使用原生的网络请求)
+    - [step1：创建plugin](#step1创建plugin)
+    - [step2：编写代码](#step2编写代码)
+  - [二、发布plugin](#二发布plugin)
+    - [方式一：上传代码flutter_ucar_network到gitlab上](#方式一上传代码flutter_ucar_network到gitlab上)
+    - [方式二：上传plugin到私有pub server](#方式二上传plugin到私有pub-server)
+  - [!](#imgsfrom_ios_to_flutterauth_googlepng)
 - [Tips](#tips)
-  - [分支](#%e5%88%86%e6%94%af)
-  - [Flutter版本](#flutter%e7%89%88%e6%9c%ac)
+  - [分支](#分支)
+  - [Flutter版本](#flutter版本)
   - [flutter attach](#flutter-attach)
   - [flutter wrapper](#flutter-wrapper)
-- [遇到的问题及解决](#%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98%e5%8f%8a%e8%a7%a3%e5%86%b3)
-  - [模拟器编译报错 Command PhaseScriptExecution failed with a nonzero exit code](#%e6%a8%a1%e6%8b%9f%e5%99%a8%e7%bc%96%e8%af%91%e6%8a%a5%e9%94%99-command-phasescriptexecution-failed-with-a-nonzero-exit-code)
+- [遇到的问题及解决](#遇到的问题及解决)
+  - [模拟器编译报错 Command PhaseScriptExecution failed with a nonzero exit code](#模拟器编译报错-command-phasescriptexecution-failed-with-a-nonzero-exit-code)
   - [Flutter.framework : permission denied](#flutterframework--permission-denied)
   - [Could not find the built application bundle at build/ios/iphonesimulator/Runner.app.](#could-not-find-the-built-application-bundle-at-buildiosiphonesimulatorrunnerapp)
-- [参考资料](#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99)
+- [参考资料](#参考资料)
 # 搭建Flutter开发环境
 ## 一、下载Flutter SDK
 1. 下载SDK  [https://flutter.dev/docs/get-started/install/macos](https://flutter.dev/docs/get-started/install/macos)
@@ -56,7 +56,7 @@
 下载flutter相关的插件
 
 ## 三、Flutter工程分类
-![图片](../../src/imgs/flutter/from_ios_to_flutter/flutter_proj_types.png)
+![图片](./imgs/from_ios_to_flutter/flutter_proj_types.png)
 
 1. Flutter Application：标准Flutter工程
     ```shell
@@ -96,8 +96,8 @@
    ```
 3. 关闭原生工程的bitcode
 4. 执行 pod install
-![](../../src/imgs/flutter/from_ios_to_flutter/native_flutter_docs.png)
-![](../../src/imgs/flutter/from_ios_to_flutter/native_pod_install.png)
+![](./imgs/from_ios_to_flutter/native_flutter_docs.png)
+![](./imgs/from_ios_to_flutter/native_pod_install.png)
  
 ### Flutter产物集成方法
 * [闲鱼flutter混合工程持续集成的最佳实践](https://zhuanlan.zhihu.com/p/40528502)
@@ -184,7 +184,7 @@
    ```shell
    sh move_file.sh
    ```
-    ![图片](../../src/imgs/flutter/from_ios_to_flutter/native_flutter_out.png)
+    ![图片](./imgs/from_ios_to_flutter/native_flutter_out.png)
 
 5. 编辑私有库的podspec文件
    ```ruby
@@ -212,7 +212,7 @@
    # 校验后在原生工程里引入这个私有库，⚠️校验命令如下
    # pod lib lint test_flutter_outcome.podspec --allow-warnings
    ```
-    ![图片](../../src/imgs/flutter/from_ios_to_flutter/native_flutter_out_pod.png)
+    ![图片](./imgs/from_ios_to_flutter/native_flutter_out_pod.png)
 
 6. 可以把私有库test_flutter_outcome推到orgin，其他没有flutter环境的同学可以正常开发原生工程。
 
@@ -220,7 +220,7 @@
 
 遇到 permission denied 错误
 
-![图片](../../src/imgs/flutter/from_ios_to_flutter/permission_denied_error.png)
+![图片](./imgs/from_ios_to_flutter/permission_denied_error.png)
 
 产生原因：之前用root用户安装过npm，解决方法：修改/usr/local/lib/node_modules
 
@@ -229,7 +229,7 @@
    ```shell
    chown -R wb node_modules
    ```
-![图片](../../src/imgs/flutter/from_ios_to_flutter/permission_denied_error_chown.png)
+![图片](./imgs/from_ios_to_flutter/permission_denied_error_chown.png)
 
 ## 启动Flutter
 ```objc
@@ -270,7 +270,7 @@ source 'http://gitlab.10101111.com/ucar_ios_platform/specs.git'
 ```
 打开Example/ios中的Runner工程
 
-![图片](../../src/imgs/flutter/from_ios_to_flutter/eg_runner.png)
+![图片](./imgs/from_ios_to_flutter/eg_runner.png)
 
 plugin模块默认创建了swift和OC两个版本的代码，我们用OC开发，这里直接把SwiftFlutterUcarNetworkPlugin.swift文件删掉，把MethodChannel的创建和回调方法写在FlutterUcarNetworkPlugin.m中
 
@@ -288,7 +288,7 @@ plugin模块默认创建了swift和OC两个版本的代码，我们用OC开发�
 }
 @end
 ```
-![](../../src/imgs/flutter/from_ios_to_flutter/FlutterUcarNetworkPlugin.jpg)
+![](./imgs/from_ios_to_flutter/FlutterUcarNetworkPlugin.jpg)
 
 ## 二、发布plugin
 ### 方式一：上传代码flutter_ucar_network到gitlab上
@@ -304,7 +304,7 @@ dependencies:
     
 ```
 ⚠️：因为ucar_network这个plugin依赖了私有的cocoapods库，出现以下问题。解决是在Runner工程Podfile里加上私有索引源
-![图片](../../src/imgs/flutter/from_ios_to_flutter/pod_srouce_error.png)
+![图片](./imgs/from_ios_to_flutter/pod_srouce_error.png)
 
 ```ruby
 # Runner的Podfile，在顶部指明私有索引源地址
@@ -359,7 +359,7 @@ Waiting for your authorization...
 Authorization received, processing...
 Successfully uploaded package.
 ```
-## ![](../../src/imgs/flutter/from_ios_to_flutter/auth_google.png)
+## ![](./imgs/from_ios_to_flutter/auth_google.png)
 # Tips 
 ## 分支
 以下四个分支，稳定性依次降低：
@@ -398,12 +398,12 @@ flutter attach -d EF8429A7-3E3A-4C01-B1D6-5A6AA7FF4C89
 ## 模拟器编译报错 Command PhaseScriptExecution failed with a nonzero exit code
 解决：File - Workspace Setting - Legacy Build System
 
-![图片](../../src/imgs/flutter/from_ios_to_flutter/error_PhaseScriptExecution.png)
+![图片](./imgs/from_ios_to_flutter/error_PhaseScriptExecution.png)
 
 ## Flutter.framework : permission denied
 解决：这是1.9版本的一个bug，现在master分支已经修复 [Pull Request 在此](https://github.com/flutter/flutter/pull/45189)
 
-![图片](../../src/imgs/flutter/from_ios_to_flutter/error_flutter_permission_denied.png)
+![图片](./imgs/from_ios_to_flutter/error_flutter_permission_denied.png)
 
 ## Could not find the built application bundle at build/ios/iphonesimulator/Runner.app.
 原因是在xcode中修改了bundle Name字段的名字 默认是Runner，将bundle Name修改为Runner即可

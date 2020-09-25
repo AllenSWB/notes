@@ -25,7 +25,7 @@ Flutter里一切都是Widget，视图、布局、手势、动画等等都是Widg
       runApp(BwcmtFlutterApp());
     } 
   ```
-  ![view_debug](../../src/imgs/flutter/widgets/view_debug.png)
+  ![view_debug](./imgs/widgets/view_debug.png)
 
 
 ### 基础Widget
@@ -53,11 +53,11 @@ Flutter里一切都是Widget，视图、布局、手势、动画等等都是Widg
 
 eg: 自定义button `MaterialButton`
 
-![btn_material](../../src/imgs/flutter/widgets/btn_material.png)
-![btn_raised](../../src/imgs/flutter/widgets/btn_raised.png)
-![btn_flat](../../src/imgs/flutter/widgets/btn_flat.png)
-![btn_outline](../../src/imgs/flutter/widgets/btn_outline.png)
-![btn_icon](../../src/imgs/flutter/widgets/btn_icon.png)
+![btn_material](./imgs/widgets/btn_material.png)
+![btn_raised](./imgs/widgets/btn_raised.png)
+![btn_flat](./imgs/widgets/btn_flat.png)
+![btn_outline](./imgs/widgets/btn_outline.png)
+![btn_icon](./imgs/widgets/btn_icon.png)
 
 #### Image
 
@@ -82,15 +82,15 @@ eg: 自定义button `MaterialButton`
 ```
   + 将图片放入工程
 
-    ![img_to_proj](../../src/imgs/flutter/widgets/img_to_proj.png)  
+    ![img_to_proj](./imgs/widgets/img_to_proj.png)  
 
   + 在`pubspec.ymal`里添加`assets`
 
-    ![asset_ymal](../../src/imgs/flutter/widgets/asset_ymal.png)  
+    ![asset_ymal](./imgs/widgets/asset_ymal.png)  
 
   + 使用
 
-    ![img](../../src/imgs/flutter/widgets/img.png)
+    ![img](./imgs/widgets/img.png)
 
 #### CircularProgressIndicator  
 
@@ -105,7 +105,7 @@ eg: 自定义button `MaterialButton`
     })
 ```
 
-![progress_hud](../../src/imgs/flutter/widgets/progress_hud.png)
+![progress_hud](./imgs/widgets/progress_hud.png)
 
 #### Checkbox 
 
@@ -144,7 +144,7 @@ Checkbox(
     List<Widget> children = const <Widget>[],
    })
 ```
- ![row](../../src/imgs/flutter/widgets/row.png)
+ ![row](./imgs/widgets/row.png)
 
 #### Column
 
@@ -186,8 +186,8 @@ Checkbox(
        @required Widget child,
      })
 ```
-   ![flex0](../../src/imgs/flutter/widgets/flex0.png)
-   ![flex1](../../src/imgs/flutter/widgets/flex1.png)
+   ![flex0](./imgs/widgets/flex0.png)
+   ![flex1](./imgs/widgets/flex1.png)
 
 #### Wrap
 
@@ -195,7 +195,7 @@ Checkbox(
 
   在线性布局Row(Column)中，如果子Widget超出屏幕返回就会报溢出的错误。
 
-  ![row_overflow](../../src/imgs/flutter/widgets/row_overflow.png)
+  ![row_overflow](./imgs/widgets/row_overflow.png)
 
   这时候就需要用流式布局来解决这个问题。
 
@@ -213,13 +213,13 @@ Checkbox(
    List<Widget> children = const <Widget>[],
  })
 ```
-![wrap](../../src/imgs/flutter/widgets/wrap.png)
+![wrap](./imgs/widgets/wrap.png)
 
 #### Flow
 
 > 流式布局
 
-![flow_desc](../../src/imgs/flutter/widgets/flow_desc.png)
+![flow_desc](./imgs/widgets/flow_desc.png)
 
 ```dart
   /////////// Flow
@@ -303,7 +303,7 @@ Checkbox(
   })
 ```
 
- ![Positioned](../../src/imgs/flutter/widgets/Positioned.png)    
+ ![Positioned](./imgs/widgets/Positioned.png)    
 
 ### 容器Widget
 
@@ -329,7 +329,7 @@ Checkbox(
 
 - `color`和`decoration`不能同时存在，否则会报错. `The color argument is just a shorthand for "decoration: new BoxDecoration(color: color)".`
 
-  ![color_decoration](../../src/imgs/flutter/widgets/color_decoration.png)
+  ![color_decoration](./imgs/widgets/color_decoration.png)
 
 #### Padding
 
@@ -357,7 +357,7 @@ Checkbox(
 
 ```
 
-![padding](../../src/imgs/flutter/widgets/padding.png)
+![padding](./imgs/widgets/padding.png)
 
 #### DecoratedBox
 
@@ -387,7 +387,7 @@ Checkbox(
       this.shape = BoxShape.rectangle, // BoxShape类型，形状
     })
 ```
-  ![decoration](../../src/imgs/flutter/widgets/decoration.png)
+  ![decoration](./imgs/widgets/decoration.png)
 
 #### ConstrainedBox
 
@@ -404,20 +404,20 @@ const BoxConstraints({
 })
 ```
 
-![constraintbox](../../src/imgs/flutter/widgets/constraintbox.png)
+![constraintbox](./imgs/widgets/constraintbox.png)
 
 **多重限制**
 
 - 有多重限制时，对于minHeight&minWidth来说，是取父子中比较**大**的那个值。
-  ![muti_constraint_0](../../src/imgs/flutter/widgets/muti_constraint_0.png)
+  ![muti_constraint_0](./imgs/widgets/muti_constraint_0.png)
 - 有多重限制时，对于maxHeight&maxWidth来说，是取父子中比较**小**的那个值。
-  ![muti_constraint_1](../../src/imgs/flutter/widgets/muti_constraint_1.png)
+  ![muti_constraint_1](./imgs/widgets/muti_constraint_1.png)
 
 #### SizeBox
 
 `SizeBox`用于指定子Widget固定宽高，它只是`ConstrainedBox`的一个定制。
 
-![sizebox](../../src/imgs/flutter/widgets/sizebox.png)
+![sizebox](./imgs/widgets/sizebox.png)
 
 #### Transform
 
@@ -503,7 +503,7 @@ const BoxConstraints({
  })
 ```
 
-  ![singlechildscrollview](../../src/imgs/flutter/widgets/singlechildscrollview.png)
+  ![singlechildscrollview](./imgs/widgets/singlechildscrollview.png)
 
 #### ListView
 
@@ -533,7 +533,7 @@ const BoxConstraints({
 
       这种方式接收一个widget list，适合只有少量子widg的情况。因为这种方式会提前将所有的children创建好，而不是等到子widget真正显示的时候才创建。
 
-      ![listview_create_1](../../src/imgs/flutter/widgets/listview_create_1.png)
+      ![listview_create_1](./imgs/widgets/listview_create_1.png)
 
   - **II. `ListView.builder`**
 
@@ -547,7 +547,7 @@ const BoxConstraints({
         }) → ListView
       ```
 
-      ![listview_create_2](../../src/imgs/flutter/widgets/listview_create_2.png)
+      ![listview_create_2](./imgs/widgets/listview_create_2.png)
 
   - **III. `ListView.separated`**
 
@@ -560,7 +560,7 @@ const BoxConstraints({
       }) → ListView
       ```
 
-      ![listview_create_3](../../src/imgs/flutter/widgets/listview_create_3.png)
+      ![listview_create_3](./imgs/widgets/listview_create_3.png)
 
 
 使用`ListTile`实现类似TableViewHeader的效果。
@@ -583,11 +583,11 @@ const BoxConstraints({
        })
 ```
 
-  ![listtile](../../src/imgs/flutter/widgets/listtile.png)
+  ![listtile](./imgs/widgets/listtile.png)
     
 tip： 使用`ListTile`，需要将他放到一个Material风格的widget里面.
 
-  ![listtil_err](../../src/imgs/flutter/widgets/listtil_err.png)
+  ![listtil_err](./imgs/widgets/listtil_err.png)
 
 ## 功能相关Widget
 
@@ -632,7 +632,7 @@ tip： 使用`ListTile`，需要将他放到一个Material风格的widget里面.
 
 #### StatelessWidget & StatefulWidget
 
-![widget-elements](../../src/imgs/flutter/widgets/widget-elements.png)
+![widget-elements](./imgs/widgets/widget-elements.png)
 
 #### Builder
 

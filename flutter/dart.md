@@ -12,7 +12,7 @@
 
 2. 关键字
 
-  ![keywords](../../src/imgs/flutter/dart/keywords.png)
+  ![keywords](./imgs/dart/keywords.png)
 
 3. `final`和`const`的区别
    
@@ -122,7 +122,7 @@
         print(iamclosure); // flutter: Closure: ({String name}) => void
     ```
 
-    ![closure](../../src/imgs/flutter/dart/closure.png)
+    ![closure](./imgs/dart/closure.png)
 
 9. 方法 - 返回值
 
@@ -587,7 +587,7 @@
 
     ```
 
-21. [为类添加新的功能 Mixins](http://dart.goodev.org/guides/language/language-tour#adding-features-to-a-class-mixins%E4%B8%BA%E7%B1%BB%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E5%8A%9F%E8%83%BD) 
+21. 为类添加新的功能 Mixins
 
     Mixins是一种在多类继承中重用 一个类代码的方法。
 

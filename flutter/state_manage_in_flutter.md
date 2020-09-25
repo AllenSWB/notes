@@ -1,11 +1,11 @@
 # Flutter中的状态管理
-- [Flutter中的状态管理](#Flutter%E4%B8%AD%E7%9A%84%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86)
-  - [使用setState](#%E4%BD%BF%E7%94%A8setState)
-  - [使用scoped_model](#%E4%BD%BF%E7%94%A8scopedmodel)
-  - [使用Bloc](#%E4%BD%BF%E7%94%A8Bloc)
-  - [使用Provider](#%E4%BD%BF%E7%94%A8Provider)
-  - [使用Redux](#%E4%BD%BF%E7%94%A8Redux)
-  - [参考链接](#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5)
+- [Flutter中的状态管理](#flutter中的状态管理)
+  - [使用setState](#使用setstate)
+  - [使用scoped_model](#使用scoped_model)
+  - [使用Bloc](#使用bloc)
+  - [使用Provider](#使用provider)
+  - [使用Redux](#使用redux)
+  - [参考链接](#参考链接)
 
 ## 使用setState
 
@@ -137,7 +137,7 @@
       }
     ```
 
-    ![scopedmodel_2](../../src/imgs/flutter/state_manage/scopedmodel_2.png)
+    ![scopedmodel_2](./imgs/state_manage/scopedmodel_2.png)
 
 ## 使用Bloc
 
@@ -247,11 +247,11 @@
     
       }
 
-![bloc_example](../../src/imgs/flutter/state_manage/bloc_example.GIF)
+![bloc_example](./imgs/state_manage/bloc_example.GIF)
 
   - VSCode扩展
     
-    ![bloc_extension](../../src/imgs/flutter/state_manage/bloc_extension.png)
+    ![bloc_extension](./imgs/state_manage/bloc_extension.png)
 
 ## 使用Provider
 
@@ -375,7 +375,7 @@
       }
     ```
 
-  ![provider](../../src/imgs/flutter/state_manage/provider.GIF)
+  ![provider](./imgs/state_manage/provider.GIF)
 
 ## 使用Redux
 
