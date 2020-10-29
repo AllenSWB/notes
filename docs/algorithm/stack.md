@@ -6,6 +6,8 @@
   - [例子一：表达式求值](#%E4%BE%8B%E5%AD%90%E4%B8%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC)
   - [例子二：导航栏的push和pop](#%E4%BE%8B%E5%AD%90%E4%BA%8C%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9A%84push%E5%92%8Cpop)
   
+## links
++ [Stack的三种含义](http://www.ruanyifeng.com/blog/2013/11/stack.html)
 ## 介绍
 
 ![](https://diycode.b0.upaiyun.com/photo/2018/96b3ad3bce0f7a21ca229b78e490a9e7.gif)

@@ -20,6 +20,7 @@
 
 + [现代 JavaScript 教程](https://zh.javascript.info)
 + [ECMAScript 6 入门 by 阮一峰](http://es6.ruanyifeng.com/)
++ https://wangdoc.com/javascript/index.html
 
 ### Chrome 快捷键 
 
