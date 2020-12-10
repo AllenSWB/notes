@@ -49,6 +49,7 @@
 - [ ] listen1
 - [ ] Ummy Video Downloader (YouTube视频下载)
 - [ ] magnet 窗口速调辅助工具
+- [ ] ishot 截图
 - [ ] 打印目录结构 `brew install tree`    
     ```shell
     # https://www.jianshu.com/p/9411d60950bf
