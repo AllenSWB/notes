@@ -42,6 +42,10 @@
 - [x] Visual Studio Code
 - [x] SourceTree
 - [ ] homebrew 
+
+    ```
+      /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+    ```
 - [ ] Sketch
 - [ ] 达芬奇
 - [ ] PS
