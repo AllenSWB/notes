@@ -22,7 +22,7 @@
   - [修改 UIPickerView 中的文字大小](#修改-uipickerview-中的文字大小)
   - [深拷贝](#深拷贝)
   - [[Application] The app delegate must implement the window property if it wants to use a main storyboard file.](#application-the-app-delegate-must-implement-the-window-property-if-it-wants-to-use-a-main-storyboard-file)
-  - [秒数转成 00:00:00 格式  eg: 60s -> 00:01:00](#秒数转成-000000-格式-eg-60s---000100)
+  - [秒数转成 00:00:00 格式  eg: 60s -> 00:01:00](#秒数转成-000000-格式--eg-60s---000100)
   - [添加 pch 文件时候路径怎么写](#添加-pch-文件时候路径怎么写)
   - [iOS 添加点击效果，方便录屏时候看触点](#ios-添加点击效果方便录屏时候看触点)
   - [model类转字典](#model类转字典)
@@ -43,6 +43,7 @@
   - [使用DZNEmptyDataSet自定义空白视图高度为0](#使用dznemptydataset自定义空白视图高度为0)
   - [UILabel 显示 HTML](#uilabel-显示-html)
   - [故事版设置NSAttributedString](#故事版设置nsattributedstring)
+  - [高度自适应使用 UITableViewAutomaticDimension 遇到的一个问题：首次加载cell UILabel没有折行，将该cell滑动出界面再滑回来，才能正确折行](#高度自适应使用-uitableviewautomaticdimension-遇到的一个问题首次加载cell-uilabel没有折行将该cell滑动出界面再滑回来才能正确折行)
 - [xib & storyboard](#xib--storyboard)
   - [xib 创建 UIView](#xib-创建-uiview)
   - [获取故事版上的vc](#获取故事版上的vc)
@@ -1540,6 +1541,26 @@ cell.label.font = UIFont.systemFont(ofSize: 14)
 
 ## 故事版设置NSAttributedString
 ![](../../src/imgs/ios/attributedstring_storyboard.png)
+
+## 高度自适应使用 UITableViewAutomaticDimension 遇到的一个问题：首次加载cell UILabel没有折行，将该cell滑动出界面再滑回来，才能正确折行
+
+```Objective-C
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+// 解决：在cell里要设置下下 UILabel 的 preferredMaxLayoutWidth
+<!-- > 例子：圈子动态流视频 SVCoterieFeedVideoCell -->
+- (void)setModel:(id)model {
+    CGFloat titleMaxW = [SVCoterieUtil coterieHomeLeftContentW] - 22.f * 2 - 5.f * 2;
+    self.titleLabel.preferredMaxLayoutWidth = titleMaxW;
+    [self layoutIfNeeded];
+    
+    NSAttributedString *titleAttributedStr = [ChannelUtil feedVideoTitleWith:model font:UIFontMedium(18)];
+    self.titleLabel.attributedText = titleAttributedStr;
+}
+
+```
 
 # xib & storyboard
 
