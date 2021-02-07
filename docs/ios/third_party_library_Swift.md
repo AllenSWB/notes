@@ -68,6 +68,8 @@ Alert
 
 [ImagePicker](https://github.com/hyperoslo/ImagePicker.git)	 Reinventing the way ImagePicker works. http://hyper.no 图片选择
 
+[Nuke](https://github.com/kean/Nuke) 图片加载、处理
+
 #### 存储 
 
 [SQLite.swift](https://github.com/stephencelis/SQLite.swift.git)	A type-safe, Swift-language layer over SQLite3.

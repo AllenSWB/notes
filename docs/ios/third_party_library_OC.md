@@ -191,6 +191,7 @@
 
 + [MJRefresh](https://github.com/CoderMJLee/MJRefresh.git) An easy way to use pull-to-refresh.
 + [BreakOutToRefresh](https://github.com/dasdom/BreakOutToRefresh.git) Play BreakOut while loading - A playable pull to refresh view using SpriteKit
++ [UITableViewDynamicLayoutCacheHeight](https://github.com/liangdahong/UITableViewDynamicLayoutCacheHeight)
 
 ### UITableViewCell
 
@@ -323,6 +324,7 @@
 
 + [MLeaksFinder](https://github.com/Zepo/MLeaksFinder.git) Find memory leaks in your iOS app at develop time. 检测内存泄漏
 + [PLeakSniffer](https://github.com/music4kid/PLeakSniffer.git) Detect memory leaks for your iOS project automatically. http://mrpeak.cn
++ [AMLeaksFinder](https://github.com/liangdahong/AMLeaksFinder)
 
 ### Demo
 

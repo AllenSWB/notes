@@ -4,7 +4,7 @@
   - [扩大 button 响应区域](#扩大-button-响应区域)
   - [UILabel 文本靠左上角](#uilabel-文本靠左上角)
   - [UILabel 设置行间隙](#uilabel-设置行间隙)
-  - [去除 String 中的空格](#去除-string-中的空格)
+  - [去除 String 中的空格、换行](#去除-string-中的空格换行)
   - [UILabel 部分文字可点击](#uilabel-部分文字可点击)
   - [找到所有 subviewClass 类](#找到所有-subviewclass-类)
   - [找到 subviewClass 这个类的父视图](#找到-subviewclass-这个类的父视图)
@@ -16,7 +16,7 @@
   - [`Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: "swift_lang")` 方法获取不到文件解决](#bundlemainpathsforresourcesoftype-pdf-indirectory-swift_lang-方法获取不到文件解决)
   - [Xcode11 新建项目，去除 SceneDelegate.swift](#xcode11-新建项目去除-scenedelegateswift)
   - [Xcode 报错](#xcode-报错)
-  - [旋转动画](#旋转动画)
+  - [关键帧动画实现：旋转 & 移动](#关键帧动画实现旋转--移动)
   - [方法废弃](#方法废弃)
   - [NSURL 的 query 、path 等方法](#nsurl-的-query-path-等方法)
   - [修改 UIPickerView 中的文字大小](#修改-uipickerview-中的文字大小)
@@ -236,7 +236,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 
 ```
 
-## 去除 String 中的空格
+## 去除 String 中的空格、换行
 
 1. 仅去除前后的空格
 
@@ -244,6 +244,10 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
     NSString *str  = [NSString stringWithFormat:@"    sda  sda    "];
     str = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSLog(@"%@", str);  // sda  sda
+
+    // 仅去除前后的空格和换行
+    temp = [temp stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
 ```
 
 2. 去除所有空格
@@ -1003,8 +1007,9 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 解决：clean下工程
 
 
-## 旋转动画
+## 关键帧动画实现：旋转 & 移动
 ```objc
+// 旋转
 CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
   // 默认是顺时针效果，若将fromValue和toValue的值互换，则为逆时针效果
   animation.fromValue = [NSNumber numberWithFloat:0.f];
@@ -1020,6 +1025,49 @@ CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform
   // [self.indicatorView.layer removeAllAnimations];
 ```
 
+```Objective-C
+
+- (void)p_startRunAnimation:(CGFloat)moveX flag:(BOOL)flag {
+
+    [self.labelRoomName.layer  removeAllAnimations];
+    
+    [self layoutIfNeeded];
+    // label宽度
+    CGFloat labelRoomNameWidth = self.labelRoomName.width;// [self.labelRoomName.text widthForFont:[UIFont systemFontOfSize:15]];
+    // 容器宽度
+    CGFloat containerVWidht = self.labelContainView.frame.size.width;
+    // label比容器多出的宽度
+    CGFloat moreWidth = labelRoomNameWidth - containerVWidht;
+    
+    if (moreWidth <= 0) {
+        return;
+    }
+    
+    
+    CGFloat duration = moreWidth / 38 * 1.5;//移动38pt耗时1.5
+    NSNumber *fromValue;
+    NSNumber *toValue;
+    
+    if (flag) { // 左滑漏出
+        fromValue = @(containerVWidht/2 + moreWidth/2);
+        toValue = @(containerVWidht/2 - moreWidth/2);
+    } else { // 右滑归位
+        fromValue = @(containerVWidht/2 - moreWidth/2);
+        toValue = @(containerVWidht/2 + moreWidth/2);
+    }
+    
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position.x"];
+    animation.fromValue = fromValue;
+    animation.toValue = toValue;
+    animation.duration = duration;
+    animation.repeatCount = MAXFLOAT;
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
+    animation.autoreverses = YES;
+    [self.labelRoomName.layer addAnimation:animation forKey:@"position.x"];
+}
+```
 ## 方法废弃
 
 ```objc
