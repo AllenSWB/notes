@@ -1,6 +1,9 @@
 - [iOS 开发随手记](#ios-开发随手记)
   - [多 target](#多-target)
   - [加快编译速度](#加快编译速度)
+  - [判断一个view是不是指定view的子视图](#判断一个view是不是指定view的子视图)
+  - [让一个视图始终在最前面](#让一个视图始终在最前面)
+  - [系统UINavigationController滑动返回手势取消](#系统uinavigationcontroller滑动返回手势取消)
   - [扩大 button 响应区域](#扩大-button-响应区域)
   - [UILabel 文本靠左上角](#uilabel-文本靠左上角)
   - [UILabel 设置行间隙](#uilabel-设置行间隙)
@@ -130,7 +133,18 @@
 
 2. `.h`文件引入头文件，`#import`改成`@class`
 
-
+## 判断一个view是不是指定view的子视图
+```
+BOOL isChildView =  [childView isDescendantOfView:parentView];
+```
+## 让一个视图始终在最前面
+```
+view.layer.zPosition = 999;
+```
+## 系统UINavigationController滑动返回手势取消
+```
+self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+```
 
 ## 扩大 button 响应区域
 
