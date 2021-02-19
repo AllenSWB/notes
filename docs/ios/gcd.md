@@ -1,14 +1,14 @@
-- [开发者需要做的是定义想执行的任务，并追加到适当的Dispatch Queue中](#%e5%bc%80%e5%8f%91%e8%80%85%e9%9c%80%e8%a6%81%e5%81%9a%e7%9a%84%e6%98%af%e5%ae%9a%e4%b9%89%e6%83%b3%e6%89%a7%e8%a1%8c%e7%9a%84%e4%bb%bb%e5%8a%a1%e5%b9%b6%e8%bf%bd%e5%8a%a0%e5%88%b0%e9%80%82%e5%bd%93%e7%9a%84dispatch-queue%e4%b8%ad)
-- [队列 `dispatch_queue_t`](#%e9%98%9f%e5%88%97-dispatchqueuet)
-- [指定时间后执行处理 `dispatch_after`](#%e6%8c%87%e5%ae%9a%e6%97%b6%e9%97%b4%e5%90%8e%e6%89%a7%e8%a1%8c%e5%a4%84%e7%90%86-dispatchafter)
+- [开发者需要做的是定义想执行的任务，并追加到适当的Dispatch Queue中](#开发者需要做的是定义想执行的任务并追加到适当的dispatch-queue中)
+- [队列 `dispatch_queue_t`](#队列-dispatch_queue_t)
+- [指定时间后执行处理 `dispatch_after`](#指定时间后执行处理-dispatch_after)
 - [Dispatch Groupe](#dispatch-groupe)
-- [`dispatch_barrier_async`](#dispatchbarrierasync)
-- [`dispatch_sync dispatch_async`](#dispatchsync-dispatchasync)
-- [`dispatch_apply`](#dispatchapply)
-- [`dispatch_suspend & dispatch_resume`](#dispatchsuspend--dispatchresume)
-- [信号量 `Dispatch Semaphore`](#%e4%bf%a1%e5%8f%b7%e9%87%8f-dispatch-semaphore)
-- [`dispatch_once`](#dispatchonce)
-- [参考链接](#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5)
+- [`dispatch_barrier_async`](#dispatch_barrier_async)
+- [`dispatch_sync dispatch_async`](#dispatch_sync-dispatch_async)
+- [`dispatch_apply`](#dispatch_apply)
+- [`dispatch_suspend & dispatch_resume`](#dispatch_suspend--dispatch_resume)
+- [信号量 `Dispatch Semaphore`](#信号量-dispatch-semaphore)
+- [`dispatch_once`](#dispatch_once)
+- [参考链接](#参考链接)
  
 ## 开发者需要做的是定义想执行的任务，并追加到适当的Dispatch Queue中
  
@@ -66,12 +66,15 @@ dispatch_queue_t mySerialQueue = dispatch_queue_create("com.sun.ucarshare.gcdCre
     - global dispatch queue
  
         ```objc
-        dispatch_queue_t globalQueueHigh = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-        
+        /*
+        *  - DISPATCH_QUEUE_PRIORITY_HIGH:         QOS_CLASS_USER_INITIATED
+        *  - DISPATCH_QUEUE_PRIORITY_DEFAULT:      QOS_CLASS_DEFAULT
+        *  - DISPATCH_QUEUE_PRIORITY_LOW:          QOS_CLASS_UTILITY
+        *  - DISPATCH_QUEUE_PRIORITY_BACKGROUND:   QOS_CLASS_BACKGROUND
+        */
+        dispatch_queue_t globalQueueHigh = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);        
         dispatch_queue_t globalQueueDefault = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        
         dispatch_queue_t globalQueueLow = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
-        
         dispatch_queue_t globalQueueBackground = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
         ```
  
