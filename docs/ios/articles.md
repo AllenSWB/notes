@@ -46,6 +46,7 @@
 + [saitjr](http://www.saitjr.com)
 
 + [weread](http://wereadteam.github.io) 微信读书团队
++ [bestswifter](https://github.com/bestswifter/blog)
 
 <h4 id="title_jianshu">简书优秀文章</h4>
 
