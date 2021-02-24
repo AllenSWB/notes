@@ -28,6 +28,7 @@
     - [蓝牙](#蓝牙)
     - [键盘](#键盘)
     - [JavaScript](#javascript)
+    - [Hook](#hook)
     - [热修复](#热修复)
     - [Category](#category)
     - [其他](#其他)
@@ -286,6 +287,11 @@
 
 + [WebViewJavascriptBridge](https://github.com/marcuswestin/WebViewJavascriptBridge.git)  An iOS/OSX bridge for sending messages between Obj-C and JavaScript in UIWebViews/WebViews  
 + [NJKWebViewProgress](https://github.com/ninjinkun/NJKWebViewProgress.git) UIWebView progress interface
+
+### Hook
+
+- [SDMagicHook](https://github.com/larksuite/SDMagicHook)
+- [Aspects](https://github.com/steipete/Aspects)
 
 ### 热修复
 
