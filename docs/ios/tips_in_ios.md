@@ -3,6 +3,7 @@
   - [加快编译速度](#加快编译速度)
   - [判断一个view是不是指定view的子视图](#判断一个view是不是指定view的子视图)
   - [让一个视图始终在最前面](#让一个视图始终在最前面)
+  - [判断一个vc是否显示在界面上](#判断一个vc是否显示在界面上)
   - [系统UINavigationController滑动返回手势取消](#系统uinavigationcontroller滑动返回手势取消)
   - [扩大 button 响应区域](#扩大-button-响应区域)
   - [UILabel 文本靠左上角](#uilabel-文本靠左上角)
@@ -140,6 +141,13 @@ BOOL isChildView =  [childView isDescendantOfView:parentView];
 ## 让一个视图始终在最前面
 ```
 view.layer.zPosition = 999;
+```
+## 判断一个vc是否显示在界面上
+```Obj-C
+//  当前vc里判断
+if (self.isViewLoaded && !self.view.window) {
+    
+}
 ```
 ## 系统UINavigationController滑动返回手势取消
 ```
